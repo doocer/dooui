@@ -1,0 +1,60 @@
+.du-root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font);
+}
+
+.du-layout-head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: #42b983;
+  z-index: 980;
+  box-sizing: border-box;
+  padding-left: 230px;
+  transition: padding-left 0.2s ease;
+}
+
+.du-layout-side {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 230px;
+  background-color: #324057;
+  z-index: 990;
+  overflow: hidden;
+  transition: width 0.2s ease;
+}
+
+.du-layout-main {
+  padding: 50px 0 0 230px;
+  transition: padding-left 0.2s ease;
+}
+
+.Collapse .du-layout-head,
+.Collapse .du-layout-main {
+  padding-left: 50px;
+}
+
+.Collapse .du-layout-side {
+  width: 50px;
+}
+
+.du-layout-logo {
+  display: block;
+  height: 50px;
+  color: white;
+  background-color: #54CDBA;
+}
+
+.du-scroll {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
