@@ -1,6 +1,5 @@
 <template>
-<router-link class="du-menu_item" tag="li" active-class="Active"
-  :to="path" exact>
+<router-link class="du-menu_item" tag="li" active-class="Active" :to="to">
   <a>
     <i class="du-icon" :class="icon" v-if="icon" aria-hidden="true"></i>
     <span class="du-menu_text"><slot></slot></span>
@@ -10,9 +9,11 @@
 
 <script>
 export default {
+  name: 'du-menu-item',
   props: {
     icon: String,
-    path: {
+    to: {
+      type: [String, Object],
       required: true
     }
   }

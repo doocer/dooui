@@ -9,11 +9,11 @@
   <aside class="du-layout-side">
     <div class="du-scroll">
       <du-menu title="Navigation">
-        <du-menu-item path="/dashboard" icon="fa fa-tachometer">Dashboard 1</du-menu-item>
-        <du-menu-tree>
+        <du-menu-item to="/dashboard" icon="fa fa-tachometer">Dashboard 1</du-menu-item>
+        <du-menu-tree icon="fa fa-database">
           <span slot="title">Dashboard 2</span>
-          <du-menu-item path="create">Hi</du-menu-item>
-          <du-menu-item path="hi">Hi 2</du-menu-item>
+          <du-menu-item to="create">Hi</du-menu-item>
+          <du-menu-item to="hi">Hi 2</du-menu-item>
         </du-menu-tree>
       </du-menu>
     </div>

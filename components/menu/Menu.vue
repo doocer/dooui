@@ -7,6 +7,7 @@
 
 <script>
 export default {
+  name: 'du-menu',
   props: {
     title: String
   }
@@ -49,6 +50,11 @@ export default {
   margin-right: 4px;
   font-size: inherit;
 }
+.du-menu_group {
+  transform-origin: top;
+  transform: scaleY(1);
+  transition: transform 0.2s ease;
+}
 .du-menu_group li {
   padding-left: 15px;
   background-color: var(--menu-group-bg);
@@ -70,9 +76,40 @@ export default {
   border-color: var(--menu-border-color);
 }
 .du-menu li a:hover,
-.du-menu li a:hover,
+.du-menu li span:hover,
 .du-menu_group li.Active a {
   color: var(--menu-active-color);
+}
+.du-menu_title:after {
+  display: table;
+  content: '';
+  clear: both;
+}
+.du-menu_angle {
+  float: right;
+  display: inline-block;
+  margin-right: 15px;
+  margin-top: 6px;
+  display: inline-block;
+  font-size: 0;
+  transform: rotate(-45deg);
+  transition: transform 0.2s ease;
+}
+.du-menu_angle:after {
+  display: block;
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 1px;
+  border: 1px solid transparent;
+  border-left-color: var(--menu-text-color);
+  border-top-color: var(--menu-text-color);
+}
+.Open .du-menu_angle {
+  transform: rotate(45deg);
+}
+.Open .du-menu_group {
+  transform: scaleY(0);
 }
 .Collapse .du-menu_head,
 .Collapse .du-menu_text {
