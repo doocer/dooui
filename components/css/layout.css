@@ -1,22 +1,27 @@
-.du-root {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  font-family: var(--font);
-}
-
 .du-layout-head {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: 50px;
-  background-color: #42b983;
-  z-index: 980;
+  color: var(--layout-head-fg);
+  background-color: var(--layout-head-bg);
+  z-index: 990;
   box-sizing: border-box;
-  padding-left: 230px;
-  transition: padding-left 0.2s ease;
+}
+
+.du-layout-logo {
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  width: 230px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.04);
+  transition: width 0.2s ease;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
 }
 
 .du-layout-side {
@@ -24,11 +29,14 @@
   top: 0;
   left: 0;
   bottom: 0;
+  padding-top: 50px;
   width: 230px;
-  background-color: #324057;
-  z-index: 990;
+  color: var(--layout-side-color);
+  background-color: var(--layout-side-bg);
+  z-index: 980;
   overflow: hidden;
   transition: width 0.2s ease;
+  box-sizing: border-box;
 }
 
 .du-layout-main {
@@ -36,25 +44,11 @@
   transition: padding-left 0.2s ease;
 }
 
-.Collapse .du-layout-head,
 .Collapse .du-layout-main {
   padding-left: 50px;
 }
 
-.Collapse .du-layout-side {
+.Collapse .du-layout-side,
+.Collapse .du-layout-logo {
   width: 50px;
-}
-
-.du-layout-logo {
-  display: block;
-  height: 50px;
-  color: white;
-  background-color: #54CDBA;
-}
-
-.du-scroll {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
 }

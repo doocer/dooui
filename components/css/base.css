@@ -1,0 +1,24 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.du-root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--text-plain-color);
+  background-color: var(--layout-base-bg);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+.du-scroll {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}

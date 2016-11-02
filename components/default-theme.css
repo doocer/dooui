@@ -1,15 +1,46 @@
-:root {
-  --color-red: #E4223C;
-  --color-blue: #1683F8;
-  --color-semi-black: #36495D;
+@import "css/base.css";
+@import "css/layout.css";
 
-  --color-main: #ffffff;
-  --color-black: #3f3f3f;
-  --color-gray: #d0d4d7;
-  --color-blue: #03a9f4;
-  --color-dark-grey: #333333;
-  --color-red: #ff5722;
-  --color-text: #4a4a4a;
+:root {
+  --color-white: #FFFFFF;
+  --color-semi-white: #F9FAFC;
+  --color-gray: #D3DCE6;
+  --color-semi-gray: #E5E9F2;
+  --color-light-gray: #EFF2F7;
+  --color-silver: #8492A6;
+  --color-semi-silver: #99A9BF;
+  --color-light-silver: #C0CCDA;
+  --color-black: #1F2D3D;
+  --color-semi-black: #36495D;
+  --color-light-black: #475669;
+
+  --color-red: #E4223C;
+  --color-blue: #419fd6;
+  --color-green: #13CE66;
+  --color-yellow: #F7BA2A;
+
+  --layout-base-bg: var(--color-semi-white);
+  --layout-head-bg: #3081B7;
+  --layout-head-fg: var(--color-white);
+  --layout-side-bg: var(--color-semi-black);
+  --layout-side-color: var(--color-semi-white);
+
+  --menu-head-color: rgba(255, 255, 255, 0.25);
+  --menu-head-bg: rgba(0, 0, 0, 0.16);
+  --menu-text-color: var(--color-semi-gray);
+  --menu-active-color: var(--color-white);
+  --menu-border-color: var(--color-blue);
+  --menu-active-bg: rgba(0, 0, 0, 0.04);
+  --menu-hover-bg: rgba(0, 0, 0, 0.08);
+  --menu-group-color: rgba(222, 222, 222, 0.8);
+  --menu-group-bg: rgba(222, 222, 222, 0.04);
+
+  --text-plain-color: #5e6d80;
+  --text-heading-color: #1f2f3d;
+  --text-link-color: var(--color-light-black);
+
+  --box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+
   --size-xl: 32px;
   --size-lg: 24px;
   --size-md: 18px;
@@ -18,11 +49,3 @@
   --font: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-
-@import "css/layout.css"
