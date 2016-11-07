@@ -14,7 +14,8 @@
     <span class="du-select_search" v-if="search">
       <input v-model="query">
     </span>
-    <ul class="du-select_results" role="tree" ref="tree">
+    <ul class="du-select_results" role="tree" ref="tree"
+      @click="select" @mouseover="focus">
       <li class="du-select_optgroup" role="group" v-for="g in results">
         <strong v-text="g.label" v-if="g.label"></strong>
         <ul>
@@ -25,8 +26,6 @@
             }"
             :aria-selected="isMatch(selected, o)"
             :data-value="o.value"
-            @click.prevent="select(o)"
-            @mouseenter="focus(o)"
             v-for="o in g.options">
             <component :is="component" :item="o"></component>
           </li>
@@ -80,7 +79,8 @@ export default {
       if (!this.query || !this.search) {
         return optgroups
       }
-      return _filterSearch(optgroups, this.query)
+      var rv = _filterSearch(optgroups, this.query)
+      return rv
     }
   },
   data() {
@@ -108,12 +108,13 @@ export default {
   },
   watch: {
     query(q) {
+      if (!this.results.length) {
+        return
+      }
       var option = this.selected || this.focused
       if (q) {
-        var results = _filterSearch([{options: [option]}], q)
-        if (!results.length) {
-          option = _getDefaultValue(this.results)
-        }
+        option = _getDefaultValue(this.results, option.value)
+          || _getDefaultValue(this.results)
       }
       this.focused = option
     }
@@ -139,19 +140,25 @@ export default {
         this.__input = this.$el.querySelector(sel)
       }
       if (this.active) {
+        this.query = ''
+        if (this.selected) {
+          this.focused = this.selected
+        }
         this.__input.focus()
       }
-      this.ensureVisible(this.selected)
+      this.ensureVisible(this.focused)
     },
     select(item) {
-      if (!item.disabled) {
+      item = this.getEventItem(item)
+      if (item && !item.disabled) {
         this.selected = item
-        this.$emit('input', this.selected)
+        this.$emit('input', item)
         this.toggleOff()
       }
     },
     focus(item) {
-      if (!item.disabled) {
+      item = this.getEventItem(item)
+      if (item && !item.disabled) {
         this.focused = item
       }
     },
@@ -176,6 +183,16 @@ export default {
         // press enter
         this.select(this.focused)
       }
+    },
+    getEventItem(e) {
+      if (!e.target && e.value !== undefined) {
+        return e
+      }
+      var value = _getTargetValue(e.target, this.$refs.tree)
+      if (value) {
+        return _getDefaultValue(this.cloneGroups(), value)
+      }
+      return null
     },
     getItemElement(item) {
       if (!item) {
@@ -202,6 +219,16 @@ export default {
   }
 }
 
+function _getTargetValue(target, parent) {
+  while (target && target != parent && !target.hasAttribute('data-value')) {
+    target = target.parentNode
+  }
+  if (target) {
+    return target.getAttribute('data-value')
+  }
+  return null
+}
+
 function _getDefaultValue(optgroups, value) {
   var options = []
   for (var i = 0; i < optgroups.length; i++) {
@@ -210,7 +237,7 @@ function _getDefaultValue(optgroups, value) {
       if (options[j].disabled) {
         continue
       }
-      if (value === undefined || value === options[j].value) {
+      if (value === undefined || value == options[j].value) {
         return options[j]
       }
     }
@@ -221,7 +248,7 @@ function _getDefaultValue(optgroups, value) {
 function _filterSearch(optgroups, query) {
   query = query.toLowerCase()
   return optgroups.filter(g => {
-    g.options = g.options.filter(o => {
+    var options = g.options.filter(o => {
       var value = o.value.toLowerCase()
       if (value.indexOf(query) !== -1) {
         return true
@@ -229,7 +256,11 @@ function _filterSearch(optgroups, query) {
       var label = o.label.toLowerCase()
       return label.indexOf(query) !== -1
     })
-    return Boolean(g.options.length)
+    if (!options.length) {
+      return false
+    }
+    g.options = options
+    return true
   })
 }
 
@@ -339,6 +370,7 @@ function _cloneGroups(optgroups) {
   position: relative;
   max-height: 320px;
   overflow-y: auto;
+  pointer-events: none;
 }
 .du-select_optgroup strong {
   display: block;
@@ -348,21 +380,23 @@ function _cloneGroups(optgroups) {
   display: block;
   padding: 6px 10px;
   cursor: pointer;
+  pointer-events: auto;
 }
 .du-select_option[aria-selected] {
-  background-color: rgba(0, 0, 0, 0.04);
-}
-.du-select_option:hover {
   background-color: rgba(0, 0, 0, 0.06);
 }
 .du-select_option.Disabled {
   opacity: 0.6;
   cursor: not-allowed;
   background-color: transparent;
+  pointer-events: none;
 }
 .du-select_option.Focused {
   color: white;
   background-color: #5897fb;
+}
+.du-select_option > * {
+  pointer-events: none;
 }
 .du-select_optgroup .du-select_option {
   padding-left: 12px;
