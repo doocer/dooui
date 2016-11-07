@@ -1,18 +1,21 @@
 <template>
-<span class="du-select" :class="{'Active': active, 'Selected': selected}"
+<span class="du-select" :class="{'Active': active}"
   v-clickoutside="toggleOff" @keydown="handleKey">
-  <span class="du-select_selection" @click.prevent="toggleActive">
+  <span class="du-select_selection" @click.prevent="toggleActive" tabindex="0">
     <span class="du-select_selected">
-      <input readonly :placeholder="placeholder">
       <component :is="component" :item="selected" v-if="selected">
       </component>
+      <span class="du-select_placeholder" v-text="placeholder" v-else>
+      </span>
     </span>
     <i class="du-select_arrow" aria-hidden="true"></i>
   </span>
 
   <span class="du-select_dropdown" :aria-expanded="active">
     <span class="du-select_search" v-if="search">
-      <input v-model="query">
+      <input autocomplete="off" autocorrect="off" autocapitalize="off"
+      spellcheck="false" role="text-box" tabindex="-1" v-model="query"
+      ref="search">
     </span>
     <ul class="du-select_results" role="tree" ref="tree"
       @click="select" @mouseover="focus">
@@ -132,21 +135,16 @@ export default {
     },
     toggleActive() {
       this.active = !this.active
-      if (!this.__input) {
-        var sel = 'input'
-        if (this.search) {
-          sel = '.du-select_search input'
-        }
-        this.__input = this.$el.querySelector(sel)
-      }
       if (this.active) {
         this.query = ''
         if (this.selected) {
           this.focused = this.selected
         }
-        this.__input.focus()
+        if (this.$refs.search) {
+          this.$refs.search.focus()
+        }
+        this.ensureVisible(this.focused)
       }
-      this.ensureVisible(this.focused)
     },
     select(item) {
       item = this.getEventItem(item)
@@ -169,18 +167,31 @@ export default {
       return item.value === choice.value
     },
     handleKey(e) {
+      var code = e.keyCode
+      if (!this.active) {
+        e.preventDefault()
+        // space, enter
+        if ([32, 13].indexOf(code) !== -1) {
+          this.toggleActive()
+        }
+        return
+      }
+      if (code === 27) {  // esc
+        e.preventDefault()
+        this.toggleOff()
+        return
+      }
       var item = null
-      if (e.keyCode == 38) {
+      if (code == 38) {  // up
         item = this.getPrevItem()
-      } else if (e.keyCode == 40) {
+      } else if (code == 40) {
         item = this.getNextItem()
       }
-      if (item) {
+      if (item) {  // down
         this.focused = item
         this.ensureVisible(item)
       }
-      if (e.keyCode == 13) {
-        // press enter
+      if (code == 13) {  // enter
         this.select(this.focused)
       }
     },
@@ -337,21 +348,8 @@ function _iterOptions(optgroups, fn) {
 .du-select_selected {
   display: block;
 }
-.du-select_selection input {
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 28px;
-  padding: 0 30px 0 10px;
-  box-sizing: border-box;
-  background-color: transparent;
-  font-size: inherit;
-  font-family: inherit;
-  line-height: 1;
-  border: 0 none;
-  outline: none;
+.du-select_placeholder {
+  opacity: 0.65;
 }
 .du-select_arrow {
   position: absolute;
@@ -440,11 +438,9 @@ function _iterOptions(optgroups, fn) {
 }
 .du-select.Active .du-select_selection {
   border-radius: 3px 3px 0 0;
+  outline: none;
 }
 .du-select.Active .du-select_dropdown {
   transform: scaleY(1);
-}
-.du-select.Selected .du-select_selection input {
-  opacity: 0;
 }
 </style>
