@@ -171,9 +171,9 @@ export default {
     handleKey(e) {
       var item = null
       if (e.keyCode == 38) {
-        // item = this.getAvailableItem(-1)
+        item = this.getPrevItem()
       } else if (e.keyCode == 40) {
-        // item = this.getAvailableItem(1)
+        item = this.getNextItem()
       }
       if (item) {
         this.focused = item
@@ -183,6 +183,31 @@ export default {
         // press enter
         this.select(this.focused)
       }
+    },
+    getPrevItem() {
+      var prev = null
+      _iterOptions(this.results, (option) => {
+        if (!option.disabled) {
+          if (this.focused.value == option.value) {
+            return true
+          }
+          prev = option
+        }
+      })
+      return prev
+    },
+    getNextItem() {
+      var found = false, next = null
+      _iterOptions(this.results, (option) => {
+        if (!option.disabled) {
+          if (found) {
+            next = option
+            return true
+          }
+          found = this.focused.value == option.value
+        }
+      })
+      return next
     },
     getEventItem(e) {
       if (!e.target && e.value !== undefined) {
@@ -230,19 +255,16 @@ function _getTargetValue(target, parent) {
 }
 
 function _getDefaultValue(optgroups, value) {
-  var options = []
-  for (var i = 0; i < optgroups.length; i++) {
-    options = optgroups[i].options
-    for (var j = 0; j < options.length; j++) {
-      if (options[j].disabled) {
-        continue
-      }
-      if (value === undefined || value == options[j].value) {
-        return options[j]
+  var rv = null
+  _iterOptions(optgroups, function(option) {
+    if (!option.disabled) {
+      if (value === undefined || value == option.value) {
+        rv = option
+        return true
       }
     }
-  }
-  return null
+  })
+  return rv
 }
 
 function _filterSearch(optgroups, query) {
@@ -276,6 +298,18 @@ function _cloneGroups(optgroups) {
     })
     return g
   })
+}
+
+function _iterOptions(optgroups, fn) {
+  var options = []
+  for (var i = 0; i < optgroups.length; i++) {
+    options = optgroups[i].options
+    for (var j = 0; j < options.length; j++) {
+      if (fn(options[j])) {
+        return
+      }
+    }
+  }
 }
 </script>
 
