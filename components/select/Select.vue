@@ -18,9 +18,16 @@
       <li class="du-select_optgroup" role="group" v-for="g in results">
         <strong v-text="g.label" v-if="g.label"></strong>
         <ul>
-          <li class="du-select_option" :class="{'Disabled': o.disabled}"
-            role="treeitem" :aria-selected="isSelected(o)"
-            @click.prevent="select(o)" v-for="o in g.options">
+          <li class="du-select_option" role="treeitem"
+            :class="{
+              'Disabled': o.disabled,
+              'Focused': isMatch(focused, o)
+            }"
+            :aria-selected="isMatch(selected, o)"
+            :data-value="o.value"
+            @click.prevent="select(o)"
+            @mouseenter="focus(o)"
+            v-for="o in g.options">
             <component :is="component" :item="o"></component>
           </li>
         </ul>
@@ -63,59 +70,62 @@ export default {
       default: 'du-select-item'
     },
     search: {
-      type: [Function, Boolean],
+      type: Boolean,
       default: false,
     },
   },
   computed: {
     results() {
-      var results = this.optgroups
-      if (!results.length) {
-        results = [{options: this.options}]
+      var optgroups = this.cloneGroups()
+      if (!this.query || !this.search) {
+        return optgroups
       }
-      if (!this.query) {
-        return results
-      }
-      var searchFn = this.search
-      if (typeof searchFn === 'boolean') {
-        searchFn = filterSearch
-      }
-      var rv = []
-      results.forEach(item => {
-        var options = item.options.filter(option => {
-          return searchFn(option, this.query)
-        })
-        if (options.length) {
-          rv.push({label: item.label, options})
-        }
-      })
-      return rv
+      return _filterSearch(optgroups, this.query)
     }
   },
   data() {
-    var selected = null
-    if (this.value) {
-      selected = this.value
-    } else if (!this.placeholder) {
-      if (this.optgroups.length) {
-        var first = this.optgroups[0]
-        if (first.options) {
-          selected = getFirstOption(first.options)
-        }
-      } else if (this.options.length) {
-        selected = getFirstOption(this.options)
-      }
-      if (selected) {
-        this.$emit('input', selected)
-      }
-    }
     return {
-      selected,
+      selected: null,
+      focused: null,
       active: false,
       query: '',
     }
   },
+  mounted() {
+    var selected = null
+    var optgroups = this.cloneGroups()
+    if (this.value) {
+      selected = _getDefaultValue(optgroups, this.value.value)
+    } else if (!this.placeholder) {
+      selected = _getDefaultValue(optgroups)
+    }
+    this.selected = selected
+    if (selected) {
+      this.focused = selected
+    } else {
+      this.focused = _getDefaultValue(optgroups)
+    }
+  },
+  watch: {
+    query(q) {
+      var option = this.selected || this.focused
+      if (q) {
+        var results = _filterSearch([{options: [option]}], q)
+        if (!results.length) {
+          option = _getDefaultValue(this.results)
+        }
+      }
+      this.focused = option
+    }
+  },
   methods: {
+    cloneGroups() {
+      var optgroups = this.optgroups
+      if (!optgroups.length) {
+        optgroups = [{options: this.options}]
+      }
+      return _cloneGroups(optgroups)
+    },
     toggleOff() {
       this.active = false
     },
@@ -131,50 +141,110 @@ export default {
       if (this.active) {
         this.__input.focus()
       }
-      this.ensureVisible(this.$el.querySelector('li[aria-selected]'))
+      this.ensureVisible(this.selected)
     },
     select(item) {
       if (!item.disabled) {
         this.selected = item
-        this.$emit('input', item)
+        this.$emit('input', this.selected)
         this.toggleOff()
       }
     },
-    isSelected(item) {
-      if (!this.selected) {
+    focus(item) {
+      if (!item.disabled) {
+        this.focused = item
+      }
+    },
+    isMatch(item, choice) {
+      if (!item) {
         return false
       }
-      return item.label == this.selected.label
+      return item.value === choice.value
     },
     handleKey(e) {
-      // TODO
+      var item = null
       if (e.keyCode == 38) {
-        // up
+        // item = this.getAvailableItem(-1)
       } else if (e.keyCode == 40) {
-        // down
+        // item = this.getAvailableItem(1)
+      }
+      if (item) {
+        this.focused = item
+        this.ensureVisible(item)
+      }
+      if (e.keyCode == 13) {
+        // press enter
+        this.select(this.focused)
       }
     },
-    ensureVisible(el) {
+    getItemElement(item) {
+      if (!item) {
+        return null
+      }
+      var sel = 'li[data-value="' + item.value + '"]'
+      return this.$el.querySelector(sel)
+    },
+    ensureVisible(item) {
+      var el = this.getItemElement(item)
       if (!el) {
         return
       }
-      this.$refs.tree.scrollTop = el.offsetTop - 30
+      var tree = this.$refs.tree
+      var offsetTop = el.offsetTop
+      var height = tree.clientHeight - el.clientHeight
+      var delta = offsetTop - tree.scrollTop
+      if (delta < 0) {
+        tree.scrollTop = offsetTop
+      } else if (delta > height) {
+        tree.scrollTop = offsetTop - height
+      }
     },
   }
 }
 
-function getFirstOption(options) {
-  for (var i = 0; i < options.length; i++) {
-    if (!options[i].disabled) {
-      return options[i]
+function _getDefaultValue(optgroups, value) {
+  var options = []
+  for (var i = 0; i < optgroups.length; i++) {
+    options = optgroups[i].options
+    for (var j = 0; j < options.length; j++) {
+      if (options[j].disabled) {
+        continue
+      }
+      if (value === undefined || value === options[j].value) {
+        return options[j]
+      }
     }
   }
+  return null
 }
 
-function filterSearch(option, query) {
-  var label = option.label.toLowerCase()
+function _filterSearch(optgroups, query) {
   query = query.toLowerCase()
-  return label.indexOf(query) !== -1
+  return optgroups.filter(g => {
+    g.options = g.options.filter(o => {
+      var value = o.value.toLowerCase()
+      if (value.indexOf(query) !== -1) {
+        return true
+      }
+      var label = o.label.toLowerCase()
+      return label.indexOf(query) !== -1
+    })
+    return Boolean(g.options.length)
+  })
+}
+
+function _cloneGroups(optgroups) {
+  return optgroups.map(g => {
+    g = Object.assign({}, g)
+    g.options = g.options.map(o => {
+      o = Object.assign({}, o)
+      if (!o.label) {
+        o.label = o.value
+      }
+      return o
+    })
+    return g
+  })
 }
 </script>
 
@@ -266,6 +336,7 @@ function filterSearch(option, query) {
   outline: none;
 }
 .du-select_results {
+  position: relative;
   max-height: 320px;
   overflow-y: auto;
 }
@@ -288,6 +359,10 @@ function filterSearch(option, query) {
   opacity: 0.6;
   cursor: not-allowed;
   background-color: transparent;
+}
+.du-select_option.Focused {
+  color: white;
+  background-color: #5897fb;
 }
 .du-select_optgroup .du-select_option {
   padding-left: 12px;

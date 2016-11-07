@@ -20,33 +20,33 @@
 export default {
   data() {
     return {
-      choice: {label: 'Finland'},
+      choice: {value: 'Japan'},
       options: [
-        {label: 'Japan'},
-        {label: 'Korea', disabled: true},
-        {label: 'China'},
-        {label: 'US'},
-        {label: 'Sigapore'},
-        {label: 'France'},
-        {label: 'German'},
-        {label: 'Finland'},
-        {label: 'India'},
-        {label: 'Thai'},
+        {value: 'Japan'},
+        {value: 'Korea', disabled: true},
+        {value: 'China'},
+        {value: 'US'},
+        {value: 'Sigapore'},
+        {value: 'France'},
+        {value: 'German'},
+        {value: 'Finland'},
+        {value: 'India'},
+        {value: 'Thai'},
       ],
       optgroups: [
         {
           label: 'Asia',
           options: [
-            {label: 'Japan'},
-            {label: 'Korea', disabled: true},
-            {label: 'China'}
+            {value: 'Japan'},
+            {value: 'Korea', disabled: true},
+            {value: 'China'}
           ]
         },
         {
           label: 'Europe',
           options: [
-            {label: 'UK'},
-            {label: 'German'}
+            {value: 'UK'},
+            {value: 'German'}
           ]
         }
       ]
