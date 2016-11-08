@@ -402,6 +402,8 @@ function _iterOptions(optgroups, fn) {
   position: relative;
   max-height: 320px;
   overflow-y: auto;
+}
+.du-select_optgroup {
   pointer-events: none;
 }
 .du-select_optgroup strong {
