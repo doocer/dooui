@@ -72,18 +72,17 @@ export default {
       default: 'du-select-item'
     },
     search: {
-      type: Boolean,
+      type: [Boolean, Function],
       default: false,
     },
   },
   computed: {
     results() {
       var optgroups = this.cloneGroups()
-      if (!this.query || !this.search) {
+      if (!this.query || this.search !== true) {
         return optgroups
       }
-      var rv = _filterSearch(optgroups, this.query)
-      return rv
+      return _filterSearch(optgroups, this.query)
     }
   },
   data() {
@@ -94,32 +93,27 @@ export default {
       query: '',
     }
   },
-  mounted() {
-    var selected = null
-    var optgroups = this.cloneGroups()
-    if (this.value) {
-      selected = _getDefaultValue(optgroups, this.value.value)
-    } else if (!this.placeholder) {
-      selected = _getDefaultValue(optgroups)
-    }
-    this.selected = selected
-    if (selected) {
-      this.focused = selected
-    } else {
-      this.focused = _getDefaultValue(optgroups)
-    }
-  },
   watch: {
+    results(data) {
+      if (data.length) {
+        var selected = null
+        if (this.value) {
+          selected = _getDefaultValue(data, this.value.value)
+        } else if (!this.placeholder) {
+          selected = _getDefaultValue(data)
+        }
+        this.selected = selected
+        if (selected) {
+          this.focused = selected
+        } else {
+          this.focused = _getDefaultValue(data)
+        }
+      }
+    },
     query(q) {
-      if (!this.results.length) {
-        return
+      if (q && typeof this.search === 'function') {
+        return this.search(q)
       }
-      var option = this.selected || this.focused
-      if (q) {
-        option = _getDefaultValue(this.results, option.value)
-          || _getDefaultValue(this.results)
-      }
-      this.focused = option
     }
   },
   methods: {
@@ -183,8 +177,10 @@ export default {
       }
       var item = null
       if (code == 38) {  // up
+        e.preventDefault()
         item = this.getPrevItem()
       } else if (code == 40) {
+        e.preventDefault()
         item = this.getNextItem()
       }
       if (item) {  // down
@@ -330,6 +326,7 @@ function _iterOptions(optgroups, fn) {
   display: inline-block;
   vertical-align: middle;
   width: 100%;
+  text-align: left;
 }
 .du-select_selection {
   position: relative;
@@ -347,6 +344,9 @@ function _iterOptions(optgroups, fn) {
 }
 .du-select_selected {
   display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .du-select_placeholder {
   opacity: 0.65;
