@@ -1,6 +1,7 @@
 <template>
-<span class="du-select" :class="{'Active': active}"
-  v-clickoutside="toggleOff" @keydown="handleKey">
+<span class="du-select" :class="{'Active': active, 'Bottom': bottom}"
+  v-don:click="toggleOff" v-don:scroll="resetPosition"
+  @keydown="handleKey">
   <span class="du-select_selection" @click.prevent="toggleActive" tabindex="0">
     <span class="du-select_selected">
       <component :is="component" :item="selected" v-if="selected">
@@ -40,12 +41,12 @@
 </template>
 
 <script>
-import clickoutside from 'du-clickoutside'
+import don from 'vue-document-event'
 import SelectItem from './SelectItem.vue'
 
 export default {
   name: 'du-select',
-  directives: {clickoutside},
+  directives: {don},
   components: {
     'du-select-item': SelectItem,
   },
@@ -76,6 +77,9 @@ export default {
       default: false,
     },
   },
+  mounted() {
+    this.resetPosition()
+  },
   computed: {
     results() {
       var optgroups = this.cloneGroups()
@@ -90,6 +94,7 @@ export default {
       selected: null,
       focused: null,
       active: false,
+      bottom: false,
       query: '',
     }
   },
@@ -123,6 +128,10 @@ export default {
         optgroups = [{options: this.options}]
       }
       return _cloneGroups(optgroups)
+    },
+    resetPosition() {
+      var rect = this.$el.getBoundingClientRect()
+      this.bottom = rect.top / document.body.clientHeight > 0.5
     },
     toggleOff() {
       this.active = false
@@ -353,7 +362,8 @@ function _iterOptions(optgroups, fn) {
 }
 .du-select_arrow {
   position: absolute;
-  top: 12px;
+  top: 50%;
+  margin-top: -2px;
   right: 10px;
   transition: transform 0.1s ease;
 }
@@ -371,8 +381,10 @@ function _iterOptions(optgroups, fn) {
   left: 0;
   right: 0;
   background-color: white;
-  border: 1px solid #aaa;
-  border-top: none;
+  border-color: #aaa;
+  border-width: 1px;
+  border-style: solid;
+  border-top-width: 0;
   border-radius: 0 0 3px 3px;
   transform-origin: top;
   transform: scaleY(0);
@@ -444,5 +456,15 @@ function _iterOptions(optgroups, fn) {
 }
 .du-select.Active .du-select_dropdown {
   transform: scaleY(1);
+}
+.du-select.Bottom .du-select_dropdown {
+  transform-origin: bottom;
+  bottom: 30px;
+  border-top-width: 1px;
+  border-bottom-width: 0;
+  border-radius: 3px 3px 0 0;
+}
+.du-select.Bottom.Active .du-select_selection {
+  border-radius: 0 0 3px 3px;
 }
 </style>
