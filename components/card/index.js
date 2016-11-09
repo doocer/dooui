@@ -1,3 +1,7 @@
 import Card from './Card.vue'
 
-export default [Card]
+function install(Vue) {
+  Vue.component(Card.name, Card)
+}
+
+export default {Card, install}
