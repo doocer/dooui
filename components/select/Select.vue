@@ -3,13 +3,13 @@
   v-don:click="toggleOff" v-don:scroll="resetPosition"
   @keydown="handleKey">
   <span class="du-select_selection" @click.prevent="toggleActive" tabindex="0">
-    <span class="du-select_selected">
+    <span class="du-select_combox">
       <component :is="component" :item="selected" v-if="selected">
       </component>
       <span class="du-select_placeholder" v-text="placeholder" v-else>
       </span>
     </span>
-    <i class="du-select_arrow" aria-hidden="true"></i>
+    <i class="du-select_arrow" aria-hidden="true" v-if="!multiple"></i>
   </span>
 
   <span class="du-select_dropdown" :aria-expanded="active">
@@ -351,7 +351,7 @@ function _iterOptions(optgroups, fn) {
   user-select: none;
   cursor: default;
 }
-.du-select_selected {
+.du-select_combox {
   display: block;
   white-space: nowrap;
   overflow: hidden;
