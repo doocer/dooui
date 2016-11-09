@@ -1,5 +1,6 @@
 <template>
-<li class="du-optgroup" :class="{'Disabled': disabled}" role="group">
+<li  role="group" class="du-optgroup"
+  :class="{'Disabled': disabled}" v-show="visible">
   <strong v-text="label" v-if="label"></strong>
   <ul><slot></slot></ul>
 </li>
@@ -11,12 +12,22 @@ export default {
   optgroup: true,
   props: {
     label: {
-      type: Boolean,
-      default: false
+      type: String,
+      default: ''
     },
     disabled: {
       type: Boolean,
       default: false
+    }
+  },
+  data() {
+    return {
+      options: []
+    }
+  },
+  computed: {
+    visible() {
+      return this.options.filter(o => o.isVisible).length
     }
   }
 }

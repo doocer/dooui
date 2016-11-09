@@ -45,6 +45,9 @@ export default {
   },
   created() {
     this.root.options.push(this)
+    if (this.$parent.$options.optgroup) {
+      this.$parent.options.push(this)
+    }
     var value = this.root.value
     if (Array.isArray(value)) {
       if (value.indexOf(this.value) !== -1) {

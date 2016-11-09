@@ -2,7 +2,8 @@
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  width: 100%;
+  width: var(--select-width);
+  line-height: var(--select-line-height);
   text-align: left;
 }
 .du-select_box {
@@ -17,7 +18,8 @@
   user-select: none;
   cursor: default;
 }
-.du-select_value {
+.du-select_box.Single .du-select_value {
+  display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -28,7 +30,7 @@
 }
 .du-select_value, .du-select_placeholder {
   display: inline-block;
-  line-height: 28px;
+  line-height: inherit;
   padding: 4px 0;
 }
 .du-select.Active.Input .du-select_value {
@@ -40,11 +42,10 @@
 }
 .du-select_input {
   opacity: 0;
-  line-height: 28px;
   outline: 0;
   font-size: inherit;
   color: inherit;
-  border: none;
+  border: 0;
   background: transparent;
   box-sizing: border-box;
 }
@@ -54,9 +55,9 @@
 .du-select_box.Single .du-select_input {
   position: absolute;
   width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
+  line-height: inherit;
   padding: 4px 30px 4px 10px;
 }
 .du-select_arrow {

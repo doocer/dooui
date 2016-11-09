@@ -112,14 +112,13 @@ export default {
     toggleOff() {
       this.active = false
       this.$refs.input.blur()
+      this.hoverOption = null
     },
     toggleOn() {
       this.query = ''
       this.active = true
       this.$refs.input.focus()
-      if (this.hoverOption) {
-        this.ensureVisible(this.hoverOption.$el)
-      } else if (this.selected.length) {
+      if (this.selected.length) {
         this.ensureVisible(this.selected[0].$el)
       }
     },

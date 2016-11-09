@@ -17,6 +17,17 @@
       </du-select>
     </div>
   </div>
+  <div class="row">
+    <div class="col-12">
+      <du-select v-model="choice" filter>
+        <du-optgroup :label="group.label" v-for="group in optgroups">
+          <du-option :value="item.value" :disabled="item.disabled"
+            v-for="item in group.options">
+          </du-option>
+        </du-optgroup>
+      </du-select>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -30,7 +41,7 @@ export default {
         {value: 'Korea', disabled: true},
         {value: 'China'},
         {value: 'US'},
-        {value: 'Sigapore'},
+        {value: 'Sigapore of Sigapore of Sigapore'},
         {value: 'France'},
         {value: 'German'},
         {value: 'Finland'},

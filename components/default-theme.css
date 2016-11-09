@@ -44,6 +44,8 @@
 
   --select-line-color: var(--color-light-silver);
   --select-hover-color: var(--color-blue);
+  --select-width: 160px;
+  --select-line-height: 24px;
 
   --size-xl: 32px;
   --size-lg: 24px;
