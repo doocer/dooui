@@ -11,9 +11,8 @@
       <du-menu title="Navigation">
         <du-menu-item to="/dashboard" icon="fa fa-tachometer">Dashboard 1</du-menu-item>
         <du-menu-tree icon="fa fa-database">
-          <span slot="title">Dashboard 2</span>
-          <du-menu-item to="create">Hi</du-menu-item>
-          <du-menu-item to="hi">Hi 2</du-menu-item>
+          <span slot="title">Form Control</span>
+          <du-menu-item to="/select/">Select</du-menu-item>
         </du-menu-tree>
       </du-menu>
     </div>

@@ -55,6 +55,7 @@
 .du-select_box.Single .du-select_input {
   position: absolute;
   width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   line-height: inherit;
@@ -93,6 +94,7 @@
   transition: all 0.1s ease;
   opacity: 0;
   z-index: 1000;
+  overflow: hidden;
 }
 .du-select.Active .du-select_dropdown {
   opacity: 1;
