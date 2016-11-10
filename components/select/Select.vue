@@ -5,8 +5,8 @@
   <div class="du-select_box Multiple" v-if="multiple">
   </div>
   <div class="du-select_box Single" v-else>
-    <component class="du-select_value" v-if="selected.length"
-      :is="component" :item="selected[0]">
+    <component class="du-select_value" v-if="selectedOptions.length"
+      :is="component" :item="selectedOptions[0]">
     </component>
     <span class="du-select_placeholder" v-text="placeholder" v-else>
     </span>
@@ -66,6 +66,7 @@ export default {
     return {
       query: '',
       active: false,
+      selected: [],
       options: [],
       hoverOption: null,
     }
@@ -83,24 +84,31 @@ export default {
       }
       return filterOptions(this.options, this.query)
     },
-    selected() {
-      if (this.multiple) {
-        return this.options.filter(o => this.value.indexOf(o.value) !== -1)
-      } else {
-        return this.options.filter(o => o.value === this.value)
-      }
+    selectedOptions() {
+      return this.options.filter(
+        o => this.selected.indexOf(o.value) !== -1
+      )
     },
   },
   watch: {
     query(q) {
       this.remote && this.remote(q)
-    }
+    },
+    value(v) {
+      if (this.multiple) {
+        this.selected = v
+      } else {
+        this.selected = [v]
+      }
+    },
   },
   methods: {
     selectOption(option) {
       if (this.multiple) {
-        this.$emit('input', this.value.concat(option.value))
+        this.selected.push(option.value)
+        this.$emit('input', this.selected)
       } else {
+        this.selected = [option.value]
         this.$emit('input', option.value)
         this.toggleOff()
       }
@@ -122,8 +130,8 @@ export default {
       this.query = ''
       this.active = true
       this.$refs.input.focus()
-      if (this.selected.length) {
-        this.ensureVisible(this.selected[0].$el)
+      if (this.selectedOptions.length) {
+        this.ensureVisible(this.selectedOptions[0].$el)
       }
     },
     handleKey(e) {
