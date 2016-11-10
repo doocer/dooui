@@ -50,7 +50,10 @@ export default {
       var code = e.keyCode
       if (e.ctrlKey || e.metaKey) {
         var delta = DELTA_MAP[code]
-        delta && this.yearDelta(delta)
+        if (delta) {
+          e.preventDefault()
+          this.yearDelta(delta)
+        }
       } else {
         this.$refs.table.keypress(e)
       }

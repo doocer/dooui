@@ -65,9 +65,17 @@ export default {
         37: -1,  // left
         38: -3,  // up
         39: +1,  // right
-        40: +3  // down
+        40: +3,  // down
+        13: 0    // enter
       }
       var delta = deltaMap[e.keyCode]
+      if (!delta) {
+        if (delta === 0) {
+          this.$emit('select')
+        }
+        return
+      }
+      e.preventDefault()
       var value = this.current + delta
       if (value < 1) {
         this.$emit('year-delta', -1)

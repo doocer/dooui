@@ -2,10 +2,10 @@
 <span class="du-month-picker" :class="{'Active': active}"
   v-off:click="toggleOff" @keydown="keypress">
   <span class="du-month-picker_box">
-    <input type="text" :value="display" readonly
-      @click="toggle" :placeholder="placeholder">
+    <input type="text" :value="value" :placeholder="placeholder"
+      @click="toggle" ref="input" readonly>
   </span>
-  <div class="du-month-picker_dropdown">
+  <div class="du-month-picker_dropdown" @click="refocus">
     <du-month-calendar :year="year" :month="month" :months="months"
       @change="change" @select="select" ref="calendar">
     </du-month-calendar>
@@ -25,7 +25,7 @@ export default {
   },
   watch: {
     value(v) {
-      var ym = splitValue(v)
+      var ym = splitValue(this.value)
       if (ym) {
         this.year = ym[0]
         this.month = ym[1]
@@ -45,13 +45,6 @@ export default {
       month,
     }
   },
-  computed: {
-    display() {
-      if (this.year && this.month) {
-        return formatMonth(this.year, this.month)
-      }
-    }
-  },
   methods: {
     change(ym) {
       this.year = ym[0]
@@ -59,6 +52,9 @@ export default {
     },
     select() {
       this.toggleOff()
+      this.$nextTick(() => {
+        this.$emit('input', formatMonth(this.year, this.month))
+      })
     },
     keypress(e) {
       this.$refs.calendar.keypress(e)
@@ -68,6 +64,13 @@ export default {
     },
     toggle() {
       this.active = !this.active
+    },
+    refocus(e) {
+      if (e.target.nodeName !== 'INPUT') {
+        this.$nextTick(() => {
+          this.$refs.input.focus()
+        })
+      }
     }
   }
 }

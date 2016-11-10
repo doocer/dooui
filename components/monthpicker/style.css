@@ -1,12 +1,54 @@
+.du-month-picker {
+  position: relative;
+}
+.du-month-picker_box {
+  display: inline-block;
+  width: 160px;
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid var(--select-line-color);
+  border-radius: 3px;
+  background-color: white;
+  user-select: none;
+  cursor: default;
+}
+.du-month-picker_box input {
+  padding: 6px 30px 6px 10px;
+  width: 100%;
+  height: 100%;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+  user-select: none;
+}
+.du-month-picker_dropdown {
+  position: absolute;
+  left: 0;
+  right: 0;
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: all 0.1s ease;
+  opacity: 0;
+  z-index: 1000;
+}
+.du-month-picker.Active .du-month-picker_dropdown {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
 .du-month-calendar {
   background: white;
   box-shadow: 0 1px 1px rgba(0,0,0,0.1);
   border-radius: 3px;
-  min-width: 180px;
+  min-width: 200px;
 }
 .du-month-calendar_head {
   box-shadow: 0 1px 0 rgba(0,0,0,0.05);
 }
+
 .du-month-panel {
   position: relative;
   text-align: center;
@@ -49,6 +91,7 @@
   -webkit-appearance: none;
   margin: 0;
 }
+
 .du-month-table {
   table-layout: fixed;
   border-collapse: collapse;

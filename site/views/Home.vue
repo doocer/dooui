@@ -5,7 +5,7 @@
       <du-card>A</du-card>
       <div style="padding: 20px">
         <i class="du-double-arrow Down"></i>
-        <du-month-picker v-model="ym"></du-month-picker>
+        <du-month-picker v-model="ym" placeholder="Select"></du-month-picker>
       </div>
       <du-select filter>
         <du-option :value="item.value" :disabled="item.disabled"
