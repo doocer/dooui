@@ -28,10 +28,11 @@
   position: absolute;
   left: 0;
   right: 0;
+  opacity: 0;
+  min-width: 200px;
   transform-origin: top;
   transform: scaleY(0);
   transition: all 0.15s ease;
-  opacity: 0;
   z-index: 1000;
 }
 .du-month-picker.Active .du-month-picker_dropdown {

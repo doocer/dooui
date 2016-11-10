@@ -24,26 +24,20 @@ export default {
     months: Array,
   },
   watch: {
-    value(v) {
-      var ym = splitValue(this.value)
-      if (ym) {
-        this.year = ym[0]
-        this.month = ym[1]
+    value: {
+      immediate: true,
+      handler(v) {
+        var ym = splitValue(v)
+        if (ym) {
+          this.year = ym[0]
+          this.month = ym[1]
+        }
       }
     }
   },
   data() {
-    var year, month
-    var ym = splitValue(this.value)
-    if (ym) {
-      year = ym[0]
-      month = ym[1]
-    }
-    return {
-      active: false,
-      year,
-      month,
-    }
+    var year, month, active = false
+    return {active, year, month}
   },
   methods: {
     change(ym) {
