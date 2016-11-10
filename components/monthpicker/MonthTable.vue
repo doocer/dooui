@@ -1,10 +1,10 @@
 <template>
-<table class="du-month-table">
+<table class="du-month-table" role="grid">
   <tr v-for="cols in rows">
-    <td v-for="col in cols" :class="{'Active': month == col.value}">
-      <a role="button" v-text="col.label"
-        @click.prevent="selectMonth(col.value)">
-      </a>
+    <td role="gridcell" v-for="col in cols"
+      @click.prevent="select(col.value)"
+      :title="col.label" :class="{'Active': current == col.value}">
+      <a role="button" v-text="col.label"></a>
     </td>
   </tr>
 </table>
@@ -26,7 +26,10 @@ export default {
     },
     month: {
       type: Number,
-      required: true
+      default: () =>{
+        var d = new Date()
+        return d.getMonth() + 1
+      }
     }
   },
   computed: {
@@ -39,11 +42,32 @@ export default {
       ]
     }
   },
-  methods: {
-    selectMonth(value) {
-      this.$emit('month-change', value)
+  watch: {
+    month(m) {
+      this.current = m
     },
-    changeMonth(delta) {
+    current(m) {
+      this.$emit('change', m)
+    }
+  },
+  data() {
+    return {
+      current: this.month
+    }
+  },
+  methods: {
+    select(value) {
+      this.current = value
+      this.$emit('select')
+    },
+    keypress(e) {
+      var deltaMap = {
+        37: -1,  // left
+        38: -3,  // up
+        39: +1,  // right
+        40: +3  // down
+      }
+      var delta = deltaMap[e.keyCode]
       var value = this.current + delta
       if (value < 1) {
         this.$emit('year-delta', -1)
@@ -52,19 +76,7 @@ export default {
         this.$emit('year-delta', +1)
         value = 12 - value
       }
-      this.selectMonth(value)
-    },
-    up() {
-      this.changeMonth(-3)
-    },
-    down() {
-      this.changeMonth(+3)
-    },
-    left() {
-      this.changeMonth(-1)
-    },
-    right() {
-      this.changeMonth(+1)
+      this.current = value
     }
   }
 }

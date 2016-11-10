@@ -4,8 +4,8 @@
     <i class="du-double-arrow Left"></i>
   </a>
   <div class="du-month-panel_year">
-    <a role="button" v-text="year"></a>
-    <input type="number" pattern="[0-9]*" v-model="year">
+    <input type="number" pattern="[0-9]*" :value="current"
+      @input="record">
   </div>
   <a class="du-month-panel_next" role="button" @click.prevent="next">
     <i class="du-double-arrow Right"></i>
@@ -25,12 +25,31 @@ export default {
       }
     }
   },
+  watch: {
+    year(y) {
+      this.current = y
+    },
+    current(y) {
+      this.$emit('change', y)
+    }
+  },
+  data() {
+    return {
+      current: this.year
+    }
+  },
   methods: {
     prev() {
-      this.$emit('year-change', this.year - 1)
+      this.current -= 1
     },
     next() {
-      this.$emit('year-change', this.year + 1)
+      this.current += 1
+    },
+    record(e) {
+      try {
+        this.current = parseInt(e.target.value, 10)
+      } catch (e) {
+      }
     },
   }
 }

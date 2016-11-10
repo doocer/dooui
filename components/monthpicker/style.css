@@ -1,15 +1,75 @@
+.du-month-calendar {
+  background: white;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  border-radius: 3px;
+  min-width: 180px;
+}
+.du-month-calendar_head {
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+}
 .du-month-panel {
   position: relative;
   text-align: center;
+  user-select: none;
+}
+.du-month-panel_year {
+  padding: 8px 30px;
+  box-sizing: border-box;
 }
 .du-month-panel_prev,
 .du-month-panel_next {
   position: absolute;
   top: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+.du-month-panel_prev:hover,
+.du-month-panel_next:hover {
+  opacity: 0.75;
 }
 .du-month-panel_prev {
   left: 8px;
 }
 .du-month-panel_next {
   right: 8px;
+}
+.du-month-panel_year input {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  font: inherit;
+  color: inherit;
+  outline: none;
+}
+.du-month-panel_year input::-webkit-inner-spin-button,
+.du-month-panel_year input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.du-month-table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  max-width: 100%;
+  background-color: transparent;
+  width: 100%;
+  height: 240px;
+}
+.du-month-table td {
+  text-align: center;
+  cursor: pointer;
+}
+.du-month-table td a {
+  display: inline-block;
+  padding: 4px 15px;
+  border-radius: 3px;
+}
+.du-month-table td:hover a {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.du-month-table td.Active a {
+  color: white;
+  background-color: var(--calendar-hover-color);
 }
