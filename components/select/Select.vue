@@ -1,7 +1,9 @@
 <template>
 <span class="du-select"
-  :class="{'Active': active, 'Input': canInput, 'Inputing': query}"
-  v-don:click="toggleOff" @keydown="keypress">
+  :class="{'Active': active, 'Input': canInput, 'Inputing': isInputing}"
+  v-off:click="toggleOff" @keydown="keypress"
+  @compositionstart="composing=true"
+  @compositionend="composing=false">
   <div class="du-select_box Multiple" v-if="multiple">
   </div>
   <div class="du-select_box Single" v-else>
@@ -26,13 +28,13 @@
 </template>
 
 <script>
-import don from 'vue-document-event'
+import off from 'vue-document-event'
 import SelectedItem from './SelectedItem.vue'
 
 export default {
   name: 'du-select',
   select: true,
-  directives: {don},
+  directives: {off},
   components: {'du-selected-item': SelectedItem},
   props: {
     component: {
@@ -66,6 +68,7 @@ export default {
     return {
       query: '',
       active: false,
+      composing: false,
       selected: [],
       options: [],
       hoverOption: null,
@@ -74,6 +77,9 @@ export default {
   computed: {
     canInput() {
       return this.remote || this.filter
+    },
+    isInputing() {
+      return this.query || this.composing
     },
     visibleOptions() {
       if (!this.query || this.remote) {
