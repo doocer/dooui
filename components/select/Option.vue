@@ -64,7 +64,9 @@ export default {
   },
   methods: {
     selectOption() {
-      this.root.selectOption(this)
+      if (!this.isDisabled) {
+        this.root.selectOption(this)
+      }
     },
     hoverOption() {
       if (!this.isDisabled) {
