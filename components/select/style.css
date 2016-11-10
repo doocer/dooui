@@ -135,8 +135,8 @@
   background-color: transparent;
 }
 .du-option.Hover {
-  color: white;
-  background-color: var(--select-hover-color);
+  color: var(--select-hover-fg);
+  background-color: var(--select-hover-bg);
 }
 .du-optgroup .du-option {
   padding-left: 12px;
