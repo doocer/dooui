@@ -21,6 +21,7 @@ export default {
       type: Boolean,
       default: false,
     },
+    extra: {}
   },
   computed: {
     root() {
