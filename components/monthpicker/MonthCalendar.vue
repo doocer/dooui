@@ -18,8 +18,20 @@ export default {
   name: 'du-month-calendar',
   props: {
     months: Array,
-    year: Number,
-    month: Number
+    year: {
+      type: Number,
+      default: () => {
+        var d = new Date()
+        return d.getFullYear()
+      }
+    },
+    month: {
+      type: Number,
+      default: () =>{
+        var d = new Date()
+        return d.getMonth() + 1
+      }
+    }
   },
   methods: {
     yearChange(year) {
@@ -46,5 +58,3 @@ export default {
   }
 }
 </script>
-
-<style src="./style.css"></style>

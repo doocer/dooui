@@ -1,21 +1,27 @@
 <template>
-<span class="du-month-picker"
-  :class="{'Active': active}" v-don:click="toggleOff"
-  @keydown="handleKey">
+<span class="du-month-picker" :class="{'Active': active}"
+  v-off:click="toggleOff" @keydown="keypress">
   <span class="du-month-picker_box">
-    <input type="text" readonly="" @click="toggle">
+    <input type="text" :value="display" readonly
+      @click="toggle" :placeholder="placeholder">
   </span>
   <div class="du-month-picker_dropdown">
-    <du-month-calendar ></du-month-calendar>
+    <du-month-calendar :year="year" :month="month" :months="months"
+      @change="change" @select="select" ref="calendar">
+    </du-month-calendar>
   </div>
 </span>
 </template>
 
 <script>
+import off from 'vue-document-event'
 export default {
   name: 'du-month-picker',
+  directives: {off},
   props: {
+    placeholder: String,
     value: String,
+    months: Array,
   },
   watch: {
     value(v) {
@@ -27,10 +33,41 @@ export default {
     }
   },
   data() {
-    var ym = splitValue(this.value) || defaultValue()
+    var year, month
+    var ym = splitValue(this.value)
+    if (ym) {
+      year = ym[0]
+      month = ym[1]
+    }
     return {
-      year: ym[0],
-      month: ym[1],
+      active: false,
+      year,
+      month,
+    }
+  },
+  computed: {
+    display() {
+      if (this.year && this.month) {
+        return formatMonth(this.year, this.month)
+      }
+    }
+  },
+  methods: {
+    change(ym) {
+      this.year = ym[0]
+      this.month = ym[1]
+    },
+    select() {
+      this.toggleOff()
+    },
+    keypress(e) {
+      this.$refs.calendar.keypress(e)
+    },
+    toggleOff() {
+      this.active = false
+    },
+    toggle() {
+      this.active = !this.active
     }
   }
 }
@@ -42,10 +79,12 @@ function splitValue(value) {
   var ym = value.split('-')
   return [parseInt(ym[0], 10), parseInt(ym[1], 10)]
 }
-function defaultValue() {
-  var d = new Date()
-  var year = d.getFullYear()
-  var month = d.getMonth() + 1
-  return [year, month]
+function formatMonth(y, m) {
+  if (m < 10) {
+    m = '0' + m
+  }
+  return y + '-' + m
 }
 </script>
+
+<style src="./style.css"></style>

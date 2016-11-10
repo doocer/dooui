@@ -74,7 +74,7 @@ export default {
         value = 12 + value
       } else if (value > 12) {
         this.$emit('year-delta', +1)
-        value = 12 - value
+        value = value - 12
       }
       this.current = value
     }
