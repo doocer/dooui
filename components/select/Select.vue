@@ -67,7 +67,6 @@ export default {
       query: '',
       active: false,
       options: [],
-      selected: [],
       hoverOption: null,
     }
   },
@@ -83,7 +82,14 @@ export default {
         return this.filter(this.options, this.query)
       }
       return filterOptions(this.options, this.query)
-    }
+    },
+    selected() {
+      if (this.multiple) {
+        return this.options.filter(o => this.value.indexOf(o.value) !== -1)
+      } else {
+        return this.options.filter(o => o.value === this.value)
+      }
+    },
   },
   watch: {
     query(q) {
@@ -93,10 +99,8 @@ export default {
   methods: {
     selectOption(option) {
       if (this.multiple) {
-        this.selected.push(option)
-        this.$emit('input', this.selected.map(o => o.value))
+        this.$emit('input', this.value.concat(option.value))
       } else {
-        this.selected = [option]
         this.$emit('input', option.value)
         this.toggleOff()
       }

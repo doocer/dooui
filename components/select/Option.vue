@@ -34,7 +34,10 @@ export default {
       return this.disabled || this.$parent.disabled
     },
     isSelected() {
-      return this.root.selected.indexOf(this) !== -1
+      if (Array.isArray(this.root.value)) {
+        return this.root.value.indexOf(this.value) !== -1
+      }
+      return this.root.value === this.value
     },
     isVisible() {
       return this.root.visibleOptions.indexOf(this) !== -1
