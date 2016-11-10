@@ -22,3 +22,37 @@ html, body {
   height: 100%;
   overflow-y: auto;
 }
+
+.du-double-arrow,
+.du-double-arrow:after {
+  display: inline-block;
+  content: '';
+  border-radius: 1px;
+  border: 1px solid transparent;
+  border-left-color: #999;
+  border-top-color: #999;
+}
+.du-double-arrow {
+  position: relative;
+  width: 5px;
+  height: 5px;
+}
+.du-double-arrow:after {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 4px;
+  height: 4px;
+}
+.du-double-arrow.Up {
+  transform: rotate(45deg);
+}
+.du-double-arrow.Left {
+  transform: rotate(-45deg);
+}
+.du-double-arrow.Right {
+  transform: rotate(135deg);
+}
+.du-double-arrow.Down {
+  transform: rotate(225deg);
+}

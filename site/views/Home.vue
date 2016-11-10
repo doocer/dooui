@@ -3,6 +3,10 @@
   <div class="row">
     <div class="col-6">
       <du-card>A</du-card>
+      <div style="padding: 20px">
+        <i class="du-double-arrow Down"></i>
+        <du-month-calendar></du-month-calendar>
+      </div>
       <du-select filter>
         <du-option :value="item.value" :disabled="item.disabled"
           v-for="item in options">

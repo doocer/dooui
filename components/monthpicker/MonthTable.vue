@@ -1,7 +1,7 @@
 <template>
 <table class="du-month-table">
   <tr v-for="cols in rows">
-    <td v-for="col in cols" :class="{'Current': current == col.value}">
+    <td v-for="col in cols" :class="{'Active': month == col.value}">
       <a role="button" v-text="col.label"
         @click.prevent="selectMonth(col.value)">
       </a>
@@ -18,17 +18,15 @@ const MONTHS = [
   'Oct', 'Nov', 'Dec',
 ]
 export default {
+  name: 'du-month-table',
   props: {
     months: {
       type: Array,
       default: () => MONTHS
     },
-    current: {
+    month: {
       type: Number,
-      default: () => {
-        var d = new Date()
-        return d.getMonth() + 1
-      }
+      required: true
     }
   },
   computed: {
@@ -43,16 +41,15 @@ export default {
   },
   methods: {
     selectMonth(value) {
-      this.current = value
-      this.$emit('select', value)
+      this.$emit('month-change', value)
     },
     changeMonth(delta) {
       var value = this.current + delta
       if (value < 1) {
-        this.$emit('year-change', -1)
+        this.$emit('year-delta', -1)
         value = 12 + value
       } else if (value > 12) {
-        this.$emit('year-change', +1)
+        this.$emit('year-delta', +1)
         value = 12 - value
       }
       this.selectMonth(value)

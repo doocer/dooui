@@ -1,0 +1,15 @@
+.du-month-panel {
+  position: relative;
+  text-align: center;
+}
+.du-month-panel_prev,
+.du-month-panel_next {
+  position: absolute;
+  top: 0;
+}
+.du-month-panel_prev {
+  left: 8px;
+}
+.du-month-panel_next {
+  right: 8px;
+}
