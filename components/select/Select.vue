@@ -1,7 +1,7 @@
 <template>
 <span class="du-select"
   :class="{'Active': active, 'Input': canInput, 'Inputing': query}"
-  v-don:click="toggleOff" @keydown="handleKey">
+  v-don:click="toggleOff" @keydown="keypress">
   <div class="du-select_box Multiple" v-if="multiple">
   </div>
   <div class="du-select_box Single" v-else>
@@ -12,7 +12,7 @@
     </span>
     <i class="du-select_arrow" aria-hidden="true"></i>
     <input class="du-select_input" type="text" :readonly="!canInput"
-      @click="toggleActive" v-model="query" ref="input">
+      @click="toggle" v-model="query" ref="input">
   </div>
   <span class="du-select_dropdown" :aria-expanded="active">
     <ul class="du-select_options" role="tree" ref="tree">
@@ -113,7 +113,7 @@ export default {
         this.toggleOff()
       }
     },
-    toggleActive() {
+    toggle() {
       this.active = !this.active
       if (this.active) {
         this.toggleOn()
@@ -134,7 +134,7 @@ export default {
         this.ensureVisible(this.selectedOptions[0].$el)
       }
     },
-    handleKey(e) {
+    keypress(e) {
       var code = e.keyCode
       if (!this.active) {
         e.preventDefault()
