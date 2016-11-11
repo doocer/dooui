@@ -2,22 +2,22 @@
 <div id="app" class="du-root">
   <header class="du-layout-head">
     <router-link to="/" class="du-layout-logo">
-      <span>Dashboard</span>
+      <span>Doocer</span>
     </router-link>
     Dashboard
   </header>
   <aside class="du-layout-side">
     <div class="du-scroll">
       <du-menu title="Navigation">
-        <du-menu-tree icon="fa fa-database">
+        <du-menu-tree icon="fa fa-th-large">
           <span slot="title">Basic</span>
-          <du-menu-item to="/grid/">Grid</du-menu-item>
-          <du-menu-item to="/colors/">Colors</du-menu-item>
+          <du-menu-item icon="fa fa-circle-o" to="/grid/">Grid</du-menu-item>
+          <du-menu-item icon="fa fa-circle-o" to="/colors/">Colors</du-menu-item>
         </du-menu-tree>
-        <du-menu-tree icon="fa fa-database">
+        <du-menu-tree icon="fa fa-check-square-o">
           <span slot="title">Form Control</span>
-          <du-menu-item to="/select/">Select</du-menu-item>
-          <du-menu-item to="/month-picker/">Month Picker</du-menu-item>
+          <du-menu-item icon="fa fa-circle-o" to="/select/">Select</du-menu-item>
+          <du-menu-item icon="fa fa-circle-o" to="/month-picker/">Month Picker</du-menu-item>
         </du-menu-tree>
       </du-menu>
     </div>

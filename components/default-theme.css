@@ -22,9 +22,11 @@
   --color-green: #13CE66;
   --color-yellow: #F7BA2A;
 
+  --color-dark-blue: #0EA0E2;
+
   /* layout colors */
-  --layout-base-bg: var(--color-semi-white);
-  --layout-head-bg: #3081B7;
+  --layout-base-bg: #eff4fb;
+  --layout-head-bg: var(--color-dark-blue);
   --layout-head-fg: var(--color-white);
   --layout-side-bg: var(--color-semi-black);
   --layout-side-color: var(--color-semi-white);
@@ -47,7 +49,9 @@
 
   /* utilities */
   --box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-  --line-color: var(--color-light-silver);
+  --line-color: var(--color-gray);
+  --line-light-color: var(--color-semi-gray);
+  --line-dark-color: var(--color-light-silver);
   --focus-bg-color: var(--color-blue);
   --focus-fg-color: white;
 

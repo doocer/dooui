@@ -1,10 +1,11 @@
 <template>
 <div class="view-colors wrap">
-  <div class="content">
-    <h1>Colors</h1>
-    <p>Colors for default theme.</p>
-
-    <h2>Primary Colors</h2>
+  <du-box>
+    <div slot="head">
+      <h1>Colors</h1>
+      <span>Colors for default theme.</span>
+    </div>
+    <h2>Main Colors</h2>
     <du-row :gutter="10">
       <du-col :span="3">
         <div class="color-block" style="background:#03A9F4">Blue<em>#03A9F4</em></div>
@@ -19,17 +20,11 @@
         <div class="color-block" style="background:#FF5722">Red<em>#FF5722</em></div>
       </du-col>
     </du-row>
-  </div>
+  </du-box>
 </div>
 </template>
 
 <style>
-.view-colors .content {
-  padding: 20px;
-  background: white;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
-}
 .color-block {
   display: block;
   padding: 20px;
