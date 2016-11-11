@@ -1,6 +1,6 @@
 <template>
 <div class="view-colors wrap">
-  <du-box>
+  <du-box class="Blue">
     <div slot="head">
       <h1>Colors</h1>
       <span>Colors for default theme.</span>

@@ -1,9 +1,9 @@
-import Home from './views/Home.vue'
-import Colors from './views/Colors.vue'
+import Home from './basic/Home.vue'
+import Colors from './basic/Colors.vue'
 
-import Grid from './grid/index.vue'
-import Select from './select/index.vue'
-import Monthpicker from './monthpicker/index.vue'
+import Grid from './basic/Grid.vue'
+import Select from './form/Select.vue'
+import Monthpicker from './time/Monthpicker.vue'
 
 
 const routes = [

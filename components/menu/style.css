@@ -69,6 +69,10 @@
   margin-top: 6px;
   transform: rotate(-45deg);
 }
+.du-menu_tree .du-arrow:after {
+  border-top-color: var(--menu-text-color);
+  border-left-color: var(--menu-text-color);
+}
 .du-menu_tree.Open .du-arrow {
   transform: rotate(45deg);
 }

@@ -1,5 +1,6 @@
 <template>
-<router-link class="du-menu_item" tag="li" active-class="Active" :to="to">
+<router-link class="du-menu_item" tag="li"
+  :class="{'Active': active}" :to="to">
   <a>
     <i class="du-icon" :class="icon" aria-hidden="true" v-if="icon"></i>
     <span class="du-menu_text"><slot></slot></span>
