@@ -3,8 +3,8 @@
   <tr v-for="cols in rows">
     <td role="gridcell" v-for="col in cols"
       @click.prevent="select(col.value)"
-      :title="col.label" :class="{'Active': current == col.value}">
-      <a role="button" v-text="col.label"></a>
+      :title="col.long" :class="{'Active': current == col.value}">
+      <a role="button" v-text="col.short"></a>
     </td>
   </tr>
 </table>
@@ -90,15 +90,16 @@ export default {
 function genRows(start, end, locale) {
   var rows = []
   while (start < end) {
-    rows.push({value: start + 1, label: getMonthName(start, locale)})
+    rows.push(genRow(start, locale))
     start += 1
   }
   return rows
 }
 
-function getMonthName(month, locale) {
+function genRow(month, locale) {
   var date = new Date(YEAR, month)
-  var option = {month: 'short'}
-  return date.toLocaleString(locale, option)
+  var short = date.toLocaleString(locale, {month: 'short'})
+  var long = date.toLocaleString(locale, {month: 'long'})
+  return {value: month + 1, short, long}
 }
 </script>
