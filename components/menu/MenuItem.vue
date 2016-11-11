@@ -1,7 +1,7 @@
 <template>
 <router-link class="du-menu_item" tag="li" active-class="Active" :to="to">
   <a>
-    <du-icon :name="icon" v-if="icon"></du-icon>
+    <i class="du-icon" :class="icon" aria-hidden="true" v-if="icon"></i>
     <span class="du-menu_text"><slot></slot></span>
   </a>
 </router-link>

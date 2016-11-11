@@ -1,7 +1,7 @@
 <template>
 <li class="du-menu_tree" :class="{'Active': active, 'Open': open}">
   <span class="du-menu_title" @click.prevent="toggleOpen">
-    <du-icon :name="icon" v-if="icon"></du-icon>
+    <i class="du-icon" :class="icon" aria-hidden="true" v-if="icon"></i>
     <span class="du-menu_text"><slot name="title"></slot></span>
     <i class="du-menu_angle"></i>
   </span>
