@@ -2,12 +2,12 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
 import Dooui from '../components'
-import views from './views'
+import routerConfig from './router'
 
 Vue.use(VueRouter)
 Vue.use(Dooui)
 
-const router = new VueRouter(views)
+const router = new VueRouter(routerConfig)
 
 new Vue({
   el: '#app',
