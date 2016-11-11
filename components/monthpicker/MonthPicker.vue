@@ -2,8 +2,11 @@
 <span class="du-month-picker" :class="{'Active': active}"
   v-off:click="toggleOff" @keydown="keypress">
   <span class="du-month-picker_box">
-    <input type="text" :value="value" :placeholder="placeholder"
-      @click="toggle" ref="input" readonly>
+    <input type="text" :value="display" :placeholder="placeholder"
+      @click="toggle" ref="input" :readonly="readonly">
+    <span class="du-month-picker_icon">
+      <slot name="icon"></slot>
+    </span>
   </span>
   <div class="du-month-picker_dropdown" @click="refocus">
     <du-month-calendar :year="year" :month="month" :months="months"
@@ -22,6 +25,11 @@ export default {
     placeholder: String,
     value: String,
     months: Array,
+    format: Function,
+    readonly: {
+      type: Boolean,
+      default: false
+    }
   },
   watch: {
     value: {
@@ -39,6 +47,14 @@ export default {
     var year, month, active = false
     return {active, year, month}
   },
+  computed: {
+    display() {
+      if (this.year && this.month) {
+        var fn = this.format || _format
+        return fn(this.year, this.month)
+      }
+    }
+  },
   methods: {
     change(ym) {
       this.year = ym[0]
@@ -47,7 +63,7 @@ export default {
     select() {
       this.toggleOff()
       this.$nextTick(() => {
-        this.$emit('input', formatMonth(this.year, this.month))
+        this.$emit('input', _format(this.year, this.month))
       })
     },
     keypress(e) {
@@ -76,7 +92,7 @@ function splitValue(value) {
   var ym = value.split('-')
   return [parseInt(ym[0], 10), parseInt(ym[1], 10)]
 }
-function formatMonth(y, m) {
+function _format(y, m) {
   if (m < 10) {
     m = '0' + m
   }
