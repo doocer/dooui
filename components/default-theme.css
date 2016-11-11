@@ -17,8 +17,8 @@
   --color-light-black: #475669;
 
   /* main colors */
-  --color-red: #E4223C;
-  --color-blue: #419fd6;
+  --color-red: #ff5722;
+  --color-blue: #03a9f4;
   --color-green: #13CE66;
   --color-yellow: #F7BA2A;
 
@@ -53,13 +53,14 @@
 
   /* select component */
   --select-width: 160px;
+  --select-line-height: 24px;
   --select-line-color: var(--line-color);
   --select-hover-fg: var(--focus-fg-color);
   --select-hover-bg: var(--focus-bg-color);
-  --select-line-height: 24px;
 
   /* month picker component */
   --month-picker-width: 160px;
+  --month-picker-line-height: 24px;
   --month-picker-line-color: var(--line-color);
   --month-picker-hover-fg: var(--focus-fg-color);
   --month-picker-hover-bg: var(--focus-bg-color);

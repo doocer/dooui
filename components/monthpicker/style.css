@@ -1,9 +1,13 @@
 .du-month-picker {
   position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: var(--month-picker-width);
+  line-height: var(--month-picker-line-height);
+  text-align: left;
 }
 .du-month-picker_box {
   display: inline-block;
-  width: var(--month-picker-width);
   position: relative;
   box-sizing: border-box;
   border: 1px solid var(--month-picker-line-color);
@@ -13,12 +17,12 @@
   cursor: default;
 }
 .du-month-picker_box input {
-  padding: 6px 30px 6px 10px;
+  padding: 4px 30px 4px 10px;
   width: 100%;
-  height: 100%;
   outline: 0;
   font: inherit;
   color: inherit;
+  line-height: inherit;
   border: 0;
   background: transparent;
   box-sizing: border-box;
@@ -44,7 +48,7 @@
   background: white;
   box-shadow: 0 1px 1px rgba(0,0,0,0.1);
   border-radius: 3px;
-  min-width: 200px;
+  min-width: 220px;
 }
 .du-month-calendar_head {
   box-shadow: 0 1px 0 rgba(0,0,0,0.05);
@@ -54,6 +58,7 @@
   position: relative;
   text-align: center;
   user-select: none;
+  line-height: 1.2;
 }
 .du-month-panel_year {
   padding: 8px 30px;
@@ -101,6 +106,7 @@
   background-color: transparent;
   width: 100%;
   height: 240px;
+  line-height: 1.2;
 }
 .du-month-table td {
   text-align: center;
