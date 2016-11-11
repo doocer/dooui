@@ -9,7 +9,7 @@
     </span>
   </span>
   <div class="du-month-picker_dropdown" @click="refocus">
-    <du-month-calendar :year="year" :month="month" :months="months"
+    <du-month-calendar :year="year" :month="month" :locale="locale"
       @change="change" @select="select" ref="calendar">
     </du-month-calendar>
   </div>
@@ -24,7 +24,7 @@ export default {
   props: {
     placeholder: String,
     value: String,
-    months: Array,
+    locale: String,
     format: Function,
     readonly: {
       type: Boolean,
@@ -36,6 +36,7 @@ export default {
       immediate: true,
       handler(v) {
         var ym = splitValue(v)
+        this.selected = ym
         if (ym) {
           this.year = ym[0]
           this.month = ym[1]
@@ -44,14 +45,14 @@ export default {
     }
   },
   data() {
-    var year, month, active = false
-    return {active, year, month}
+    var year, month, selected, active = false
+    return {active, year, month, selected}
   },
   computed: {
     display() {
-      if (this.year && this.month) {
+      if (this.selected) {
         var fn = this.format || _format
-        return fn(this.year, this.month)
+        return fn(this.selected[0], this.selected[1])
       }
     }
   },
@@ -63,6 +64,7 @@ export default {
     select() {
       this.toggleOff()
       this.$nextTick(() => {
+        this.selected = [this.year, this.month]
         this.$emit('input', _format(this.year, this.month))
       })
     },

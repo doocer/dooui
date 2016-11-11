@@ -11,18 +11,16 @@
 </template>
 
 <script>
-const MONTHS = [
-  'Jan', 'Feb', 'Mar',
-  'Apr', 'May', 'Jun',
-  'Jul', 'Aug', 'Sep',
-  'Oct', 'Nov', 'Dec',
-]
+const YEAR = 2016
+
 export default {
   name: 'du-month-table',
   props: {
-    months: {
-      type: Array,
-      default: () => MONTHS
+    locale: {
+      type: String,
+      default: () => {
+        return navigator.language || 'en'
+      }
     },
     month: {
       type: Number,
@@ -35,10 +33,10 @@ export default {
   computed: {
     rows() {
       return [
-        genRows(0, 3, this.months),
-        genRows(3, 6, this.months),
-        genRows(6, 9, this.months),
-        genRows(9, 12, this.months),
+        genRows(0, 3, this.locale),
+        genRows(3, 6, this.locale),
+        genRows(6, 9, this.locale),
+        genRows(9, 12, this.locale)
       ]
     }
   },
@@ -89,12 +87,18 @@ export default {
   }
 }
 
-function genRows(start, end, months) {
+function genRows(start, end, locale) {
   var rows = []
   while (start < end) {
-    rows.push({value: start + 1, label: months[start]})
+    rows.push({value: start + 1, label: getMonthName(start, locale)})
     start += 1
   }
   return rows
+}
+
+function getMonthName(month, locale) {
+  var date = new Date(YEAR, month)
+  var option = {month: 'short'}
+  return date.toLocaleString(locale, option)
 }
 </script>

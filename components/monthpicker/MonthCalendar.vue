@@ -4,7 +4,7 @@
     <du-month-panel :year="year" @change="yearChange"></du-month-panel>
   </div>
   <div class="du-month-calendar_body">
-    <du-month-table :month="month" :months="months" ref="table"
+    <du-month-table :month="month" :locale="locale" ref="table"
       @select="onSelect" @change="monthChange" @year-delta="yearDelta">
     </du-month-table>
   </div>
@@ -17,7 +17,7 @@ const DELTA_MAP = {37: -1, 39: +1}
 export default {
   name: 'du-month-calendar',
   props: {
-    months: Array,
+    locale: String,
     year: {
       type: Number,
       default: () => {
