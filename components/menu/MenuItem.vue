@@ -16,6 +16,23 @@ export default {
       type: [String, Object],
       required: true
     }
+  },
+  computed: {
+    active() {
+      var target = this.$router.match(this.to)
+      return target.path === this.$route.path
+    }
+  },
+  created() {
+    if (this.$parent.items) {
+      this.$parent.items.push(this)
+    }
+  },
+  beforeDestroy() {
+    if (this.$parent.items) {
+      var index = this.$parent.items.indexOf(this)
+      this.$parent.items.splice(index, 1)
+    }
   }
 }
 </script>

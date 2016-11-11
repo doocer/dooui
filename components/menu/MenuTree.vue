@@ -1,11 +1,11 @@
 <template>
 <li class="du-menu_tree" :class="{'Active': active, 'Open': open}">
-  <span class="du-menu_title" @click.prevent="toggleOpen">
+  <span class="du-menu_title" @click.prevent="open = !open">
     <i class="du-icon" :class="icon" aria-hidden="true" v-if="icon"></i>
     <span class="du-menu_text"><slot name="title"></slot></span>
-    <i class="du-menu_angle"></i>
+    <i class="du-arrow"></i>
   </span>
-  <ul class="du-menu_group">
+  <ul class="du-menu_group" v-show="open">
     <slot></slot>
   </ul>
 </li>
@@ -19,30 +19,17 @@ export default {
   },
   data() {
     return {
-      active: false,
+      items: [],
       open: false,
     }
   },
-  methods: {
-    toggleOpen() {
-      this.open = !this.open
-    },
-    hasActive() {
-      return Boolean(this.$el.querySelector('.Active'))
-    }
-  },
-  watch: {
-    "$route.path": function() {
-      this.$nextTick(() => {
-        this.active = this.hasActive()
-      })
+  computed: {
+    active() {
+      return Boolean(this.items.filter(o => o.active).length)
     }
   },
   mounted() {
-    if (this.hasActive()) {
-      this.active = true
-      this.open = true
-    }
+    this.open = this.active
   }
 }
 </script>

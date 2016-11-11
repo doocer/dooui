@@ -1,17 +1,47 @@
+.du-arrow {
+  display: inline-block;
+  font-size: 0;
+  transition: transform 0.2s ease;
+}
+.du-arrow:after {
+  display: inline-block;
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 1px;
+  border: 1px solid #999;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  vertical-align: middle;
+}
+.du-arrow.Up {
+  transform: rotate(45deg);
+}
+.du-arrow.Left {
+  transform: rotate(-45deg);
+}
+.du-arrow.Right {
+  transform: rotate(135deg);
+}
+.du-arrow.Down {
+  transform: rotate(225deg);
+}
+
 .du-double-arrow,
 .du-double-arrow:after {
   display: inline-block;
   content: '';
   border-radius: 1px;
-  border: 1px solid transparent;
-  border-left-color: #999;
-  border-top-color: #999;
+  border: 1px solid #999;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
   vertical-align: middle;
 }
 .du-double-arrow {
   position: relative;
   width: 5px;
   height: 5px;
+  transition: transform 0.2s ease;
 }
 .du-double-arrow:after {
   position: absolute;

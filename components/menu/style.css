@@ -33,11 +33,6 @@
   margin-right: 4px;
   font-size: inherit;
 }
-.du-menu_group {
-  transform-origin: top;
-  transform: scaleY(1);
-  transition: transform 0.2s ease;
-}
 .du-menu_group li {
   padding-left: 15px;
   background-color: var(--menu-group-bg);
@@ -68,33 +63,12 @@
   content: '';
   clear: both;
 }
-.du-menu_angle {
+.du-menu_tree .du-arrow {
   float: right;
-  display: inline-block;
   margin-right: 15px;
   margin-top: 6px;
-  display: inline-block;
-  font-size: 0;
   transform: rotate(-45deg);
-  transition: transform 0.2s ease;
 }
-.du-menu_angle:after {
-  display: block;
-  content: '';
-  width: 5px;
-  height: 5px;
-  border-radius: 1px;
-  border: 1px solid transparent;
-  border-left-color: var(--menu-text-color);
-  border-top-color: var(--menu-text-color);
-}
-.Open .du-menu_angle {
+.du-menu_tree.Open .du-arrow {
   transform: rotate(45deg);
-}
-.Open .du-menu_group {
-  transform: scaleY(0);
-}
-.Collapse .du-menu_head,
-.Collapse .du-menu_text {
-  display: none;
 }
