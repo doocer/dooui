@@ -44,4 +44,5 @@ export default {
 </script>
 
 <style src="../components/default-theme.css"></style>
+<style src="./highlight.css"></style>
 <style src="./style.css"></style>

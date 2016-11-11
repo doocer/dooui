@@ -29,7 +29,6 @@ export default {
   box-shadow: var(--box-shadow);
   background-color: var(--color-white);
   border-radius: 2px;
-  overflow: hidden;
 }
 .du-box.Blue {
   border-color: var(--color-blue);

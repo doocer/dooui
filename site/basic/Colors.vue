@@ -1,5 +1,5 @@
 <template>
-<div class="view-colors wrap">
+<div class="view-colors content">
   <du-box class="Blue">
     <div slot="head">
       <h1>Colors</h1>
