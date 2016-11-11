@@ -1,5 +1,6 @@
 .hljs {
   display: block;
+  box-sizing: border-box;
   overflow-x: auto;
   padding: 0.5em;
   background: #f8f8f8;

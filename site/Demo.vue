@@ -1,8 +1,6 @@
 <template>
-<div class="du-box demo" :class="{Open: show}">
-  <div class="du-box_head">
-    <slot name="head"></slot>
-  </div>
+<section class="du-box demo" :class="{Open: show}">
+  <div class="du-box_head"><slot></slot></div>
   <div class="demo_show">
     <component :is="name"></component>
   </div>
@@ -20,7 +18,7 @@
     <span v-show="show">Hide Code</span>
     <span v-show="!show">Show Code</span>
   </div>
-</div>
+</section>
 </template>
 
 <script>
@@ -67,6 +65,9 @@ export default {
 </script>
 
 <style>
+.demo {
+  margin-bottom: 20px;
+}
 .demo_show {
   padding: 20px;
 }

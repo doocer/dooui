@@ -9,7 +9,7 @@ fs.readdirSync(DIR).forEach(name => {
   if (/\.vue$/.test(name)) {
     var content = fs.readFileSync(path.join(DIR, name), 'utf8')
     content = content.replace('<template>', '')
-    content = content.replace('</template>', '')
+    content = content.replace('</template>', '').trim()
     vue[name] = h.highlight('html', content).value.trim()
   }
 })

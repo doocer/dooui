@@ -21,7 +21,7 @@
         </du-menu-tree>
         <du-menu-tree icon="fa fa-calendar">
           <span slot="title">Time</span>
-          <du-menu-item icon="fa fa-circle-o" to="/month-picker/">Month Picker</du-menu-item>
+          <du-menu-item icon="fa fa-circle-o" to="/monthpicker/">Month Picker</du-menu-item>
         </du-menu-tree>
       </du-menu>
     </div>
