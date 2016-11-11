@@ -49,14 +49,6 @@ export default {
     if (this.$parent.$options.optgroup) {
       this.$parent.options.push(this)
     }
-    var value = this.root.value
-    if (Array.isArray(value)) {
-      if (value.indexOf(this.value) !== -1) {
-        this.selectOption()
-      }
-    } else if (value === this.value) {
-      this.selectOption()
-    }
   },
   beforeDestroy() {
     var index = this.root.options.indexOf(this)

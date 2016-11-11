@@ -100,11 +100,14 @@ export default {
     query(q) {
       this.remote && this.remote(q)
     },
-    value(v) {
-      if (this.multiple) {
-        this.selected = v
-      } else {
-        this.selected = [v]
+    value: {
+      immediate: true,
+      handler(v) {
+        if (this.multiple) {
+          this.selected = v
+        } else {
+          this.selected = [v]
+        }
       }
     },
   },
