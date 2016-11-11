@@ -2,16 +2,14 @@
 <div class="v-home">
   <div class="row">
     <div class="col-6">
-      <du-card>A</du-card>
       <div style="padding: 20px">
-        <i class="du-double-arrow Down"></i>
-        <du-month-picker v-model="ym" placeholder="Select" :format="format"></du-month-picker>
+        <du-month-picker v-model="ym" placeholder="Select" :format="format" locale="zh"></du-month-picker>
+        <du-select filter>
+          <du-option :value="item.value" :disabled="item.disabled"
+            v-for="item in options">
+          </du-option>
+        </du-select>
       </div>
-      <du-select filter>
-        <du-option :value="item.value" :disabled="item.disabled"
-          v-for="item in options">
-        </du-option>
-      </du-select>
     </div>
     <div class="col-6">
       <du-select v-model="choice">
@@ -44,6 +42,7 @@ export default {
   },
   data() {
     return {
+      show: true,
       ym: '',
       choice: 'German',
       options: [

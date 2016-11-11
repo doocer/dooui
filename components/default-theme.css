@@ -17,8 +17,8 @@
   --color-light-black: #475669;
 
   /* main colors */
-  --color-red: #ff5722;
-  --color-blue: #03a9f4;
+  --color-red: #FF5722;
+  --color-blue: #03A9F4;
   --color-green: #13CE66;
   --color-yellow: #F7BA2A;
 
@@ -42,7 +42,7 @@
 
   /* text colors */
   --text-plain-color: #5e6d80;
-  --text-heading-color: #1f2f3d;
+  --text-bold-color: #323a44;
   --text-link-color: var(--color-light-black);
 
   /* utilities */
@@ -70,6 +70,6 @@
   --size-md: 18px;
   --size-sm: 14px;
   --size-xs: 12px;
-  --font: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --font: 'Source Sans Pro','Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 

@@ -33,7 +33,7 @@
   left: 0;
   right: 0;
   opacity: 0;
-  min-width: 200px;
+  min-width: 220px;
   transform-origin: top;
   transform: scaleY(0);
   transition: all 0.15s ease;
@@ -48,7 +48,6 @@
   background: white;
   box-shadow: 0 1px 1px rgba(0,0,0,0.1);
   border-radius: 3px;
-  min-width: 220px;
 }
 .du-month-calendar_head {
   box-shadow: 0 1px 0 rgba(0,0,0,0.05);

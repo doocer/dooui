@@ -9,10 +9,10 @@
   <aside class="du-layout-side">
     <div class="du-scroll">
       <du-menu title="Navigation">
-        <du-menu-item to="/dashboard" icon="fa fa-tachometer">Dashboard 1</du-menu-item>
         <du-menu-tree icon="fa fa-database">
           <span slot="title">Basic</span>
           <du-menu-item to="/grid/">Grid</du-menu-item>
+          <du-menu-item to="/colors/">Colors</du-menu-item>
         </du-menu-tree>
         <du-menu-tree icon="fa fa-database">
           <span slot="title">Form Control</span>
@@ -40,3 +40,4 @@ export default {
 </script>
 
 <style src="../components/default-theme.css"></style>
+<style src="./style.css"></style>

@@ -1,0 +1,9 @@
+.wrap {
+  padding: 20px;
+}
+
+.clearfix:after {
+  display: table;
+  content: '';
+  clear: both;
+}
