@@ -17,11 +17,23 @@
         </du-menu-tree>
         <du-menu-tree icon="fa fa-check-square-o">
           <span slot="title">Form</span>
+          <du-menu-item icon="fa fa-circle-o" to="/select/">Input</du-menu-item>
+          <du-menu-item icon="fa fa-circle-o" to="/select/">Radio</du-menu-item>
+          <du-menu-item icon="fa fa-circle-o" to="/select/">Checkbox</du-menu-item>
+          <du-menu-item icon="fa fa-circle-o" to="/select/">Slider</du-menu-item>
           <du-menu-item icon="fa fa-circle-o" to="/select/">Select</du-menu-item>
+          <du-menu-item icon="fa fa-circle-o" to="/select/">Autocomplete</du-menu-item>
         </du-menu-tree>
         <du-menu-tree icon="fa fa-calendar">
           <span slot="title">Time</span>
           <du-menu-item icon="fa fa-circle-o" to="/monthpicker/">Month Picker</du-menu-item>
+        </du-menu-tree>
+        <du-menu-tree icon="fa fa-pie-chart">
+          <span slot="title">Chart</span>
+          <du-menu-item icon="fa fa-circle-o" to="/">Line</du-menu-item>
+          <du-menu-item icon="fa fa-circle-o" to="/">Area</du-menu-item>
+          <du-menu-item icon="fa fa-circle-o" to="/">Bar</du-menu-item>
+          <du-menu-item icon="fa fa-circle-o" to="/">Pie</du-menu-item>
         </du-menu-tree>
       </du-menu>
     </div>

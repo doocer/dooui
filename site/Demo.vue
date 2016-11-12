@@ -88,7 +88,7 @@ export default {
   padding: 0;
 }
 .demo_source .hljs {
-  padding: 20px 30px;
+  padding: 20px;
 }
 .demo_code {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
