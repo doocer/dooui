@@ -1,6 +1,5 @@
 <template>
-<span class="du-month-picker" :class="{'Active': active}"
-  v-off:click="toggleOff" @keydown="keypress">
+<du-popup class="du-month-picker" @keydown="keypress" ref="popup">
   <span class="du-month-picker_box">
     <input type="text" :value="display" :placeholder="placeholder"
       @click="toggle" ref="input" :readonly="readonly">
@@ -8,19 +7,16 @@
       <slot name="icon"></slot>
     </span>
   </span>
-  <div class="du-month-picker_dropdown" @click="refocus">
-    <du-month-calendar :year="year" :month="month" :locale="locale"
-      @change="change" @select="select" ref="calendar">
-    </du-month-calendar>
-  </div>
-</span>
+  <du-month-calendar slot="overlay" ref="calendar"
+    :year="year" :month="month" :locale="locale"
+    @change="change" @select="select" @click.native="refocus">
+  </du-month-calendar>
+</du-popup>
 </template>
 
 <script>
-import off from 'vue-document-event'
 export default {
   name: 'du-month-picker',
-  directives: {off},
   props: {
     placeholder: String,
     value: String,
@@ -45,8 +41,8 @@ export default {
     }
   },
   data() {
-    var year, month, selected, active = false
-    return {active, year, month, selected}
+    var year, month, selected
+    return {year, month, selected}
   },
   computed: {
     display() {
@@ -71,11 +67,8 @@ export default {
     keypress(e) {
       this.$refs.calendar.keypress(e)
     },
-    toggleOff() {
-      this.active = false
-    },
     toggle() {
-      this.active = !this.active
+      this.$refs.popup.toggle()
     },
     refocus(e) {
       if (e.target.nodeName !== 'INPUT') {
@@ -94,6 +87,7 @@ function splitValue(value) {
   var ym = value.split('-')
   return [parseInt(ym[0], 10), parseInt(ym[1], 10)]
 }
+
 function _format(y, m) {
   if (m < 10) {
     m = '0' + m

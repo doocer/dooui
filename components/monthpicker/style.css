@@ -28,23 +28,9 @@
   box-sizing: border-box;
   user-select: none;
 }
-.du-month-picker_dropdown {
-  position: absolute;
-  left: 0;
-  right: 0;
-  opacity: 0;
-  min-width: 220px;
-  transform-origin: top;
-  transform: scaleY(0);
-  transition: all 0.15s ease;
-  z-index: 1000;
-}
-.du-month-picker.Active .du-month-picker_dropdown {
-  opacity: 1;
-  transform: scaleY(1);
-}
 
 .du-month-calendar {
+  min-width: 220px;
   background: white;
   box-shadow: 0 1px 1px rgba(0,0,0,0.1);
   border-radius: 3px;
