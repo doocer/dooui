@@ -1,7 +1,7 @@
 <template>
 <span class="du-select"
   :class="{'Active': active, 'Input': canInput, 'Inputing': isInputing}"
-  v-off:click="toggleOff" @keydown="keypress"
+  v-out:click="toggleOff" @keydown="keypress"
   @compositionstart="composing=true"
   @compositionend="composing=false">
   <div class="du-select_box Multiple" v-if="multiple">
@@ -16,25 +16,25 @@
     <input class="du-select_input" type="text" :readonly="!canInput"
       @click="toggle" v-model="query" ref="input">
   </div>
-  <span class="du-select_dropdown" :aria-expanded="active">
+  <div class="du-select_dropdown" :aria-expanded="active">
     <ul class="du-select_options" role="tree" ref="tree">
       <slot></slot>
       <li class="du-select_empty" v-if="!visibleOptions.length">
         <span v-text="emptyText"></span>
       </li>
     </ul>
-  </span>
+  </div>
 </span>
 </template>
 
 <script>
-import off from 'vue-document-event'
+import out from 'vue-document-event'
 import SelectedItem from './SelectedItem.vue'
 
 export default {
   name: 'du-select',
   select: true,
-  directives: {off},
+  directives: {out},
   components: {'du-selected-item': SelectedItem},
   props: {
     component: {
@@ -133,14 +133,14 @@ export default {
     toggleOff() {
       this.active = false
       this.$refs.input.blur()
-      this.hoverOption = null
     },
     toggleOn() {
       this.query = ''
       this.active = true
       this.$refs.input.focus()
       if (this.selectedOptions.length) {
-        this.ensureVisible(this.selectedOptions[0].$el)
+        this.hoverOption = this.selectedOptions[0]
+        this.ensureVisible(this.hoverOption.$el)
       }
     },
     keypress(e) {
