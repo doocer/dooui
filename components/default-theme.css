@@ -39,7 +39,7 @@
   --menu-border-color: var(--color-blue);
   --menu-active-bg: rgba(0, 0, 0, 0.04);
   --menu-hover-bg: rgba(0, 0, 0, 0.08);
-  --menu-group-color: rgba(222, 222, 222, 0.8);
+  --menu-group-color: var(--color-semi-silver);
   --menu-group-bg: rgba(222, 222, 222, 0.04);
 
   /* text colors */

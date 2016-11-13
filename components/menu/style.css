@@ -5,12 +5,12 @@
   padding: 0;
   white-space: nowrap;
   overflow: hidden;
+  font-weight: 400;
 }
 .du-menu_head {
   padding: 10px 25px 10px 18px;
   box-sizing: border-box;
   font-size: 12px;
-  font-weight: 400;
   background-color: var(--menu-head-bg);
   color: var(--menu-head-color);
   text-transform: uppercase;
@@ -38,8 +38,8 @@
   background-color: var(--menu-group-bg);
 }
 .du-menu_group > li > a {
-  font-size: 14px;
-  padding: 6px;
+  line-height: 1.42;
+  padding: 6px 4px;
   color: var(--menu-group-color);
 }
 .du-menu > li > a:hover,
