@@ -2,18 +2,19 @@ button.du-button,
 a.du-button {
   display: inline-block;
   background-color: white;
-  border: 1px solid var(--line-dark-color);
+  border: 1px solid var(--field-border-color);
   border-radius: 3px;
   color: var(--text-plain-color);
-  padding: 12px 14px;
-  line-height: 1;
-  font-weight: 600;
+  padding: var(--field-padding) 14px;
+  line-height: var(--field-line-height);
   font-size: 14px;
   cursor: pointer;
   text-decoration: none;
   outline: none;
   box-sizing: border-box;
   text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
 }
 .du-button:hover {
   opacity: 0.8;

@@ -2,18 +2,18 @@
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  width: var(--select-width);
-  line-height: var(--select-line-height);
+  width: var(--field-width);
   text-align: left;
 }
 .du-select_box {
   position: relative;
   display: block;
   width: 100%;
+  line-height: var(--field-line-height);
   box-sizing: border-box;
-  border: 1px solid var(--select-line-color);
+  border: 1px solid var(--field-border-color);
   border-radius: 3px;
-  padding: 0 30px 0 10px;
+  padding: var(--field-padding) 30px var(--field-padding) 10px;
   background-color: white;
   user-select: none;
   cursor: default;
@@ -31,7 +31,6 @@
 .du-select_value, .du-select_placeholder {
   display: inline-block;
   line-height: inherit;
-  padding: 4px 0;
 }
 .du-select.Active.Input .du-select_value {
   opacity: 0.65;
@@ -43,9 +42,10 @@
 .du-select_input {
   opacity: 0;
   outline: 0;
+  padding: 0;
+  border: 0;
   font-size: inherit;
   color: inherit;
-  border: 0;
   background: transparent;
   box-sizing: border-box;
 }
@@ -79,7 +79,7 @@
   border-style: solid;
   border-color: transparent;
   border-width: 5px 4px 0 4px;
-  border-top-color: var(--select-line-color);
+  border-top-color: var(--field-border-color);
 }
 
 .du-select_dropdown {
@@ -87,7 +87,7 @@
   left: 0;
   right: 0;
   background-color: white;
-  border: 1px solid var(--select-line-color);
+  border: 1px solid var(--field-border-color);
   border-radius: 3px;
   transform-origin: top;
   transform: scaleY(0);
@@ -127,17 +127,17 @@
   line-height: 1.8;
   cursor: pointer;
 }
-.du-option[aria-selected] {
-  background-color: rgba(0, 0, 0, 0.06);
-}
 .du-option.Disabled {
   opacity: 0.6;
   cursor: not-allowed;
   background-color: transparent;
 }
 .du-option.Hover {
-  color: var(--select-hover-fg);
-  background-color: var(--select-hover-bg);
+  background-color: rgba(0, 0, 0, 0.06);
+}
+.du-option[aria-selected] {
+  color: var(--field-option-active-fg);
+  background-color: var(--field-option-active-bg);
 }
 .du-optgroup .du-option {
   padding-left: 12px;

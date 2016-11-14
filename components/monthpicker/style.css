@@ -2,24 +2,25 @@
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  width: var(--month-picker-width);
-  line-height: var(--month-picker-line-height);
+  width: var(--field-width);
   text-align: left;
 }
 .du-month-picker_box {
-  display: inline-block;
+  display: block;
   position: relative;
   box-sizing: border-box;
-  border: 1px solid var(--month-picker-line-color);
+  line-height: var(--field-line-height);
+  border: 1px solid var(--field-border-color);
+  padding: var(--field-padding) 30px var(--field-padding) 10px;
   border-radius: 3px;
   background-color: white;
   user-select: none;
   cursor: default;
 }
 .du-month-picker_box input {
-  padding: 4px 30px 4px 10px;
   width: 100%;
   outline: 0;
+  padding: 0;
   font: inherit;
   color: inherit;
   line-height: inherit;
@@ -107,6 +108,6 @@
   background-color: rgba(0, 0, 0, 0.04);
 }
 .du-month-table td.Active a {
-  color: var(--month-picker-hover-fg);
-  background-color: var(--month-picker-hover-bg);
+  color: var(--field-option-active-fg);
+  background-color: var(--field-option-active-bg);
 }

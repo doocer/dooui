@@ -55,19 +55,14 @@
   --focus-bg-color: var(--color-blue);
   --focus-fg-color: white;
 
-  /* select component */
-  --select-width: 160px;
-  --select-line-height: 24px;
-  --select-line-color: var(--line-color);
-  --select-hover-fg: var(--focus-fg-color);
-  --select-hover-bg: var(--focus-bg-color);
-
-  /* month picker component */
-  --month-picker-width: 160px;
-  --month-picker-line-height: 24px;
-  --month-picker-line-color: var(--line-color);
-  --month-picker-hover-fg: var(--focus-fg-color);
-  --month-picker-hover-bg: var(--focus-bg-color);
+  /* form control */
+  --field-width: 160px;
+  --field-padding: 4px;
+  --field-line-height: 24px;
+  --field-border-color: var(--color-gray);
+  --field-hover-border-color: var(--color-semi-silver);
+  --field-option-active-fg: var(--color-white);
+  --field-option-active-bg: var(--color-blue);
 
   --size-xl: 32px;
   --size-lg: 24px;
