@@ -10,7 +10,7 @@
     <div class="du-scroll">
       <du-menu title="Dashboard">
         <du-menu-item icon="fa fa-home" to="/">Home</du-menu-item>
-        <du-menu-item icon="fa fa-line-chart" to="/stats/">Stats</du-menu-item>
+        <du-menu-item icon="fa fa-graduation-cap" to="/design/">Design</du-menu-item>
       </du-menu>
       <du-menu title="Documentation">
         <du-menu-item icon="fa fa-television" to="/guide/">Guide</du-menu-item>

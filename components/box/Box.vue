@@ -54,6 +54,10 @@ export default {
   padding: 10px 15px;
   border-bottom: 1px solid var(--line-light-color);
 }
+h1.du-box_head,
+h2.du-box_head,
+h3.du-box_head,
+h4.du-box_head,
 .du-box_head h1,
 .du-box_head h2,
 .du-box_head h3,
