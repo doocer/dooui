@@ -32,11 +32,14 @@ export default {
       var eh = this.$refs.overlay.clientHeight
       if (vh - rect.bottom < eh && rect.top > eh) {
         this.style = {
-          bottom: rect.height + 'px',
+          bottom: '100%',
           'transform-origin': 'bottom'
         }
       } else {
-        this.style = {'transform-origin': 'top'}
+        this.style = {
+          top: '100%',
+          'transform-origin': 'top'
+        }
       }
     },
   }
@@ -51,7 +54,6 @@ export default {
 .du-picker_overlay {
   position: absolute;
   left: 0;
-  right: 0;
   opacity: 0;
   transform: scaleY(0);
   transition: all 0.15s ease;
