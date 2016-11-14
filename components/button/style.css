@@ -1,5 +1,7 @@
 button.du-button,
-a.du-button {
+a.du-button,
+input[type="button"].du-button,
+input[type="submit"].du-button {
   display: inline-block;
   background-color: white;
   border: 1px solid var(--field-border-color);
