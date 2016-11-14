@@ -148,7 +148,7 @@ export default {
       if (!this.active) {
         e.preventDefault()
         // space, enter
-        if ([32, 13].indexOf(code) !== -1) {
+        if ([32, 13, 40].indexOf(code) !== -1) {
           this.toggleOn()
         }
         return

@@ -1,5 +1,5 @@
 <template>
-<du-popup class="du-month-picker" @keydown.native="keypress" ref="popup">
+<du-picker class="du-month-picker" @keydown.native="keypress" ref="popup">
   <span class="du-month-picker_box">
     <input type="text" :value="display" :placeholder="placeholder"
       @click="toggle" ref="input" :readonly="readonly">
@@ -9,9 +9,9 @@
   </span>
   <du-month-calendar slot="overlay" ref="calendar"
     :year="year" :month="month" :locale="locale"
-    @change="change" @select="select" @click.native="refocus">
+    @change="change" @select="select" tabindex="0">
   </du-month-calendar>
-</du-popup>
+</du-picker>
 </template>
 
 <script>
@@ -58,24 +58,18 @@ export default {
       this.month = ym[1]
     },
     select() {
-      this.toggleOff()
+      this.$refs.popup.toggleOff()
       this.$nextTick(() => {
         this.selected = [this.year, this.month]
         this.$emit('input', _format(this.year, this.month))
       })
+      this.$refs.input.focus()
     },
     keypress(e) {
       this.$refs.calendar.keypress(e)
     },
     toggle() {
       this.$refs.popup.toggle()
-    },
-    refocus(e) {
-      if (e.target.nodeName !== 'INPUT') {
-        this.$nextTick(() => {
-          this.$refs.input.focus()
-        })
-      }
     }
   }
 }

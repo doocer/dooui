@@ -1,8 +1,8 @@
 <template>
-<div class="du-popup" v-out:click="toggleOff"
+<div class="du-picker" v-out:click="toggleOff"
   :class="{'Active': active}">
   <slot></slot>
-  <div class="du-popup_overlay" ref="overlay" :style="style">
+  <div class="du-picker_overlay" ref="overlay" :style="style">
     <slot name="overlay"></slot>
   </div>
 </div>
@@ -11,7 +11,7 @@
 <script>
 import out from 'vue-document-event'
 export default {
-  name: 'du-popup',
+  name: 'du-picker',
   directives: {out},
   data() {
     return {active: false, style: {}}
@@ -44,11 +44,11 @@ export default {
 </script>
 
 <style>
-.du-popup {
+.du-picker {
   position: relative;
   display: inline-block;
 }
-.du-popup_overlay {
+.du-picker_overlay {
   position: absolute;
   left: 0;
   right: 0;
@@ -57,7 +57,7 @@ export default {
   transition: all 0.15s ease;
   z-index: 1000;
 }
-.du-popup.Active .du-popup_overlay {
+.du-picker.Active .du-picker_overlay {
   opacity: 1;
   transform: scaleY(1);
 }
