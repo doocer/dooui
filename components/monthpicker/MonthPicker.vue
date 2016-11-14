@@ -1,5 +1,5 @@
 <template>
-<du-popup class="du-month-picker" @keydown="keypress" ref="popup">
+<du-popup class="du-month-picker" @keydown.native="keypress" ref="popup">
   <span class="du-month-picker_box">
     <input type="text" :value="display" :placeholder="placeholder"
       @click="toggle" ref="input" :readonly="readonly">
