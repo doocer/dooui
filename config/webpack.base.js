@@ -16,21 +16,21 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue',
+        loader: 'vue-loader',
         options: vueOptions
       },
       {
         test: /\.js$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: /node_modules/
       },
       {
         test: /\.json$/,
-        loader: 'json'
+        loader: 'json-loader'
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file',
+        loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]'
         }
@@ -38,6 +38,9 @@ module.exports = {
     ]
   },
   resolve: {
+    modules: [
+      'node_modules'
+    ],
     alias: {
       'vue$': 'vue/dist/vue'
     }
