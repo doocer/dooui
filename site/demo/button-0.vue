@@ -1,9 +1,8 @@
 <template>
 <div>
-<du-button>Default</du-button>
-<du-button class="Blue">Blue</du-button>
-<du-button class="Green">Green</du-button>
-<du-button class="Yellow">Yellow</du-button>
-<du-button class="Red">Red</du-button>
+<button class="du-button">Button</button>
+<a class="du-button">Link</a>
+<input class="du-button" type="button" value="Input">
+<input class="du-button" type="submit" value="Submit">
 </div>
 </template>

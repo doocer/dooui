@@ -1,6 +1,6 @@
 <template>
 <div class="view-button content">
-  <demo file="button-0.vue">&lt;du-button&gt;</demo>
-  <demo file="button-1.vue">class="du-button"</demo>
+  <demo file="button-0.vue">Differant Tags</demo>
+  <demo file="button-1.vue">Button Colors</demo>
 </div>
 </template>
