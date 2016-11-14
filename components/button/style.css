@@ -1,0 +1,53 @@
+button.du-button,
+a.du-button {
+  display: inline-block;
+  background-color: white;
+  border: 1px solid var(--line-dark-color);
+  border-radius: 3px;
+  color: var(--text-plain-color);
+  padding: 12px 14px;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+  text-align: center;
+}
+.du-button:hover {
+  opacity: 0.8;
+}
+.du-button:active {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.06) inset, 0 0 4px rgba(0, 0, 0, 0.1) inset;
+}
+.du-button.Disabled,
+.du-button.Disabled:hover,
+.du-button[disabled],
+.du-button[disabled]:hover {
+  opacity: 0.68;
+  cursor: not-allowed;
+}
+.du-button[disabled]:active {
+  box-shadow: none;
+}
+.du-button.Blue {
+  color: var(--color-white);
+  background: var(--color-blue);
+  border-color: var(--color-blue);
+}
+.du-button.Green {
+  color: var(--color-white);
+  background: var(--color-green);
+  border-color: var(--color-green);
+}
+.du-button.Yellow {
+  color: var(--color-white);
+  background: var(--color-yellow);
+  border-color: var(--color-yellow);
+}
+.du-button.Red {
+  color: var(--color-white);
+  background: var(--color-red);
+  border-color: var(--color-red);
+}
