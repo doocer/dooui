@@ -1,11 +1,7 @@
 <template>
 <div class="view-colors content">
   <du-box class="Blue">
-    <div slot="head">
-      <h1>Colors</h1>
-      <span>Colors for default theme.</span>
-    </div>
-    <h2>Main Colors</h2>
+    <div slot="head">Main Colors</div>
     <du-row :gutter="10">
       <du-col :span="3">
         <div class="color-block" style="background:#03A9F4">Blue<em>#03A9F4</em></div>
@@ -20,6 +16,9 @@
         <div class="color-block" style="background:#FF5722">Red<em>#FF5722</em></div>
       </du-col>
     </du-row>
+  </du-box>
+  <du-box>
+    <div slot="head">Grayscale</div>
   </du-box>
 </div>
 </template>

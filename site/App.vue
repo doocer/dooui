@@ -33,6 +33,7 @@
         </du-menu-tree>
         <du-menu-tree icon="fa fa-check-square-o">
           <span slot="title">Form</span>
+          <du-menu-item to="/button/">Button</du-menu-item>
           <du-menu-item to="/input/">Input</du-menu-item>
           <du-menu-item to="/radio/">Radio</du-menu-item>
           <du-menu-item to="/checkbox/">Checkbox</du-menu-item>

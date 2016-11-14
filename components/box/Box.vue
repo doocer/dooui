@@ -30,6 +30,9 @@ export default {
   background-color: var(--color-white);
   border-radius: 2px;
 }
+.du-box + .du-box {
+  margin-top: 15px;
+}
 .du-box.Blue {
   border-color: var(--color-blue);
 }

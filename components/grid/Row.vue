@@ -19,11 +19,6 @@ export default {
         style['margin-left'] = margin
         style['margin-right'] = margin
       }
-      if (this.gap) {
-        margin = -this.gap / 2 + 'px'
-        style['margin-top'] = margin
-        style['margin-bottom'] = margin
-      }
       return style
     }
   },
