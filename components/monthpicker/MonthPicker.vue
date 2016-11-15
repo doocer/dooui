@@ -1,11 +1,9 @@
 <template>
 <du-picker class="du-month-picker" @keydown.native="keypress" ref="popup">
   <span class="du-month-picker_box">
+    <i class="du-icon" :class="icon" aria-hidden="true" v-if="icon"></i>
     <input type="text" :value="display" :placeholder="placeholder"
       @click="toggle" ref="input" :readonly="readonly">
-    <span class="du-month-picker_icon">
-      <slot name="icon"></slot>
-    </span>
   </span>
   <du-month-calendar slot="overlay" ref="calendar"
     :year="year" :month="month" :locale="locale"
@@ -19,6 +17,7 @@ export default {
   name: 'du-month-picker',
   props: {
     placeholder: String,
+    icon: String,
     value: String,
     locale: String,
     format: Function,

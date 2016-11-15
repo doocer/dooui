@@ -11,11 +11,20 @@
   box-sizing: border-box;
   line-height: var(--field-line-height);
   border: 1px solid var(--field-border-color);
-  padding: var(--field-padding) 30px var(--field-padding) 10px;
+  padding: var(--field-padding) 10px;
   border-radius: 3px;
   background-color: white;
   user-select: none;
   cursor: default;
+}
+.du-month-picker_box .du-icon {
+  position: absolute;
+  right: 8px;
+  line-height: var(--field-line-height);
+  opacity: 0.5;
+}
+.du-month-picker_box .du-icon + input {
+  padding-right: 30px;
 }
 .du-month-picker_box input {
   width: 100%;

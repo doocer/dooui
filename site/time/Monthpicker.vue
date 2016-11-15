@@ -1,7 +1,7 @@
 <template>
 <div class="view-month-picker content">
   <demo file="month-picker-0.vue">
-    <span>Readonly and Placeholder</span>
+    <span>Overview</span>
   </demo>
   <demo file="month-picker-1.vue">
     <span>Locale Support</span>
