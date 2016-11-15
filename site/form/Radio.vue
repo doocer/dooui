@@ -1,5 +1,5 @@
 <template>
-<div class="view-button content">
+<div class="view-radio content">
   <demo file="radio-0.vue">Radio</demo>
 </div>
 </template>

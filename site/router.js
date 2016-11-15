@@ -7,6 +7,7 @@ import Badge from './basic/Badge.vue'
 
 import Button from './form/Button.vue'
 import Radio from './form/Radio.vue'
+import Checkbox from './form/Checkbox.vue'
 import Select from './form/Select.vue'
 import Monthpicker from './time/Monthpicker.vue'
 
@@ -20,6 +21,7 @@ const routes = [
   {path: '/badge/', component: Badge},
   {path: '/button/', component: Button},
   {path: '/radio/', component: Radio},
+  {path: '/checkbox/', component: Checkbox},
   {path: '/select/', component: Select},
   {path: '/monthpicker/', component: Monthpicker},
 ]

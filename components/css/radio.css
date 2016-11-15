@@ -7,6 +7,7 @@ label.du-radio + label.du-radio {
 input.du-radio,
 .du-radio input {
   position: relative;
+  top: -1px;
   appearance: none;
   -webkit-appearance: none;
   outline: 0;
@@ -19,22 +20,22 @@ input.du-radio,
 input.du-radio:before,
 .du-radio input:before {
   display: block;
-  margin: -2px 0 0 1px;
+  margin: -1px 0 0 1px;
   content: '';
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background: var(--color-blue);
-  opacity: 1;
+  opacity: 0;
   transform: scale3d(0, 0, 0);
   box-shadow: none;
   border: 0;
-  transition: transform 0.15s;
+  transition: all 0.15s ease;
 }
 input.du-radio:after,
 .du-radio input:after {
   position: absolute;
-  top: -5px;
+  top: -4px;
   left: -2px;
   display: block;
   content: '';
@@ -48,6 +49,7 @@ input.du-radio:after,
 }
 input.du-radio:checked:before,
 .du-radio input:checked:before {
+  opacity: 1;
   transform: scale3d(1, 1, 1);
 }
 input.du-radio:checked:after,
