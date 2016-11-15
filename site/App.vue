@@ -18,6 +18,7 @@
           <span slot="title">Basic</span>
           <du-menu-item to="/grid/">Grid</du-menu-item>
           <du-menu-item to="/colors/">Colors</du-menu-item>
+          <du-menu-item to="/badge/">Badges</du-menu-item>
         </du-menu-tree>
         <du-menu-tree icon="fa fa-bell-o">
           <span slot="title">Message</span>

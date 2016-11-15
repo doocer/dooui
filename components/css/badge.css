@@ -1,0 +1,34 @@
+.du-badge {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  padding: 3px 7px;
+  line-height: 1;
+  font-size: 12px;
+  color: var(--color-white);
+  background-color: var(--color-silver);
+  border-radius: 10px;
+}
+.du-badge.Blue {
+  background-color: var(--color-blue);
+}
+.du-badge.Green {
+  background-color: var(--color-green);
+}
+.du-badge.Yellow {
+  background-color: var(--color-yellow);
+}
+.du-badge.Red {
+  background-color: var(--color-red);
+}
+
+.Badge {
+  position: relative;
+}
+sup.du-badge {
+  position: absolute;
+  font-size: 10px;
+  top: -8px;
+  right: -6px;
+  z-index: 9;
+}
