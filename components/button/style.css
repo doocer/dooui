@@ -31,6 +31,7 @@ input[type="submit"].du-button {
   opacity: 0.68;
   cursor: not-allowed;
 }
+.du-button.Disabled:active,
 .du-button[disabled]:active {
   box-shadow: none;
 }
@@ -53,4 +54,23 @@ input[type="submit"].du-button {
   color: var(--color-white);
   background: var(--color-red);
   border-color: var(--color-red);
+}
+.du-button.Text {
+  border-color: transparent;
+}
+.du-button.Text.Blue {
+  color: var(--color-blue);
+  background-color: transparent;
+}
+.du-button.Text.Green {
+  color: var(--color-green);
+  background-color: transparent;
+}
+.du-button.Text.Yellow {
+  color: var(--color-yellow);
+  background-color: transparent;
+}
+.du-button.Text.Red {
+  color: var(--color-red);
+  background-color: transparent;
 }

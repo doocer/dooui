@@ -1,0 +1,71 @@
+:root {
+  /* grayscale */
+  --color-white: #FFFFFF;
+  --color-semi-white: #F9FAFC;
+  --color-gray: #D3DCE6;
+  --color-semi-gray: #E5E9F2;
+  --color-light-gray: #EFF2F7;
+  --color-silver: #8492A6;
+  --color-semi-silver: #99A9BF;
+  --color-light-silver: #C0CCDA;
+  --color-black: #1F2D3D;
+  --color-semi-black: #36495D;
+  --color-light-black: #475669;
+
+  /* main colors */
+  --color-blue: #03A9F4;
+  --color-green: #49C784;
+  --color-yellow: #F7BA2A;
+  --color-red: #FF612F;
+  --color-dark-blue: #0EA0E2;
+  --color-dark-green: #42B983;
+  --color-dark-yellow: #F1B52A;
+  --color-dark-red: #F55826;
+
+  /* layout colors */
+  --layout-base-bg: #eff4fb;
+  --layout-head-bg: var(--color-dark-blue);
+  --layout-head-fg: var(--color-white);
+  --layout-side-bg: var(--color-semi-black);
+  --layout-side-color: var(--color-semi-white);
+
+  /* menu colors */
+  --menu-head-color: rgba(255, 255, 255, 0.25);
+  --menu-head-bg: rgba(0, 0, 0, 0.16);
+  --menu-text-color: var(--color-semi-gray);
+  --menu-active-color: var(--color-white);
+  --menu-border-color: var(--color-blue);
+  --menu-active-bg: rgba(0, 0, 0, 0.04);
+  --menu-hover-bg: rgba(0, 0, 0, 0.08);
+  --menu-group-color: var(--color-semi-silver);
+  --menu-group-bg: rgba(222, 222, 222, 0.04);
+
+  /* text colors */
+  --text-plain-color: #5e6d80;
+  --text-bold-color: #323a44;
+  --text-link-color: var(--color-light-black);
+
+  /* utilities */
+  --box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  --line-color: var(--color-gray);
+  --line-light-color: var(--color-semi-gray);
+  --line-dark-color: var(--color-light-silver);
+  --focus-bg-color: var(--color-blue);
+  --focus-fg-color: white;
+
+  /* form control */
+  --field-width: 160px;
+  --field-padding: 4px;
+  --field-line-height: 24px;
+  --field-border-color: var(--color-gray);
+  --field-hover-border-color: var(--color-semi-silver);
+  --field-option-active-fg: var(--color-white);
+  --field-option-active-bg: var(--color-blue);
+
+  --size-xl: 32px;
+  --size-lg: 24px;
+  --size-md: 18px;
+  --size-sm: 14px;
+  --size-xs: 12px;
+  --font: 'Source Sans Pro','Helvetica Neue', Helvetica, Arial, sans-serif;
+}
