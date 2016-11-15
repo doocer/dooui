@@ -64,6 +64,7 @@ h4.du-box_head,
 .du-box_head h4 {
   font-size: 1.2em;
   font-weight: 500;
+  margin: 0;
 }
 .du-box_body {
   padding: 15px;

@@ -1,10 +1,11 @@
-label.du-radio {
+.du-radio {
   vertical-align: middle;
 }
-label.du-radio + .du-radio {
+label.du-radio + label.du-radio {
   margin-left: 16px;
 }
-label.du-radio input {
+input.du-radio,
+.du-radio input {
   position: relative;
   appearance: none;
   -webkit-appearance: none;
@@ -15,7 +16,8 @@ label.du-radio input {
   margin: 0 8px 0 2px;
   vertical-align: middle;
 }
-label.du-radio input:before {
+input.du-radio:before,
+.du-radio input:before {
   display: block;
   margin: -2px 0 0 1px;
   content: '';
@@ -29,7 +31,8 @@ label.du-radio input:before {
   border: 0;
   transition: transform 0.15s;
 }
-label.du-radio input:after {
+input.du-radio:after,
+.du-radio input:after {
   position: absolute;
   top: -5px;
   left: -2px;
@@ -43,16 +46,20 @@ label.du-radio input:after {
   transition: background 0.1s;
   margin: 0;
 }
-label.du-radio input:checked:before {
+input.du-radio:checked:before,
+.du-radio input:checked:before {
   transform: scale3d(1, 1, 1);
 }
-label.du-radio input:checked:after {
+input.du-radio:checked:after,
+.du-radio input:checked:after {
   border-color: var(--color-blue);
 }
-label.du-radio input:disabled {
+input.du-radio:disabled,
+.du-radio input:disabled {
   cursor: not-allowed;
 }
-label.du-radio input:disabled:after {
+input.du-radio:disabled:after,
+.du-radio input:disabled:after {
   opacity: 0.6;
   background-color: var(--color-light-gray);
 }
