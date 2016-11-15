@@ -1,0 +1,58 @@
+label.du-radio {
+  vertical-align: middle;
+}
+label.du-radio + .du-radio {
+  margin-left: 16px;
+}
+label.du-radio input {
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: 0;
+  border: 0;
+  background: none;
+  line-height: 1;
+  margin: 0 8px 0 2px;
+  vertical-align: middle;
+}
+label.du-radio input:before {
+  display: block;
+  margin: -2px 0 0 1px;
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-blue);
+  opacity: 1;
+  transform: scale3d(0, 0, 0);
+  box-shadow: none;
+  border: 0;
+  transition: transform 0.15s;
+}
+label.du-radio input:after {
+  position: absolute;
+  top: -5px;
+  left: -2px;
+  display: block;
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--field-border-color);
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition: background 0.1s;
+  margin: 0;
+}
+label.du-radio input:checked:before {
+  transform: scale3d(1, 1, 1);
+}
+label.du-radio input:checked:after {
+  border-color: var(--color-blue);
+}
+label.du-radio input:disabled {
+  cursor: not-allowed;
+}
+label.du-radio input:disabled:after {
+  opacity: 0.6;
+  background-color: var(--color-light-gray);
+}
