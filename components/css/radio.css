@@ -5,9 +5,9 @@ label.du-radio + label.du-radio {
   margin-left: 16px;
 }
 input.du-radio,
-.du-radio input {
+.du-radio > input {
   position: relative;
-  top: -1px;
+  top: -2px;
   appearance: none;
   -webkit-appearance: none;
   outline: 0;
@@ -18,9 +18,12 @@ input.du-radio,
   vertical-align: middle;
 }
 input.du-radio:before,
-.du-radio input:before {
-  display: block;
-  margin: -1px 0 0 1px;
+.du-radio > input:before,
+.du-radio_box:before {
+  position: relative;
+  top: 1px;
+  left: 1px;
+  display: inline-block;
   content: '';
   width: 10px;
   height: 10px;
@@ -33,9 +36,9 @@ input.du-radio:before,
   transition: all 0.15s ease;
 }
 input.du-radio:after,
-.du-radio input:after {
+.du-radio > input:after {
   position: absolute;
-  top: -4px;
+  top: -2px;
   left: -2px;
   display: block;
   content: '';
@@ -44,24 +47,55 @@ input.du-radio:after,
   border: 1px solid var(--field-border-color);
   border-radius: 50%;
   box-sizing: border-box;
-  transition: background 0.1s;
+  transition: border-color 0.15s ease;
   margin: 0;
 }
 input.du-radio:checked:before,
-.du-radio input:checked:before {
+.du-radio > input:checked:before,
+.du-radio.Checked .du-radio_box:before {
   opacity: 1;
   transform: scale3d(1, 1, 1);
 }
 input.du-radio:checked:after,
-.du-radio input:checked:after {
+.du-radio > input:checked:after,
+.du-radio.Checked .du-radio_box {
   border-color: var(--color-blue);
 }
 input.du-radio:disabled,
-.du-radio input:disabled {
+.du-radio > input:disabled {
   cursor: not-allowed;
 }
 input.du-radio:disabled:after,
-.du-radio input:disabled:after {
+.du-radio > input:disabled:after {
+  opacity: 0.6;
+  background-color: var(--color-light-gray);
+}
+
+.du-radio_box {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--field-border-color);
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition: border-color 0.1s;
+  border: 1px solid var(--field-border-color);
+}
+.du-radio_box > input {
+  position: absolute;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+.du-radio_box:before {
+  top: -1px;
+  left: 2px;
+}
+.du-radio.Disabled .du-radio_box {
+  cursor: not-allowed;
   opacity: 0.6;
   background-color: var(--color-light-gray);
 }
