@@ -53,6 +53,11 @@ input.du-checkbox:after,
   transition: border-color 0.1s;
   margin: 0;
 }
+input.du-checkbox:hover:after,
+.du-checkbox:hover > input:after,
+.du-checkbox:hover .du-checkbox_box {
+  border-color: var(--field-hover-border-color);
+}
 input.du-checkbox:checked:before,
 .du-checkbox > input:checked:before,
 .du-checkbox.Checked .du-checkbox_box:before {

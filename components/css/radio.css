@@ -50,6 +50,11 @@ input.du-radio:after,
   transition: border-color 0.15s ease;
   margin: 0;
 }
+input.du-radio:hover:after,
+.du-radio:hover > input:after,
+.du-radio:hover .du-radio_box {
+  border-color: var(--field-hover-border-color);
+}
 input.du-radio:checked:before,
 .du-radio > input:checked:before,
 .du-radio.Checked .du-radio_box:before {
@@ -62,12 +67,15 @@ input.du-radio:checked:after,
   border-color: var(--color-blue);
 }
 input.du-radio:disabled,
-.du-radio > input:disabled {
+.du-radio > input:disabled,
+.du-radio.Disabled .du-radio_box {
   cursor: not-allowed;
 }
 input.du-radio:disabled:after,
-.du-radio > input:disabled:after {
+.du-radio > input:disabled:after,
+.du-radio.Disabled .du-radio_box {
   opacity: 0.6;
+  border-color: var(--field-border-color);
   background-color: var(--color-light-gray);
 }
 
@@ -93,9 +101,4 @@ input.du-radio:disabled:after,
 .du-radio_box:before {
   top: -1px;
   left: 2px;
-}
-.du-radio.Disabled .du-radio_box {
-  cursor: not-allowed;
-  opacity: 0.6;
-  background-color: var(--color-light-gray);
 }

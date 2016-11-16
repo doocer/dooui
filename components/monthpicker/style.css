@@ -16,6 +16,10 @@
   background-color: white;
   user-select: none;
   cursor: default;
+  transition: border-color 0.15s ease;
+}
+.du-month-picker_box:hover {
+  border-color: var(--field-hover-border-color);
 }
 .du-month-picker_box .du-icon {
   position: absolute;

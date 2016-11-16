@@ -17,6 +17,10 @@
   background-color: white;
   user-select: none;
   cursor: default;
+  transition: border-color 0.15s ease;
+}
+.du-select_box:hover {
+  border-color: var(--field-hover-border-color);
 }
 .du-select_box.Single .du-select_value {
   display: block;
