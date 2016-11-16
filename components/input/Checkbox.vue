@@ -1,7 +1,7 @@
 <template>
-<label class="du-checkbox" :class="{'Checked': checked, 'Disabled': disabled}">
+<label class="du-checkbox" :class="{'Checked': isCheck, 'Disabled': disabled}">
   <span class="du-checkbox_box">
-    <input type="checkbox" v-model="checked" :disabled="disabled">
+    <input type="checkbox" v-model="isCheck" :disabled="disabled">
   </span>
   <slot>{{label}}</slot>
 </label>
@@ -21,23 +21,29 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    checked: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
-    return {checked: false}
+    return {isCheck: this.checked}
   },
   watch: {
     value: {
       immediate: true,
       handler(v) {
+        var isCheck
         if (Array.isArray(v)) {
-          this.checked = v.indexOf(this.label) !== -1
+          isCheck = v.indexOf(this.label) !== -1
         } else {
-          this.checked = v
+          isCheck = v || this.checked
         }
+        this.isCheck = isCheck
       }
     },
-    checked(v) {
+    isCheck(v) {
       var rv
       if (Array.isArray(this.value)) {
         if (v) {
