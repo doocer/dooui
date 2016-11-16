@@ -6,6 +6,7 @@ import Grid from './basic/Grid.vue'
 import Badge from './basic/Badge.vue'
 
 import Button from './form/Button.vue'
+import Input from './form/Input.vue'
 import Radio from './form/Radio.vue'
 import Checkbox from './form/Checkbox.vue'
 import Select from './form/Select.vue'
@@ -20,6 +21,7 @@ const routes = [
   {path: '/grid/', component: Grid},
   {path: '/badge/', component: Badge},
   {path: '/button/', component: Button},
+  {path: '/input/', component: Input},
   {path: '/radio/', component: Radio},
   {path: '/checkbox/', component: Checkbox},
   {path: '/select/', component: Select},

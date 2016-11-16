@@ -1,0 +1,44 @@
+.du-input {
+  position: relative;
+  width: var(--field-width);
+  box-sizing: border-box;
+  line-height: var(--field-line-height);
+  border: 1px solid var(--field-border-color);
+  padding: var(--field-padding) 10px;
+  border-radius: 3px;
+  background-color: white;
+  transition: border-color 0.15s ease;
+}
+input.du-input {
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  line-height: var(--field-line-height);
+}
+
+.du-input:hover {
+  border-color: var(--field-hover-border-color);
+}
+
+.du-input > input {
+  width: 100%;
+  outline: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  line-height: inherit;
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.du-input .du-icon {
+  position: absolute;
+  right: 8px;
+  line-height: var(--field-line-height);
+  opacity: 0.5;
+}
+
+.du-input .du-icon + input {
+  padding-right: 20px;
+}
