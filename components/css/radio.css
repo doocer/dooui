@@ -23,7 +23,7 @@ input.du-radio:before,
   position: relative;
   top: 1px;
   left: 1px;
-  display: inline-block;
+  display: block;
   content: '';
   width: 10px;
   height: 10px;
@@ -81,7 +81,7 @@ input.du-radio:disabled:after,
 
 .du-radio_box {
   position: relative;
-  top: 1px;
+  top: 3px;
   display: inline-block;
   margin: 0;
   width: 16px;
@@ -99,6 +99,6 @@ input.du-radio:disabled:after,
   opacity: 0;
 }
 .du-radio_box:before {
-  top: -1px;
+  top: 2px;
   left: 2px;
 }

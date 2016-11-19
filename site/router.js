@@ -9,6 +9,7 @@ import Button from './form/Button.vue'
 import Input from './form/Input.vue'
 import Radio from './form/Radio.vue'
 import Checkbox from './form/Checkbox.vue'
+import Switch from './form/Switch.vue'
 import Select from './form/Select.vue'
 import Monthpicker from './time/Monthpicker.vue'
 
@@ -24,6 +25,7 @@ const routes = [
   {path: '/input/', component: Input},
   {path: '/radio/', component: Radio},
   {path: '/checkbox/', component: Checkbox},
+  {path: '/switch/', component: Switch},
   {path: '/select/', component: Select},
   {path: '/monthpicker/', component: Monthpicker},
 ]

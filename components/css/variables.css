@@ -55,6 +55,7 @@
 
   /* form control */
   --field-width: 160px;
+  --field-height: 24px;
   --field-padding: 4px;
   --field-line-height: 24px;
   --field-border-color: var(--color-gray);

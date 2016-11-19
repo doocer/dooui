@@ -38,6 +38,7 @@
           <du-menu-item to="/input/">Input</du-menu-item>
           <du-menu-item to="/radio/">Radio</du-menu-item>
           <du-menu-item to="/checkbox/">Checkbox</du-menu-item>
+          <du-menu-item to="/switch/">Switch</du-menu-item>
           <du-menu-item to="/slider/">Slider</du-menu-item>
           <du-menu-item to="/select/">Select</du-menu-item>
           <du-menu-item to="/autocomplete/">Autocomplete</du-menu-item>

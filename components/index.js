@@ -3,17 +3,20 @@ import menu from './menu'
 import box from './box'
 import picker from './picker'
 import input from './input'
+// switch is a keyword
+import _switch from './switch'
 import select from './select'
 import monthpicker from './monthpicker'
 
 function install(Vue) {
-  grid.install(Vue)
-  menu.install(Vue)
-  box.install(Vue)
-  picker.install(Vue)
-  input.install(Vue)
-  select.install(Vue)
-  monthpicker.install(Vue)
+  Vue.use(grid)
+  Vue.use(menu)
+  Vue.use(box)
+  Vue.use(picker)
+  Vue.use(input)
+  Vue.use(_switch)
+  Vue.use(select)
+  Vue.use(monthpicker)
 }
 
 export default {install}
