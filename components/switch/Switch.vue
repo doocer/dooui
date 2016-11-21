@@ -1,6 +1,6 @@
 <template>
 <label class="du-switch" :class="{'Checked': checked, 'Disabled': disabled}">
-  <input type="checkbox" v-model="checked" :disabled="disabled">
+  <input type="checkbox" v-model="checked" :name="name" :disabled="disabled">
   <span class="du-switch_handle"></span>
 </label>
 </template>
@@ -9,6 +9,7 @@
 export default {
   name: 'du-switch',
   props: {
+    name: String,
     value: {
       type: Boolean,
       default: false,

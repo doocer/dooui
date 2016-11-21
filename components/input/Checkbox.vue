@@ -1,7 +1,7 @@
 <template>
 <label class="du-checkbox" :class="{'Checked': isCheck, 'Disabled': disabled}">
   <span class="du-checkbox_box">
-    <input type="checkbox" v-model="isCheck" :disabled="disabled">
+    <input type="checkbox" v-model="isCheck" :name="name" :disabled="disabled">
   </span>
   <slot>{{label}}</slot>
 </label>
@@ -11,6 +11,7 @@
 export default {
   name: 'du-checkbox',
   props: {
+    name: String,
     value: {
       type: [Boolean, Array]
     },

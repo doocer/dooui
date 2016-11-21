@@ -14,7 +14,7 @@
     </span>
     <i class="du-select_arrow" aria-hidden="true"></i>
     <input class="du-select_input" type="text" :readonly="!canInput"
-      @click="toggle" v-model="query" ref="input">
+      @click="toggle" v-model="query" ref="input" :name="name">
   </div>
   <div class="du-select_dropdown" :aria-expanded="active">
     <ul class="du-select_options" role="tree" ref="tree">
@@ -37,6 +37,7 @@ export default {
   directives: {out},
   components: {'du-selected-item': SelectedItem},
   props: {
+    name: String,
     component: {
       type: String,
       default: 'du-selected-item'
