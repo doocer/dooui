@@ -3,7 +3,7 @@ const Grid = {
   props: {
     borderColor: {
       type: String,
-      default: '#ddd
+      default: '#ddd'
     },
     borderWidth: {
       type: Number,
