@@ -1,0 +1,18 @@
+.du-breadcrumb_item:last-of-type .du-breadcrumb_sep {
+  display: none;
+}
+
+.du-breadcrumb_item a {
+  text-decoration: none;
+  color: var(--color-blue);
+}
+.du-breadcrumb_item a:hover {
+  opacity: 0.6;
+}
+
+.du-breadcrumb_sep {
+  font-size: 90%;
+  user-select: none;
+  color: var(--color-gray);
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
