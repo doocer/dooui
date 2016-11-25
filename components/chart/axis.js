@@ -1,4 +1,3 @@
-
 const NAME_LOCATIONS = ['start', 'middle', 'end']
 const TYPES = ['category', 'value', 'time', 'log']
 
@@ -8,25 +7,72 @@ function choiceValidate(choices) {
   }
 }
 
-const nameLocation = {
-  type: String,
-  default: 'end',
-  validator: choiceValidate(NAME_LOCATIONS)
-}
-
-
-const xAxis = {
+const axisMixin = {
   props: {
+    data: Array,
     gridIndex: Number,
     offset: Number,
-    type: String,
-    nameLocation: nameLocation,
+    formatter: String,
+    boundaryGap: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    chartOption() {
+      return {
+        type: this.type,
+        data: this.data,
+        gridIndex: this.gridIndex,
+        offset: this.offset,
+        boundaryGap: this.boundaryGap,
+        axisLabel: {
+          formatter: this.formatter
+        }
+      }
+    }
+  },
+  render(h) {
+    return
+  },
+}
+
+export const xAxis = {
+  name: 'du-chart-x-axis',
+  mixins: [axisMixin],
+  props: {
+    type: {
+      type: String,
+      default: 'category',
+      validator: choiceValidate(TYPES)
+    },
+    nameLocation: {
+      type: String,
+      default: 'end',
+      validator: choiceValidate(NAME_LOCATIONS)
+    }
+  },
+  mounted() {
+    this.$parent.setOption('xAxis', this.chartOption)
   }
 }
 
-const props = {
-  position: String,
-  offset: Number,
-  type: String,
-  name: String,
+export const yAxis = {
+  name: 'du-chart-y-axis',
+  mixins: [axisMixin],
+  props: {
+    type: {
+      type: String,
+      default: 'value',
+      validator: choiceValidate(TYPES)
+    },
+    nameLocation: {
+      type: String,
+      default: 'end',
+      validator: choiceValidate(NAME_LOCATIONS)
+    }
+  },
+  mounted() {
+    this.$parent.setOption('yAxis', this.chartOption)
+  }
 }

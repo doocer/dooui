@@ -8,6 +8,9 @@ import _switch from './switch'
 import select from './select'
 import monthpicker from './monthpicker'
 
+import chart from './chart'
+
+
 function install(Vue) {
   Vue.use(grid)
   Vue.use(menu)
@@ -17,6 +20,7 @@ function install(Vue) {
   Vue.use(_switch)
   Vue.use(select)
   Vue.use(monthpicker)
+  Vue.use(chart)
 }
 
 export default {install}

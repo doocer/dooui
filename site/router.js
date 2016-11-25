@@ -13,6 +13,8 @@ import Switch from './form/Switch.vue'
 import Select from './form/Select.vue'
 import Monthpicker from './time/Monthpicker.vue'
 
+import LineChart from './chart/LineChart.vue'
+
 
 const routes = [
   {path: '/', name: 'home', component: Home},
@@ -28,6 +30,7 @@ const routes = [
   {path: '/switch/', component: Switch},
   {path: '/select/', component: Select},
   {path: '/monthpicker/', component: Monthpicker},
+  {path: '/line-chart/', component: LineChart},
 ]
 
 export default {
