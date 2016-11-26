@@ -1,9 +1,9 @@
 <template>
 <div>
-<button class="du-button Blue" @click="info">Info</button>
-<button class="du-button Green" @click="success">Success</button>
-<button class="du-button Yellow" @click="warn">Warn</button>
-<button class="du-button Red" @click="error">Error</button>
+<button class="du-button Line Blue" @click="info">Info</button>
+<button class="du-button Line Green" @click="success">Success</button>
+<button class="du-button Line Yellow" @click="warn">Warn</button>
+<button class="du-button Line Red" @click="error">Error</button>
 </div>
 </template>
 

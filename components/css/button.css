@@ -57,20 +57,39 @@ input[type="submit"].du-button {
 }
 .du-button.Text {
   border-color: transparent;
+  background-color: transparent;
 }
 .du-button.Text.Blue {
   color: var(--color-blue);
-  background-color: transparent;
 }
 .du-button.Text.Green {
   color: var(--color-green);
-  background-color: transparent;
 }
 .du-button.Text.Yellow {
   color: var(--color-yellow);
-  background-color: transparent;
 }
 .du-button.Text.Red {
   color: var(--color-red);
+}
+
+.du-button.Line {
   background-color: transparent;
+  color: var(--text-plain-color);
+  border-color: var(--field-border-color);
+}
+.du-button.Line.Blue:hover {
+  color: var(--color-blue);
+  border-color: var(--color-blue);
+}
+.du-button.Line.Green:hover {
+  color: var(--color-green);
+  border-color: var(--color-green);
+}
+.du-button.Line.Yellow:hover {
+  color: var(--color-yellow);
+  border-color: var(--color-yellow);
+}
+.du-button.Line.Red:hover {
+  color: var(--color-red);
+  border-color: var(--color-red);
 }

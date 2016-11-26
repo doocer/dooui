@@ -1,9 +1,8 @@
 <template>
 <div>
-<button class="du-button" disabled>Disabled</button>
-<a class="du-button Disabled Blue">Disabled Color</a>
-<button class="du-button Text">Text</button>
-<button class="du-button Text" disabled>Diabled Text</button>
-<button class="du-button Text Green">Color Text</button>
+<button class="du-button Line Blue">Blue</button>
+<button class="du-button Line Green">Green</button>
+<button class="du-button Line Yellow">Yellow</button>
+<button class="du-button Line Red">Red</button>
 </div>
 </template>
