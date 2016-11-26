@@ -14,13 +14,13 @@ export default {
       this.$message('This is an info message')
     },
     success() {
-      this.$message('This is an info message', 'success')
+      this.$message('A success message with green border', 'success')
     },
     warn() {
-      this.$message('This is an info message', 'warn')
+      this.$message('Warn messages have yellow border', 'warn')
     },
     error() {
-      this.$message('This is an info message', 'error')
+      this.$message('Red border is for error messages', 'error')
     },
   }
 }

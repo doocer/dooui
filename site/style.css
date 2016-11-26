@@ -7,3 +7,19 @@
   content: '';
   clear: both;
 }
+.du-box code {
+  color: #e96900;
+}
+.component-props {
+  border-collapse: collapse;
+  width: 100%;
+}
+.component-props th {
+  padding: 10px 15px;
+  text-align: left;
+  background: var(--color-semi-white);
+  border-bottom: 1px solid var(--line-light-color);
+}
+.component-props td {
+  padding: 10px 15px;
+}

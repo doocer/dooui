@@ -21,10 +21,6 @@
 .du-badge.Red {
   background-color: var(--color-red);
 }
-
-.Badge {
-  position: relative;
-}
 sup.du-badge {
   position: absolute;
   font-size: 10px;

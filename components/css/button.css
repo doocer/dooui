@@ -1,3 +1,6 @@
+.du-button {
+  position: relative;
+}
 button.du-button,
 a.du-button,
 input[type="button"].du-button,
