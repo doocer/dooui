@@ -14,6 +14,7 @@ import Select from './form/Select.vue'
 import Monthpicker from './time/Monthpicker.vue'
 
 import Breadcrumb from './navigation/Breadcrumb.vue'
+import Progress from './data/Progress.vue'
 
 import LineChart from './chart/LineChart.vue'
 
@@ -33,6 +34,7 @@ const routes = [
   {path: '/select/', component: Select},
   {path: '/monthpicker/', component: Monthpicker},
   {path: '/breadcrumb/', component: Breadcrumb},
+  {path: '/progress/', component: Progress},
   {path: '/line-chart/', component: LineChart},
 ]
 
