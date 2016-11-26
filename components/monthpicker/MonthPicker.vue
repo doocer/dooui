@@ -2,8 +2,8 @@
 <du-picker class="du-month-picker" @keydown.native="keypress" ref="popup">
   <span class="du-month-picker_box">
     <i class="du-icon" :class="icon" aria-hidden="true" v-if="icon"></i>
-    <input type="text" :name="name" :value="display" :placeholder="placeholder"
-      @click="toggle" ref="input" :readonly="readonly">
+    <input type="text" :name="name" :value="display"
+      :placeholder="placeholder" @click="toggle" ref="input" readonly>
   </span>
   <du-month-calendar slot="overlay" ref="calendar"
     :year="year" :month="month" :locale="locale"
@@ -21,11 +21,6 @@ export default {
     icon: String,
     value: String,
     locale: String,
-    format: Function,
-    readonly: {
-      type: Boolean,
-      default: false
-    }
   },
   watch: {
     value: {
@@ -47,8 +42,7 @@ export default {
   computed: {
     display() {
       if (this.selected) {
-        var fn = this.format || _format
-        return fn(this.selected[0], this.selected[1])
+        return _format(this.selected[0], this.selected[1])
       }
     }
   },
