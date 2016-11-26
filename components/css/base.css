@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, strong {
   min-height: 100%;
   color: var(--text-plain-color);
   background-color: var(--layout-base-bg);
-  font-family: var(--font);
+  font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
 }
 
