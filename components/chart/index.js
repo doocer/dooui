@@ -20,6 +20,7 @@ const Chart = {
   },
   data() {
     return {
+      chart: null,
       options: {},
       series: [],
     }
@@ -54,9 +55,15 @@ const Chart = {
     return h('div', {'class': 'du-chart', style: style}, this.$slots.default)
   },
   mounted() {
-    this._canvas = echarts.init(this.$el)
+    this.chart = echarts.init(this.$el)
     // TODO: watch option
-    this._canvas.setOption(this.chartOption)
+    this.chart.setOption(this.chartOption)
+  },
+  beforeDestroy() {
+    if (this.chart) {
+      this.chart.dispose()
+      this.chart = null
+    }
   }
 }
 
