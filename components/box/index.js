@@ -14,7 +14,7 @@ const Box = {
     var foots = this.$slots.foot
     if (foots) {
       children.push(
-        h('div', {'class': 'du-box_foot'}), foots
+        h('div', {'class': 'du-box_foot'}, foots)
       )
     }
     return h('div', {'class': 'du-box'}, children)
