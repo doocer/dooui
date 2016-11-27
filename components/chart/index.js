@@ -1,6 +1,7 @@
 import echarts from 'echarts'
 import {xAxis, yAxis} from './axis'
 import Line from './line'
+import Tooltip from './tooltip'
 
 const Chart = {
   name: 'du-chart',
@@ -17,12 +18,27 @@ const Chart = {
       type: Boolean,
       default: true
     },
+    backgroundColor: {
+      type: String,
+      default: 'transparent'
+    },
+    colors: {
+      type: Array,
+      default: () => [
+        '#03A9F4', '#49C784', '#F7BA2A', '#FF612F',
+        '#0EA0E2', '#42B983', '#F1B52A', '#F55826',
+        '#8492A6', '#1F2D3D', '#99A9BF', '#36495D',
+        '#C23531', '#61A0A8', '#D48265', '#749F83',
+        '#CA8622', '#6E7074', '#546570', '#C4CCD3'
+      ]
+    }
   },
   data() {
     return {
       chart: null,
       options: {},
       series: [],
+      visualMap: [],
     }
   },
   computed: {
@@ -33,13 +49,13 @@ const Chart = {
       })
       rv.animation = this.animation
       rv.series = this.series
+      rv.color = this.colors
+      rv.visualMap = this.visualMap
+      rv.backgroundColor = this.backgroundColor
       return rv
     }
   },
   methods: {
-    addSeries(option) {
-      this.series = this.series.concat(option)
-    },
     setOption(key, value) {
       this.options[key] = value
     }
@@ -71,6 +87,7 @@ function install(Vue) {
   Vue.component(Chart.name, Chart)
   Vue.component(xAxis.name, xAxis)
   Vue.component(yAxis.name, yAxis)
+  Vue.component(Tooltip.name, Tooltip)
   Vue.component(Line.name, Line)
 }
 
