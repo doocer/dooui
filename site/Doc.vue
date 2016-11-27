@@ -1,5 +1,5 @@
 <template>
-<div class="du-box prop-doc Blue">
+<div class="du-box doc Blue">
   <h2 class="du-box_head"><code>&lt;{{name}}&gt;</code></h2>
   <table>
     <thead>

@@ -8,7 +8,7 @@
     <h2>Checkbox Component</h2>
     <p>A compatible <code>&lt;du-checkbox&gt;</code> for all browsers.</p>
   </demo>
-  <prop-doc :descriptions="docs" name="du-checkbox"></prop-doc>
+  <doc :descriptions="docs" name="du-checkbox"></doc>
 </div>
 </template>
 

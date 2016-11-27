@@ -10,16 +10,19 @@
 .du-box code {
   color: #e96900;
 }
-.prop-doc table {
+.doc table {
   border-collapse: collapse;
   width: 100%;
 }
-.prop-doc th {
+.doc th {
   padding: 10px 15px;
   text-align: left;
   background: var(--color-semi-white);
   border-bottom: 1px solid var(--line-light-color);
 }
-.prop-doc td {
+.doc td {
   padding: 10px 15px;
+}
+.doc tbody tr:nth-child(2n) {
+  background: var(--color-semi-white);
 }

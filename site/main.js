@@ -3,13 +3,13 @@ import VueRouter from 'vue-router'
 import App from './App.vue'
 import Dooui from '../components'
 import routerConfig from './router'
-import PropDoc from './PropDoc.vue'
+import Doc from './Doc.vue'
 import Demo from './Demo.vue'
 
 Vue.use(VueRouter)
 Vue.use(Dooui)
 Vue.component('demo', Demo)
-Vue.component('prop-doc', PropDoc)
+Vue.component('doc', Doc)
 
 const router = new VueRouter(routerConfig)
 
