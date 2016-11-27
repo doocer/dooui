@@ -10,16 +10,16 @@
 .du-box code {
   color: #e96900;
 }
-.component-props {
+.prop-doc table {
   border-collapse: collapse;
   width: 100%;
 }
-.component-props th {
+.prop-doc th {
   padding: 10px 15px;
   text-align: left;
   background: var(--color-semi-white);
   border-bottom: 1px solid var(--line-light-color);
 }
-.component-props td {
+.prop-doc td {
   padding: 10px 15px;
 }

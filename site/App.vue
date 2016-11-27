@@ -25,6 +25,11 @@
           <du-menu-item to="/dialog/">Dialog</du-menu-item>
           <du-menu-item to="/message/">Message</du-menu-item>
         </du-menu-tree>
+        <du-menu-tree icon="fa fa-table">
+          <span slot="title">Data</span>
+          <du-menu-item to="/progress/">Progress</du-menu-item>
+          <du-menu-item to="/table/">Table</du-menu-item>
+        </du-menu-tree>
         <du-menu-tree icon="fa fa-location-arrow">
           <span slot="title">Navigation</span>
           <du-menu-item to="/breadcrumb/">Breadcrumb</du-menu-item>
