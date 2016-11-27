@@ -14,16 +14,23 @@
       <tr v-for="line in descriptions">
         <td>{{line[0]}}<span class="doc-require" v-if="isRequired(line[0])">*</span></td>
         <td v-text="typeName(line[0])"></td>
-        <td v-html="line[1]"></td>
+        <td v-html="describe(line)"></td>
         <td v-text="defaultValue(line[0])"></td>
       </tr>
     </tbody>
   </table>
+  <slot></slot>
 </div>
 </template>
 
 <script>
 import Vue from 'vue'
+const DESC_MAPS = {
+  name: 'The <code>name</code> attribute of the <code>&lt;input&gt;</code> tag.',
+  label: 'The <code>value</code> attribute of the <code>&lt;input&gt;</code> tag.',
+  value: 'Custom input value for <code>v-model</code>.',
+  disabled: 'Mark component as disabled.'
+}
 export default {
   props: {
     name: String,
@@ -56,6 +63,9 @@ export default {
         return '""'
       }
       return item.default.toString()
+    },
+    describe(line) {
+      return line[1] || DESC_MAPS[line[0]] || ''
     }
   }
 }

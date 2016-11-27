@@ -3,6 +3,7 @@
 <du-radio label="One" v-model="picked"></du-radio>
 <du-radio label="Two" v-model="picked"></du-radio>
 <du-radio label="Three" v-model="picked" disabled></du-radio>
+<du-radio label="Four" v-model="picked">Quatre</du-radio>
 <p>Picked: {{picked}}</p>
 </div>
 </template>

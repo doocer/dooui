@@ -8,16 +8,20 @@
     <h2>Checkbox Component</h2>
     <p>A compatible <code>&lt;du-checkbox&gt;</code> for all browsers.</p>
   </demo>
-  <doc :descriptions="docs" name="du-checkbox"></doc>
+  <doc :descriptions="docs" name="du-checkbox">
+    <div class="du-box_foot">
+      Fill <code>$slot</code> with different descriptions: <code>&lt;du-checkbox&gt;</code>Not label property value<code>&lt;/du-checkbox&gt;</code>.
+    </div>
+  </doc>
 </div>
 </template>
 
 <script>
 const docs = [
-  ['name', 'The <code>name</code> attribute of the <code>&lt;input&gt;</code> tag.'],
+  ['name'],
   ['label', ''],
-  ['value', ''],
-  ['disabled', ''],
+  ['value'],
+  ['disabled'],
   ['checked', ''],
 ]
 export default {
