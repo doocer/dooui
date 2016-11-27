@@ -26,3 +26,9 @@
 .doc tbody tr:nth-child(2n) {
   background: var(--color-semi-white);
 }
+.doc-require {
+  padding-left: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #e96900;
+}

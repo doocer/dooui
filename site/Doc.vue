@@ -12,7 +12,7 @@
     </thead>
     <tbody>
       <tr v-for="line in descriptions">
-        <td v-text="line[0]"></td>
+        <td>{{line[0]}}<span class="doc-require" v-if="isRequired(line[0])">*</span></td>
         <td v-text="typeName(line[0])"></td>
         <td v-html="line[1]"></td>
         <td v-text="defaultValue(line[0])"></td>
@@ -36,6 +36,10 @@ export default {
     }
   },
   methods: {
+    isRequired(key) {
+      var item = this.props[key]
+      return item.required
+    },
     typeName(key) {
       var item = this.props[key]
       if (Array.isArray(item.type)) {
