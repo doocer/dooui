@@ -8,11 +8,11 @@
     <h2>Radio Component</h2>
     <p>A compatible <code>&lt;du-radio&gt;</code> for all browsers.</p>
   </demo>
-  <doc :descriptions="docs" name="du-radio">
+  <doc-attrs :descriptions="docs" name="du-radio">
     <div class="du-box_foot">
       Fill <code>$slot</code> with different descriptions: <code>&lt;du-radio&gt;</code>Not label property value<code>&lt;/du-radio&gt;</code>.
     </div>
-  </doc>
+  </doc-attrs>
 </div>
 </template>
 

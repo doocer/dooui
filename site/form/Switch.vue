@@ -3,7 +3,7 @@
   <demo file="switch-0.vue">
     <h2><code>&lt;du-switch&gt;</code></h2>
   </demo>
-  <doc name="du-switch" :descriptions="docs"></doc>
+  <doc-attrs name="du-switch" :descriptions="docs"></doc-attrs>
 </div>
 </template>
 
