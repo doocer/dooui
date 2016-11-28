@@ -1,7 +1,8 @@
 import Chart from './chart'
 import {xAxis, yAxis} from './axis'
-import Line from './line'
 import Tooltip from './tooltip'
+import Line from './line'
+import Bar from './bar'
 
 
 function install(Vue) {
@@ -10,6 +11,7 @@ function install(Vue) {
   Vue.component(yAxis.name, yAxis)
   Vue.component(Tooltip.name, Tooltip)
   Vue.component(Line.name, Line)
+  Vue.component(Bar.name, Bar)
 }
 
 export default {install}

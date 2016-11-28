@@ -18,6 +18,7 @@ import Progress from './data/Progress.vue'
 import Message from './message/Message.vue'
 
 import LineChart from './chart/LineChart.vue'
+import BarChart from './chart/BarChart.vue'
 
 
 const routes = [
@@ -38,6 +39,7 @@ const routes = [
   {path: '/progress/', component: Progress},
   {path: '/message/', component: Message},
   {path: '/line-chart/', component: LineChart},
+  {path: '/bar-chart/', component: BarChart},
 ]
 
 export default {

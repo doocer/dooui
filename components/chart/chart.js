@@ -56,6 +56,12 @@ export default {
       Object.keys(this.options).forEach(k => {
         options[k] = this.options[k]
       })
+      if (!options.xAxis) {
+        options.xAxis = {show: false}
+      }
+      if (!options.yAxis) {
+        options.yAxis = {show: false}
+      }
       return options
     }
   },
