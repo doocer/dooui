@@ -18,8 +18,6 @@ export default {
       return name.charAt(0).toUpperCase() + name.slice(1)
     },
     flash(text, type, duration) {
-      type = type || 'info'
-      duration = duration || 4500
       this.count += 1
       var id = this.count
       this.messages.push({id, text, type})
