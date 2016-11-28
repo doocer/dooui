@@ -1,4 +1,5 @@
 import echarts from 'echarts'
+import {animationProps} from './mixins'
 
 const COLORS = [
   '#03A9F4', '#49C784', '#F7BA2A', '#FF612F',
@@ -10,6 +11,7 @@ const COLORS = [
 
 export default {
   name: 'du-chart',
+  mixins: [animationProps],
   props: {
     width: {
       type: Number,
@@ -18,10 +20,6 @@ export default {
     height: {
       type: Number,
       default: 400,
-    },
-    animation: {
-      type: Boolean,
-      default: true
     },
     backgroundColor: {
       type: String,
@@ -41,16 +39,24 @@ export default {
   },
   computed: {
     chartOption() {
-      var rv = {}
+      var options = {
+        series: this.series,
+        visualMap: this.visualMap,
+        color: this.colors,
+        backgroundColor: this.backgroundColor,
+        animation: this.animation,
+        animationThreshold: this.animationThreshold,
+        animationDuration: this.animationDuration,
+        animationEasing: this.animationEasing,
+        animationDelay: this.animationDelay,
+        animationDurationUpdate: this.animationDurationUpdate,
+        animationEasingUpdate: this.animationEasingUpdate,
+        animationDelayUpdate: this.animationDelayUpdate,
+      }
       Object.keys(this.options).forEach(k => {
-        rv[k] = this.options[k]
+        options[k] = this.options[k]
       })
-      rv.animation = this.animation
-      rv.series = this.series
-      rv.color = this.colors
-      rv.visualMap = this.visualMap
-      rv.backgroundColor = this.backgroundColor
-      return rv
+      return options
     }
   },
   methods: {
