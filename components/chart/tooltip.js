@@ -64,6 +64,9 @@ export default {
       return rv
     }
   },
+  render(h) {
+    return
+  },
   mounted() {
     this.$parent.setOption('tooltip', this.chartOption)
   }
