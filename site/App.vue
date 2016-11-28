@@ -56,7 +56,6 @@
           <span slot="title">Chart</span>
           <du-menu-item to="/chart/">Overview</du-menu-item>
           <du-menu-item to="/line-chart/">Line</du-menu-item>
-          <du-menu-item to="/area-chart/">Area</du-menu-item>
           <du-menu-item to="/bar-chart/">Bar</du-menu-item>
           <du-menu-item to="/pie-chart/">Pie</du-menu-item>
         </du-menu-tree>

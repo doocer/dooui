@@ -31,10 +31,18 @@ export default {
       type: String,
       choices: ['average', 'max', 'min', 'sum']
     },
+    area: {
+      type: Boolean,
+      default: false
+    },
+    markPointData: {
+      type: Array,
+      default: () => []
+    }
   },
   computed: {
     seriesOption() {
-      return {
+      var options = {
         type: 'line',
         name: this.name,
         data: this.data,
@@ -54,6 +62,15 @@ export default {
         animationEasingUpdate: this.animationEasingUpdate,
         animationDelayUpdate: this.animationDelayUpdate,
       }
+      if (this.area) {
+        options.areaStyle = {normal: {}}
+      } else {
+        options.lineStyle = {normal: {}}
+      }
+      if (this.markPointData.length) {
+        options.markPoint = {data: this.markPointData}
+      }
+      return options
     }
   }
 }

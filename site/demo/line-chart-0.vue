@@ -5,17 +5,17 @@
   </du-chart-x-axis>
   <du-chart-y-axis formatter="{value} °C"></du-chart-y-axis>
   <du-chart-tooltip trigger="axis"></du-chart-tooltip>
-  <du-chart-line name="High" :data="data">
-  </du-chart-line>
+  <du-chart-line name="High" :data="data" :area="area"></du-chart-line>
 </du-chart>
 <button class="du-button" @click="data=genData()">Change</button>
+<button class="du-button" @click="area=true">Area</button>
 </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {data: [11, 11, 15, 13, 12, 13, 10]}
+    return {data: [11, 11, 15, 13, 12, 13, 10], area: false}
   },
   methods: {
     genData() {
