@@ -1,15 +1,22 @@
 var webpack = require('webpack')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
-var vueOptions = require('./vue-loader.config')
+var mixin = require('./mixin.config')
 var config = require('./webpack.base')
 
-vueOptions.loaders = {
-  css: ExtractTextPlugin.extract({
-    loader: 'css-loader',
-    fallbackLoader: 'vue-style-loader'
-  })
-}
+mixin.addExtractPlugin()
 
+config.entry = {
+  dooui: [
+    './components/default-theme.css',
+    './components/index.js',
+  ]
+}
+config.output.library = 'dooui'
+config.output.libraryTarget = 'umd'
+config.externals = {
+  echarts: 'echarts',
+  'vue-document-event': 'vue-document-event',
+}
 
 // http://vue-loader.vuejs.org/en/workflow/production.html
 config.plugins = (config.plugins || []).concat([
@@ -26,7 +33,6 @@ config.plugins = (config.plugins || []).concat([
   new webpack.LoaderOptionsPlugin({
     minimize: true
   }),
-  new webpack.optimize.CommonsChunkPlugin({name: 'dooui', filename: 'dooui.js'}),
   new ExtractTextPlugin("[name].css")
 ])
 
