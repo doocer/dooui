@@ -1,8 +1,8 @@
-import {animationProps} from './mixins'
+import {animationProps, seriesMixin} from './mixins'
 
 export default {
   name: 'du-chart-line',
-  mixins: [animationProps],
+  mixins: [animationProps, seriesMixin],
   props: {
     name: String,
     data: Array,
@@ -34,18 +34,26 @@ export default {
   },
   computed: {
     seriesOption() {
-      var rv = {type: 'line'}
-      var props = this.$options.propsData
-      Object.keys(props).forEach(k => {
-        rv[k] = props[k]
-      })
-      return rv
+      return {
+        type: 'line',
+        name: this.name,
+        data: this.data,
+        stack: this.stack,
+        connectNulls: this.connectNulls,
+        clipOverfow: this.clipOverfow,
+        step: this.step,
+        smooth: this.smooth,
+        smoothMonotone: this.smoothMonotone,
+        sampling: this.sampling,
+        animation: this.animation,
+        animationThreshold: this.animationThreshold,
+        animationDuration: this.animationDuration,
+        animationEasing: this.animationEasing,
+        animationDelay: this.animationDelay,
+        animationDurationUpdate: this.animationDurationUpdate,
+        animationEasingUpdate: this.animationEasingUpdate,
+        animationDelayUpdate: this.animationDelayUpdate,
+      }
     }
-  },
-  render(h) {
-    return
-  },
-  mounted() {
-    this.$parent.series.push(this.seriesOption)
   }
 }

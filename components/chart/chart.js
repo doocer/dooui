@@ -56,6 +56,11 @@ export default {
   methods: {
     setOption(key, value) {
       this.options[key] = value
+    },
+    refresh() {
+      if (this.$chart) {
+        this.$chart.setOption(this.chartOption)
+      }
     }
   },
   render(h) {
@@ -73,12 +78,12 @@ export default {
   },
   mounted() {
     this.$chart = echarts.init(this.$el)
-    this.$chart.setOption(this.chartOption)
+    this.refresh()
   },
   beforeDestroy() {
-    if (this.chart) {
-      this.chart.dispose()
-      this.chart = null
+    if (this.$chart) {
+      this.$chart.dispose()
+      this.$chart = null
     }
   }
 }

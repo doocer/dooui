@@ -34,3 +34,22 @@ export const animationProps = {
     }
   }
 }
+
+export const seriesMixin = {
+  data() {
+    return {id: null}
+  },
+  watch: {
+    seriesOption(val) {
+      this.$parent.series[this.id - 1] = val
+      this.$parent.refresh()
+    }
+  },
+  render(h) {
+    return
+  },
+  mounted() {
+    this.$parent.series.push(this.seriesOption)
+    this.id = this.$parent.series.length
+  }
+}
