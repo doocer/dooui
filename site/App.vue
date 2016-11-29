@@ -35,6 +35,7 @@
           <du-menu-item to="/breadcrumb/">Breadcrumb</du-menu-item>
           <du-menu-item to="/navigation/">Navigation</du-menu-item>
           <du-menu-item to="/pagination/">Pagination</du-menu-item>
+          <du-menu-item to="/tab/">Tabs</du-menu-item>
           <du-menu-item to="/step/">Step</du-menu-item>
         </du-menu-tree>
         <du-menu-tree icon="fa fa-check-square-o">

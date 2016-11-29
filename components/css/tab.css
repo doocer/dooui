@@ -1,0 +1,42 @@
+.du-tab {
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.du-tab_bar {
+  position: relative;
+  border-bottom: 1px solid var(--line-light-color);
+}
+.du-tab_scroll {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.du-tab_cursor {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  box-sizing: border-box;
+  height: 2px;
+  background-color: var(--color-blue);
+  z-index: 1;
+  transition: all 0.3s var(--ease-ant);
+}
+.du-tab_tab {
+  display: inline-block;
+  padding: 8px 20px;
+  cursor: pointer;
+}
+.du-tab_tab[aria-selected] {
+  color: var(--color-blue);
+}
+.du-tab_tab:hover {
+  color: var(--color-dark-blue);
+}
+.du-tab_content {
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.3s var(--ease-ant);
+}
+.du-tab_item {
+  flex-shrink: 0;
+  width: 100%;
+}

@@ -63,6 +63,9 @@
   --field-option-active-fg: var(--color-white);
   --field-option-active-bg: var(--color-blue);
 
+  /* ease functions */
+  --ease-ant: cubic-bezier(0.645, 0.045, 0.355, 1);
+
   --size-xl: 32px;
   --size-lg: 24px;
   --size-md: 18px;

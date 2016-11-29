@@ -9,6 +9,8 @@ import select from './select'
 import monthpicker from './monthpicker'
 
 import breadcrumb from './breadcrumb'
+import tab from './tab'
+
 import progress from './progress'
 import message from './message'
 import dialog from './dialog'
@@ -25,6 +27,7 @@ function install(Vue) {
   Vue.use(select)
   Vue.use(monthpicker)
   Vue.use(breadcrumb)
+  Vue.use(tab)
   Vue.use(progress)
   Vue.use(message)
   Vue.use(dialog)
