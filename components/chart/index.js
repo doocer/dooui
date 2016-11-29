@@ -3,6 +3,7 @@ import {xAxis, yAxis} from './axis'
 import Tooltip from './tooltip'
 import Line from './line'
 import Bar from './bar'
+import Pie from './pie'
 
 
 function install(Vue) {
@@ -12,6 +13,7 @@ function install(Vue) {
   Vue.component(Tooltip.name, Tooltip)
   Vue.component(Line.name, Line)
   Vue.component(Bar.name, Bar)
+  Vue.component(Pie.name, Pie)
 }
 
 export default {install}

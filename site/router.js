@@ -20,7 +20,7 @@ import Dialog from './message/Dialog.vue'
 
 import LineChart from './chart/LineChart.vue'
 import BarChart from './chart/BarChart.vue'
-
+import PieChart from './chart/PieChart.vue'
 
 const routes = [
   {path: '/', name: 'home', component: Home},
@@ -42,6 +42,7 @@ const routes = [
   {path: '/dialog/', component: Dialog},
   {path: '/line-chart/', component: LineChart},
   {path: '/bar-chart/', component: BarChart},
+  {path: '/pie-chart/', component: PieChart},
 ]
 
 export default {
