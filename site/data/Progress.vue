@@ -1,7 +1,7 @@
 <template>
 <div class="view-progress content">
-  <du-progress :value="20"></du-progress>
-  <br>
-  <du-progress class="Striped" :value="20"></du-progress>
+  <demo file="progress-0.vue">
+    <h2>Progress</h2>
+  </demo>
 </div>
 </template>

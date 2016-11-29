@@ -81,18 +81,14 @@
 
 /* animation */
 .du-dialog.dialog-enter-active,
-.dialog-enter-active .du-dialog_content {
-  transition: all 0.3s ease;
-}
 .du-dialog.dialog-leave-active,
-.dialog-leave-active .du-dialog_content {
-  transition: all 0.2s ease;
+.dialog-enter-active .du-dialog_content {
+  transition: all 0.3s var(--ease-ant);
 }
 .du-dialog.dialog-enter, 
 .du-dialog.dialog-leave-active {
   opacity: 0;
 }
-.dialog-enter .du-dialog_content,
-.dialog-leave-active .du-dialog_content {
+.dialog-enter .du-dialog_content {
   transform: translate3d(-50%, -30px, 0);
 }
