@@ -69,9 +69,9 @@ export default {
     setOption(key, value) {
       this.options[key] = value
     },
-    refresh() {
+    refresh(force) {
       if (this.$chart) {
-        this.$chart.setOption(this.chartOption)
+        this.$chart.setOption(this.chartOption, force || false)
       }
     }
   },

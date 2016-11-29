@@ -6,7 +6,7 @@
       <tr>
         <th>Event</th>
         <th>Description</th>
-        <th>Callback</th>
+        <th>Emit Data</th>
       </tr>
     </thead>
     <tbody>

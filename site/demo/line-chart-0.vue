@@ -8,7 +8,7 @@
   <du-chart-line name="High" :data="data" :area="area"></du-chart-line>
 </du-chart>
 <button class="du-button" @click="data=genData()">Change</button>
-<button class="du-button" @click="area=true">Area</button>
+<button class="du-button" @click="area=!area">Area/Line</button>
 </div>
 </template>
 

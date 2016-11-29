@@ -42,7 +42,7 @@ export const seriesMixin = {
   watch: {
     seriesOption(val) {
       this.$parent.series[this.id - 1] = val
-      this.$parent.refresh()
+      this.$parent.refresh(true)
     }
   },
   render(h) {
