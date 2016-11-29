@@ -19,7 +19,7 @@ export default {
   },
   computed: {
     selected() {
-      return this.$parent.active === this.id
+      return this.$parent.active === this
     }
   },
   created() {
