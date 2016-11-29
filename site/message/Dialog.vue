@@ -3,7 +3,8 @@
   <demo file="dialog-0.vue">
     <h2>Dialog</h2>
   </demo>
-  <doc-attrs name="du-dialog" :descriptions="attrDocs"></doc-attrs>
+  <doc-attrs name="du-dialog" :attrs="attrDocs"></doc-attrs>
+  <doc-events name="du-dialog" :events="eventDocs"></doc-events>
 </div>
 </template>
 
@@ -17,10 +18,16 @@ const attrDocs = [
   ['cancelText', 'text for the cancle button'],
 ]
 
+const eventDocs = [
+  ['confirm', 'confirm button is clicked', 'dialog vm'],
+  ['cancel', 'cancel button is clicked'],
+]
+
 export default {
   data() {
     return {
-      attrDocs: attrDocs,
+      attrDocs,
+      eventDocs,
     }
   }
 }

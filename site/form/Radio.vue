@@ -8,7 +8,7 @@
     <h2>Radio Component</h2>
     <p>A compatible <code>&lt;du-radio&gt;</code> for all browsers.</p>
   </demo>
-  <doc-attrs :descriptions="docs" name="du-radio">
+  <doc-attrs :attrs="attrDocs" name="du-radio">
     <div class="du-box_foot">
       Fill <code>$slot</code> with different descriptions: <code>&lt;du-radio&gt;</code>Not label property value<code>&lt;/du-radio&gt;</code>.
     </div>
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-const docs = [
+const attrDocs = [
   ['name', 'The <code>name</code> attribute of the <code>&lt;input&gt;</code> tag.'],
   ['label', ''],
   ['value', ''],
@@ -25,7 +25,7 @@ const docs = [
 ]
 export default {
   data() {
-    return {docs: docs}
+    return {attrDocs}
   }
 }
 </script>

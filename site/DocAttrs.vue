@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="line in descriptions">
+      <tr v-for="line in attrs">
         <td>{{line[0]}}<span class="doc-require" v-if="isRequired(line[0])">*</span></td>
         <td v-text="typeName(line[0])"></td>
         <td v-html="describe(line)"></td>
@@ -34,7 +34,7 @@ const DESC_MAPS = {
 export default {
   props: {
     name: String,
-    descriptions: Array,
+    attrs: Array,
   },
   computed: {
     props() {
