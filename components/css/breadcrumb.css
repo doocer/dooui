@@ -1,4 +1,4 @@
-.du-breadcrumb_item:last-of-type .du-breadcrumb_sep {
+.du-breadcrumb>:last-child .du-breadcrumb_sep {
   display: none;
 }
 
