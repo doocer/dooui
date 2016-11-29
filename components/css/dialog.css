@@ -42,15 +42,18 @@
 
 .du-dialog_head,
 .du-dialog_foot {
-  padding: 10px 15px;
+  padding: 15px 20px;
 }
 .du-dialog_head {
   position: relative;
   border-bottom: 1px solid var(--line-light-color);
 }
+.du-dialog_title {
+  font-weight: 600;
+}
 .du-dialog_close {
   position: absolute;
-  top: 10px;
+  top: 14px;
   right: 15px;
   display: inline-block;
   box-sizing: border-box;
@@ -64,10 +67,10 @@
   content: '×';
   line-height: 1;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
 }
 .du-dialog_body {
-  padding: 10px 15px 20px;
+  padding: 20px;
 }
 .du-dialog_foot {
   text-align: right;
