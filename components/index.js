@@ -11,6 +11,7 @@ import monthpicker from './monthpicker'
 import breadcrumb from './breadcrumb'
 import progress from './progress'
 import message from './message'
+import dialog from './dialog'
 import chart from './chart'
 
 
@@ -26,6 +27,7 @@ function install(Vue) {
   Vue.use(breadcrumb)
   Vue.use(progress)
   Vue.use(message)
+  Vue.use(dialog)
   Vue.use(chart)
 }
 

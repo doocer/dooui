@@ -16,6 +16,7 @@ import Monthpicker from './time/Monthpicker.vue'
 import Breadcrumb from './navigation/Breadcrumb.vue'
 import Progress from './data/Progress.vue'
 import Message from './message/Message.vue'
+import Dialog from './message/Dialog.vue'
 
 import LineChart from './chart/LineChart.vue'
 import BarChart from './chart/BarChart.vue'
@@ -38,6 +39,7 @@ const routes = [
   {path: '/breadcrumb/', component: Breadcrumb},
   {path: '/progress/', component: Progress},
   {path: '/message/', component: Message},
+  {path: '/dialog/', component: Dialog},
   {path: '/line-chart/', component: LineChart},
   {path: '/bar-chart/', component: BarChart},
 ]
