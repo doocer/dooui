@@ -8,10 +8,6 @@ config.devServer = {
 config.devtool = '#eval-source-map'
 
 config.entry = {
-  dooui: [
-    './components/default-theme.css',
-    './components/index.js',
-  ],
   site: ['./site/main.js']
 }
 

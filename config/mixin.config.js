@@ -20,8 +20,11 @@ var moduleRules = [
   },
   {
     test: /\.js$/,
-    loader: 'babel-loader',
-    exclude: /node_modules/
+    loader: 'buble-loader',
+    exclude: /node_modules/,
+    options: {
+      objectAssign: 'Object.assign'
+    }
   },
   {
     test: /\.json$/,
