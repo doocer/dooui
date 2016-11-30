@@ -7,6 +7,7 @@ var vue = {}
 
 fs.readdirSync(DIR).forEach(name => {
   if (/\.vue$/.test(name)) {
+    console.log('Build: ' + name)
     var content = fs.readFileSync(path.join(DIR, name), 'utf8')
     content = content.replace('<template>', '')
     content = content.replace('</template>', '').trim()
