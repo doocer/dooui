@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --config config/webpack.dev.js --inline --hot",
-    "dist": "webpack --config config/webpack.dist.js --progress --hide-modules",
+    "min": "webpack --config config/webpack.min.js --progress --hide-modules",
+    "common": "webpack --config config/webpack.common.js --progress --hide-modules",
     "demo": "node scripts/build-demo.js"
   },
   "dependencies": {
