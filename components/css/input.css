@@ -20,7 +20,8 @@ input.du-input {
   border-color: var(--field-hover-border-color);
 }
 
-.du-input > input {
+.du-input > input,
+.du-input_inner > input {
   width: 100%;
   outline: 0;
   padding: 0;
@@ -41,4 +42,40 @@ input.du-input {
 
 .du-input .du-icon + input {
   padding-right: 20px;
+}
+
+.du-input_prepend {
+  background-color: var(--color-semi-white);
+  border-right: 1px solid var(--field-border-color);
+  border-radius: 3px 0 0 3px;
+}
+.du-input_append {
+  background-color: var(--color-semi-white);
+  border-left: 1px solid var(--field-border-color);
+  border-radius: 0 3px 3px 0;
+}
+.du-input_inner {
+  position: relative;
+  width: var(--field-width);
+}
+.du-input.Group {
+  display: table;
+  padding: 0;
+  width: auto;
+}
+.du-input.Group .du-input_prepend,
+.du-input.Group .du-input_inner,
+.du-input.Group .du-input_append {
+  display: table-cell;
+  padding: var(--field-padding) 10px;
+}
+.du-input.Disabled {
+  opacity: 0.6;
+}
+.du-input.Disabled input {
+  cursor: not-allowed;
+}
+.du-input.Disabled:hover {
+  border-color: var(--field-border-color);
+  cursor: not-allowed;
 }
