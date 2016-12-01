@@ -1,3 +1,11 @@
+@keyframes progress-bar-stripes {
+  0% {
+    background-position: 40px 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
 .du-progress {
   background: rgba(0, 0, 0, 0.05);
   height: 24px;
@@ -7,7 +15,10 @@
   height: 100%;
   transition: width 0.3s var(--ease-ant);
 }
-.Striped .du-progress_bar {
+.du-progress.Striped .du-progress_bar {
   background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
   background-size: 40px 40px;
+}
+.du-progress.Animate .du-progress_bar {
+  animation: progress-bar-stripes 2s linear infinite;
 }
