@@ -22,12 +22,7 @@
   --color-dark-yellow: #F1B52A;
   --color-dark-red: #F55826;
 
-  /* layout colors */
   --layout-base-bg: #eff4fb;
-  --layout-head-bg: var(--color-dark-blue);
-  --layout-head-fg: var(--color-white);
-  --layout-side-bg: var(--color-semi-black);
-  --layout-side-color: var(--color-semi-white);
 
   /* menu colors */
   --menu-head-color: rgba(255, 255, 255, 0.25);

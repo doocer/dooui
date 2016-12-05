@@ -7,6 +7,9 @@
   overflow: hidden;
   font-weight: 400;
 }
+.du-menu.Dark {
+  background-color: var(--color-semi-black);
+}
 .du-menu_head {
   padding: 10px 25px 10px 18px;
   box-sizing: border-box;

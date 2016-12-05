@@ -1,18 +1,25 @@
 <template>
-<div id="app" class="du-root">
-  <header class="du-layout-head">
+<div id="app" class="du-root" :class="{'Collapse': collapse}">
+  <div class="du-layout-main">
+    <header class="du-layout-head">
+      <nav>
+        <router-link to="/">Home</router-link>
+        <router-link to="/">Home</router-link>
+        <router-link to="/">Home</router-link>
+      </nav>
+    </header>
+    <router-view class="du-layout-content"></router-view>
+  </div>
+  <aside class="du-layout-side">
     <router-link to="/" class="du-layout-logo">
       <span>Doocer</span>
     </router-link>
-    Dashboard
-  </header>
-  <aside class="du-layout-side">
     <div class="du-scroll">
-      <du-menu title="Dashboard">
+      <du-menu class="Dark" title="Dashboard">
         <du-menu-item icon="fa fa-home" to="/">Home</du-menu-item>
         <du-menu-item icon="fa fa-graduation-cap" to="/design/">Design</du-menu-item>
       </du-menu>
-      <du-menu title="Documentation">
+      <du-menu class="Dark" title="Documentation">
         <du-menu-item icon="fa fa-television" to="/guide/">Guide</du-menu-item>
         <du-menu-tree icon="fa fa-th-large">
           <span slot="title">Basic</span>
@@ -63,9 +70,6 @@
       </du-menu>
     </div>
   </aside>
-  <div class="du-layout-main">
-    <router-view class="du-layout-content"></router-view>
-  </div>
 </div>
 </template>
 
@@ -74,7 +78,7 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      collapse: false
     }
   }
 }

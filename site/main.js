@@ -13,10 +13,11 @@ Vue.component('demo', Demo)
 Vue.component('doc-attrs', DocAttrs)
 Vue.component('doc-events', DocEvents)
 
+const RootApp = Vue.extend(App)
 const router = new VueRouter(routerConfig)
 
-new Vue({
+window.rootApp = new RootApp({
   el: '#app',
+  name: 'RootApp',
   router,
-  render: h => h(App)
 })
