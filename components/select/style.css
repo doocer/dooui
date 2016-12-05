@@ -116,7 +116,6 @@
 
 .du-select_options {
   position: relative;
-  max-height: 320px;
   overflow-y: auto;
   cursor: default;
 }

@@ -13,11 +13,13 @@
     <span class="du-select_placeholder" v-text="placeholder" v-else>
     </span>
     <i class="du-select_arrow" aria-hidden="true"></i>
-    <input class="du-select_input" type="text" :readonly="!canInput"
-      @click="toggle" v-model="query" ref="input" :name="name">
+    <input class="du-select_input" type="text" aria-haspopup="true"
+      :name="name" :aria-expanded="active" :readonly="!canInput"
+      @click="toggle" v-model="query" ref="input">
   </div>
-  <div class="du-select_dropdown" :aria-expanded="active">
-    <ul class="du-select_options" role="tree" ref="tree">
+  <div class="du-select_dropdown">
+    <ul class="du-select_options" role="tree" ref="tree"
+      :style="{'max-height':height}">
       <slot></slot>
       <li class="du-select_empty" v-if="!visibleOptions.length">
         <span v-text="emptyText"></span>
@@ -60,6 +62,10 @@ export default {
       type: Boolean,
       default: false
     },
+    showCount: {
+      type: Number,
+      default: 10
+    },
     emptyText: {
       type: String,
       default: 'empty'
@@ -76,6 +82,13 @@ export default {
     }
   },
   computed: {
+    height() {
+      if (!this.options.length) {
+        return ''
+      }
+      const el = this.options[0].$el
+      return el.clientHeight * this.showCount + 'px'
+    },
     canInput() {
       return this.remote || this.filter
     },
