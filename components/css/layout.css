@@ -24,13 +24,14 @@
   left: 0;
   bottom: 0;
   width: 230px;
-  color: var(--color-semi-white);
-  background-color: var(--color-semi-black);
   z-index: 980;
   transition: width 0.2s ease;
   box-sizing: border-box;
 }
-
+.du-layout-side.Dark {
+  color: var(--color-semi-white);
+  background-color: var(--color-semi-black);
+}
 .du-layout-main {
   padding: 0 0 0 230px;
   transition: padding-left 0.2s ease;

@@ -24,17 +24,6 @@
 
   --layout-base-bg: #eff4fb;
 
-  /* menu colors */
-  --menu-head-color: rgba(255, 255, 255, 0.25);
-  --menu-head-bg: rgba(0, 0, 0, 0.16);
-  --menu-text-color: var(--color-semi-gray);
-  --menu-active-color: var(--color-white);
-  --menu-border-color: var(--color-blue);
-  --menu-active-bg: rgba(0, 0, 0, 0.04);
-  --menu-hover-bg: rgba(0, 0, 0, 0.08);
-  --menu-group-color: var(--color-semi-silver);
-  --menu-group-bg: rgba(222, 222, 222, 0.04);
-
   /* text colors */
   --text-plain-color: #5e6d80;
   --text-bold-color: #323a44;

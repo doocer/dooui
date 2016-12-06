@@ -7,22 +7,17 @@
   overflow: hidden;
   font-weight: 400;
 }
-.du-menu.Dark {
-  background-color: var(--color-semi-black);
-}
 .du-menu_head {
   padding: 10px 25px 10px 18px;
   box-sizing: border-box;
   font-size: 12px;
-  background-color: var(--menu-head-bg);
-  color: var(--menu-head-color);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 .du-menu li > a,
 .du-menu li > span {
   display: block;
-  color: var(--menu-text-color);
+  color: inherit;
   text-decoration: none;
 }
 .du-menu > li > a,
@@ -38,28 +33,11 @@
 }
 .du-menu_group li {
   padding-left: 15px;
-  background-color: var(--menu-group-bg);
 }
 .du-menu_group > li > a {
   line-height: 1.42;
   padding: 6px 4px;
-  color: var(--menu-group-color);
-}
-.du-menu > li > a:hover,
-.du-menu > li > span:hover {
-  background-color: var(--menu-hover-bg);
-  border-color: var(--menu-border-color);
-}
-.du-menu > li.Active > a,
-.du-menu > li.Active > span {
-  color: var(--menu-active-color);
-  background-color: var(--menu-active-bg);
-  border-color: var(--menu-border-color);
-}
-.du-menu li a:hover,
-.du-menu li span:hover,
-.du-menu_group li.Active a {
-  color: var(--menu-active-color);
+  color: inherit;
 }
 .du-menu_title:after {
   display: table;
@@ -72,10 +50,69 @@
   margin-top: 6px;
   transform: rotate(-45deg);
 }
-.du-menu_tree .du-arrow:after {
-  border-top-color: var(--menu-text-color);
-  border-left-color: var(--menu-text-color);
-}
 .du-menu_tree.Open .du-arrow {
   transform: rotate(45deg);
+}
+
+.du-menu.Light {
+  color: var(--color-light-black);
+  background-color: var(--color-semi-white);
+}
+.du-menu.Light .du-menu_head {
+  color: var(--color-silver);
+}
+.du-menu.Light .du-menu_group li {
+  background-color: rgba(20, 20, 20, 0.02);
+}
+.du-menu.Light .du-arrow:after {
+  border-top-color: var(--color-light-black);
+  border-left-color: var(--color-light-black);
+}
+.du-menu.Light > li.Active > a,
+.du-menu.Light > li.Active > span {
+  background-color: rgba(0, 0, 0, 0.04);
+  border-color: var(--color-blue);
+}
+.du-menu.Light li a:hover,
+.du-menu.Light li span:hover,
+.du-menu.Light .du-menu_group li.Active a {
+  color: var(--color-semi-black);
+}
+.du-menu.Light > li > a:hover,
+.du-menu.Light > li > span:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+  border-color: var(--color-dark-blue);
+}
+
+.du-menu.Dark {
+  color: var(--color-semi-gray);
+  background-color: var(--color-semi-black);
+}
+.du-menu.Dark .du-menu_head {
+  background-color: rgba(0, 0, 0, 0.16);
+  color: rgba(255, 255, 255, 0.25);
+}
+.du-menu.Dark .du-menu_group li {
+  color: var(--color-semi-silver);
+  background-color: rgba(222, 222, 222, 0.04);
+}
+.du-menu.Dark .du-arrow:after {
+  border-top-color: var(--color-semi-gray);
+  border-left-color: var(--color-semi-gray);
+}
+.du-menu.Dark > li.Active > a,
+.du-menu.Dark > li.Active > span {
+  color: var(--color-white);
+  background-color: rgba(0, 0, 0, 0.04);
+  border-color: var(--color-blue);
+}
+.du-menu.Dark li a:hover,
+.du-menu.Dark li span:hover,
+.du-menu.Dark .du-menu_group li.Active a {
+  color: var(--color-white);
+}
+.du-menu.Dark > li > a:hover,
+.du-menu.Dark > li > span:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  border-color: var(--color-dark-blue);
 }
