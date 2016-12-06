@@ -52,7 +52,7 @@ export const xAxis = {
       validator: choiceValidate(NAME_LOCATIONS)
     }
   },
-  mounted() {
+  created() {
     this.$parent.setOption('xAxis', this.chartOption)
   }
 }
@@ -72,7 +72,7 @@ export const yAxis = {
       validator: choiceValidate(NAME_LOCATIONS)
     }
   },
-  mounted() {
+  created() {
     this.$parent.setOption('yAxis', this.chartOption)
   }
 }

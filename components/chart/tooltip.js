@@ -1,5 +1,9 @@
+import {optionMixin} from './mixins'
+
 export default {
   name: 'du-chart-tooltip',
+  chartOption: 'tooltip',
+  mixins: [optionMixin],
   props: {
     showContent: {
       type: Boolean,
@@ -43,8 +47,14 @@ export default {
     formatter: {
       type: [String, Function]
     },
-    backgroundColor: String,
-    borderColor: String,
+    backgroundColor: {
+      type: String,
+      default: 'rgba(50,50,50,0.7)'
+    },
+    borderColor: {
+      type: String,
+      default: '#333'
+    },
     borderWidth: {
       type: Number,
       default: 0
@@ -56,18 +66,24 @@ export default {
   },
   computed: {
     chartOption() {
-      var rv = {show: true}
-      var props = this.$options.propsData
-      Object.keys(props).forEach(k => {
-        rv[k] = props[k]
-      })
-      return rv
+      return {
+        show: true,
+        showContent: this.showContent,
+        trigger: this.trigger,
+        triggerOn: this.triggerOn,
+        alwaysShowContent: this.alwaysShowContent,
+        showDelay: this.showDelay,
+        hideDelay: this.hideDelay,
+        enterable: this.enterable,
+        position: this.position,
+        confine: this.confine,
+        transitionDuration: this.transitionDuration,
+        formatter: this.formatter,
+        backgroundColor: this.backgroundColor,
+        borderColor: this.borderColor,
+        borderWidth: this.borderWidth,
+        padding: this.padding,
+      }
     }
-  },
-  render(h) {
-    return
-  },
-  mounted() {
-    this.$parent.setOption('tooltip', this.chartOption)
   }
 }

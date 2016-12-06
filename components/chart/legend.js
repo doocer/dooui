@@ -9,7 +9,7 @@ export default {
       }
     }
   },
-  mounted() {
+  created() {
     this.$parent.setOption('legend', this.chartOption)
   }
 }

@@ -48,8 +48,18 @@ export const seriesMixin = {
   render(h) {
     return
   },
-  mounted() {
+  created() {
     this.$parent.series.push(this.seriesOption)
     this.id = this.$parent.series.length
+  }
+}
+
+export const optionMixin = {
+  render(h) {
+    return
+  },
+  created() {
+    const name = this.$options.chartOption
+    this.$parent.setOption(name, this.chartOption)
   }
 }
