@@ -1,10 +1,10 @@
 <template>
-<div class="du-scroll">
-  <du-menu class="Dark" title="Dashboard">
+<div class="du-layout-sidenav">
+  <du-menu :class="{Dark: dark}" title="Dashboard">
     <du-menu-item icon="fa fa-home" to="/">Home</du-menu-item>
     <du-menu-item icon="fa fa-graduation-cap" to="/design/">Design</du-menu-item>
   </du-menu>
-  <du-menu class="Dark" title="Documentation">
+  <du-menu :class="{Dark: dark}" title="Documentation">
     <du-menu-item icon="fa fa-television" to="/guide/">Guide</du-menu-item>
     <du-menu-tree icon="fa fa-th-large">
       <span slot="title">Basic</span>
@@ -56,3 +56,11 @@
   </du-menu>
 </div>
 </template>
+
+<script>
+export default {
+  props: {
+    dark: Boolean,
+  }
+}
+</script>

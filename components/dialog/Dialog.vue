@@ -15,7 +15,7 @@
     </div>
     <div class="du-dialog_foot">
       <slot name="foot">
-        <button class="du-button Line Red" v-text="cancelText"
+        <button class="du-button Line" v-text="cancelText"
           v-if="cancelText" @click="clickCancel"></button>
         <button class="du-button Blue" v-text="confirmText"
           @click="clickConfirm"></button>

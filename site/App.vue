@@ -10,13 +10,13 @@
     </header>
     <router-view class="du-layout-content"></router-view>
   </div>
-  <aside class="du-layout-side Dark">
+  <aside class="du-layout-side" :class="{'Dark': dark}">
     <router-link to="/" class="du-layout-logo">
       <span>Doocer</span>
     </router-link>
-    <side-nav></side-nav>
-    <div>
-      <du-switch></du-switch>
+    <side-nav :dark="dark"></side-nav>
+    <div class="du-layout-bottom">
+      <du-switch v-model="dark"></du-switch>
     </div>
   </aside>
 </div>
@@ -28,6 +28,7 @@ export default {
   components: {SideNav},
   data () {
     return {
+      dark: true,
       collapse: false
     }
   }

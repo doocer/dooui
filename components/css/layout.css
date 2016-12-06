@@ -6,7 +6,11 @@
 }
 
 .du-layout-logo {
+  position: absolute;
   display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 50px;
   line-height: 50px;
   color: white;
@@ -17,16 +21,34 @@
   font-weight: 500;
   font-size: 18px;
 }
+.du-layout-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
 
 .du-layout-side {
   position: fixed;
+  padding-top: 50px;
+  padding-bottom: 50px;
   top: 0;
   left: 0;
-  bottom: 0;
   width: 230px;
+  height: 100%;
   z-index: 980;
   transition: width 0.2s ease;
   box-sizing: border-box;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.04);
+}
+.du-layout-sidenav {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
 }
 .du-layout-side.Dark {
   color: var(--color-semi-white);

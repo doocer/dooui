@@ -23,10 +23,3 @@ h1, h2, h3, h4, h5, strong {
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
 }
-
-.du-scroll {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
-}
