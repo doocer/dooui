@@ -8,11 +8,16 @@
     <h2>Button Badges</h2>
     <p>Badges can be located in buttons. Use <code>&lt;sup&gt;</code> tag to locate badges to the right top of buttons.</p>
   </demo>
+  <demo file="badge-2.vue">
+    <h2>Labels</h2>
+    <p>A badge with class <code>.Label</code> will be a label. Labels can be colorized.</p>
+  </demo>
 </div>
 </template>
 
 <style>
-.mixed-badges .du-button + .du-button {
-  margin-left: 20px;
+.mixed-badges .du-button {
+  margin-bottom: 20px;
+  margin-right: 20px;
 }
 </style>

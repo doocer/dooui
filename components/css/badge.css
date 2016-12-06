@@ -9,6 +9,11 @@
   background-color: var(--color-silver);
   border-radius: 10px;
 }
+.du-badge.Label {
+  font-weight: 500;
+  border-radius: 3px;
+  padding: 4px 8px;
+}
 .du-badge.Blue {
   background-color: var(--color-blue);
 }
