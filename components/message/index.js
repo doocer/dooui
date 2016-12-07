@@ -7,13 +7,14 @@ function install(Vue) {
   document.body.appendChild(instance.$el)
 
   var options = {
-    duration: 4500
+    top: 24,
+    duration: 2.5
   }
 
   function message(text, type, duration) {
     type = type || 'info'
     duration = duration || options.duration
-    return instance.flash(text, type, duration)
+    return instance.flash(text, type, duration, options.top + 'px')
   }
 
   message.config = function(conf) {
@@ -33,6 +34,9 @@ function install(Vue) {
   }
   message.error = function(text, duration) {
     return message(text, 'error', duration)
+  }
+  message.clear = function(id) {
+    return instance.clear(id)
   }
 
   Vue.mixin({
