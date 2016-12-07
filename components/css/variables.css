@@ -1,15 +1,14 @@
 :root {
-  /* grayscale */
+  /* https://en.wikipedia.org/wiki/Shades_of_gray */
+  --color-dark: #36495D;
+  --color-dimgray: #5E6D80;
+  --color-gray: #8492A6;
+  --color-silver: #C0CCDA;
+  --color-lightgray: #D3DCE6;
+  --color-milk: #F9FAFC;
+
   --color-white: #FFFFFF;
-  --color-semi-white: #F9FAFC;
-  --color-gray: #D3DCE6;
   --color-semi-gray: #E5E9F2;
-  --color-light-gray: #EFF2F7;
-  --color-silver: #8492A6;
-  --color-semi-silver: #99A9BF;
-  --color-light-silver: #C0CCDA;
-  --color-black: #1F2D3D;
-  --color-semi-black: #36495D;
   --color-light-black: #475669;
 
   /* main colors */
@@ -31,9 +30,8 @@
 
   /* utilities */
   --box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-  --line-color: var(--color-gray);
+  --line-color: var(--color-lightgray);
   --line-light-color: var(--color-semi-gray);
-  --line-dark-color: var(--color-light-silver);
   --focus-bg-color: var(--color-blue);
   --focus-fg-color: white;
 
@@ -42,8 +40,8 @@
   --field-height: 24px;
   --field-padding: 4px;
   --field-line-height: 24px;
-  --field-border-color: var(--color-gray);
-  --field-hover-border-color: var(--color-semi-silver);
+  --field-border-color: var(--color-lightgray);
+  --field-hover-border-color: var(--color-silver);
   --field-option-active-fg: var(--color-white);
   --field-option-active-bg: var(--color-blue);
 

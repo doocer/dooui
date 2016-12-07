@@ -51,8 +51,8 @@
   overflow-y: auto;
 }
 .du-layout-side.Dark {
-  color: var(--color-semi-white);
-  background-color: var(--color-semi-black);
+  color: var(--color-milk);
+  background-color: var(--color-dark);
 }
 .du-layout-main {
   padding: 0 0 0 230px;

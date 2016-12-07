@@ -23,6 +23,31 @@
   </du-box>
   <du-box>
     <div slot="head">Grayscale</div>
+    <du-row :gutter="10" :gap="10">
+      <du-col :span="3">
+        <div class="color-block" style="background:#36495D">Dark<em>#36495D</em></div>
+      </du-col>
+      <du-col :span="3">
+        <div class="color-block" style="background:#5E6D80">Dimgray<em>#5E6D80</em></div>
+      </du-col>
+      <du-col :span="3">
+        <div class="color-block" style="background:#8492A6">Gray<em>#8492A6</em></div>
+      </du-col>
+      <du-col :span="3">
+        <div class="color-block" style="background:#C0CCDA">Silver<em>#C0CCDA</em></div>
+      </du-col>
+    </du-row>
+    <du-row class="White" :gutter="10" :gap="10">
+      <du-col :span="3">
+        <div class="color-block" style="background:#D3DCE6">Lightgray<em>#D3DCE6</em></div>
+      </du-col>
+      <du-col :span="3">
+        <div class="color-block" style="background:#F9FAFC">Milk<em>#F9FAFC</em></div>
+      </du-col>
+      <du-col :span="3">
+        <div class="color-block" style="border-color:#D3DCE6">White<em>#FFFFFF</em></div>
+      </du-col>
+    </du-row>
   </du-box>
 </div>
 </template>
@@ -36,12 +61,18 @@
   font-size: 14px;
   font-weight: 400;
   white-space: nowrap;
+  border: 1px solid transparent;
+}
+.White .color-block {
+  color: var(--text-plain-color);
 }
 .color-block:first-of-type {
-  border-radius: 5px 5px 0 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .color-block:last-of-type {
-  border-radius: 0 0 5px 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .color-block em {
   font-size: 13px;

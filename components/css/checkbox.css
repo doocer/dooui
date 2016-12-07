@@ -85,7 +85,7 @@ input.du-checkbox:disabled:after,
 .du-checkbox.Disabled .du-checkbox_box {
   opacity: 0.6;
   border-color: var(--field-border-color);
-  background-color: var(--color-light-gray);
+  background-color: var(--color-milk);
 }
 
 .du-checkbox_box {

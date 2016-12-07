@@ -1,5 +1,5 @@
 .du-box {
-  border-top: 3px solid var(--color-silver);
+  border-top: 3px solid var(--color-gray);
   box-shadow: var(--box-shadow);
   background-color: var(--color-white);
   border-radius: 2px;

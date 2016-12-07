@@ -46,12 +46,12 @@ input.du-input {
 }
 
 .du-input_prepend {
-  background-color: var(--color-semi-white);
+  background-color: var(--color-milk);
   border-right: 1px solid var(--field-border-color);
   border-radius: 3px 0 0 3px;
 }
 .du-input_append {
-  background-color: var(--color-semi-white);
+  background-color: var(--color-milk);
   border-left: 1px solid var(--field-border-color);
   border-radius: 0 3px 3px 0;
 }

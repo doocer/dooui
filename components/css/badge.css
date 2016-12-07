@@ -6,7 +6,7 @@
   line-height: 1;
   font-size: 12px;
   color: var(--color-white);
-  background-color: var(--color-silver);
+  background-color: var(--color-gray);
   border-radius: 10px;
 }
 .du-badge.Label {

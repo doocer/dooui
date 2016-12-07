@@ -44,8 +44,8 @@ export default {
   width: 42px;
   border-radius: 24px;
   box-sizing: border-box;
-  background: var(--color-gray);
-  border: solid 2px var(--color-gray);
+  background: var(--color-lightgray);
+  border: solid 2px var(--color-lightgray);
   cursor: pointer;
   vertical-align: middle;
   pointer-events: auto;
@@ -81,6 +81,6 @@ export default {
   transform: translate3d(18px, 0, 0);
 }
 .du-switch.Disabled .du-switch_handle {
-  background: var(--color-semi-white);
+  background: var(--color-milk);
 }
 </style>

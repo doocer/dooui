@@ -76,7 +76,7 @@ input.du-radio:disabled:after,
 .du-radio.Disabled .du-radio_box {
   opacity: 0.6;
   border-color: var(--field-border-color);
-  background-color: var(--color-light-gray);
+  background-color: var(--color-milk);
 }
 
 .du-radio_box {

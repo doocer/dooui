@@ -56,10 +56,10 @@
 
 .du-menu.Light {
   color: var(--color-light-black);
-  background-color: var(--color-semi-white);
+  background-color: var(--color-milk);
 }
 .du-menu.Light .du-menu_head {
-  color: var(--color-silver);
+  color: var(--color-gray);
 }
 .du-menu.Light .du-menu_group li {
   background-color: rgba(20, 20, 20, 0.02);
@@ -76,7 +76,7 @@
 .du-menu.Light li a:hover,
 .du-menu.Light li span:hover,
 .du-menu.Light .du-menu_group li.Active a {
-  color: var(--color-semi-black);
+  color: var(--color-dark);
 }
 .du-menu.Light > li > a:hover,
 .du-menu.Light > li > span:hover {
@@ -85,20 +85,20 @@
 }
 
 .du-menu.Dark {
-  color: var(--color-semi-gray);
-  background-color: var(--color-semi-black);
+  color: var(--color-milk);
+  background-color: var(--color-dark);
 }
 .du-menu.Dark .du-menu_head {
   background-color: rgba(0, 0, 0, 0.16);
   color: rgba(255, 255, 255, 0.25);
 }
 .du-menu.Dark .du-menu_group li {
-  color: var(--color-semi-silver);
+  color: var(--color-gray);
   background-color: rgba(222, 222, 222, 0.04);
 }
 .du-menu.Dark .du-arrow:after {
-  border-top-color: var(--color-semi-gray);
-  border-left-color: var(--color-semi-gray);
+  border-top-color: var(--color-milk);
+  border-left-color: var(--color-milk);
 }
 .du-menu.Dark > li.Active > a,
 .du-menu.Dark > li.Active > span {
