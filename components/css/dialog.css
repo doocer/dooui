@@ -83,7 +83,7 @@
 .du-dialog.dialog-enter-active,
 .du-dialog.dialog-leave-active,
 .dialog-enter-active .du-dialog_content {
-  transition: all 0.3s var(--ease-ant);
+  transition: all 0.3s var(--ease-in-out);
 }
 .du-dialog.dialog-enter, 
 .du-dialog.dialog-leave-active {

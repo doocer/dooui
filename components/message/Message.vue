@@ -1,11 +1,19 @@
 <template>
 <transition-group id="du-message-wrap" name="message" tag="div" aria-live="assertive">
-  <div class="du-message" :class="cap(msg.type)" v-for="msg in messages" :key="msg.id" v-text="msg.text">
+  <div class="du-message" :class="msg.type" v-for="msg in messages" :key="msg.id">
+    <span class="du-message_text" v-text="msg.text"></span>
   </div>
 </transition-group>
 </template>
 
 <script>
+const TYPES = {
+  info: 'Info',
+  success: 'Success',
+  warn: 'Warn',
+  warning: 'Warn',
+  error: 'Error',
+}
 export default {
   data() {
     return {
@@ -14,13 +22,10 @@ export default {
     }
   },
   methods: {
-    cap(name) {
-      return name.charAt(0).toUpperCase() + name.slice(1)
-    },
     flash(text, type, duration) {
       this.count += 1
       var id = this.count
-      this.messages.push({id, text, type})
+      this.messages.push({id, text, type: TYPES[type]})
       setTimeout(() => {
         this.clear(id)
       }, duration)

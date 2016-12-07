@@ -18,7 +18,7 @@
   height: 2px;
   background-color: var(--color-blue);
   z-index: 1;
-  transition: all 0.3s var(--ease-ant);
+  transition: all 0.3s var(--ease-in-out);
 }
 .du-tab_tab {
   display: inline-block;
@@ -34,7 +34,7 @@
 .du-tab_content {
   display: flex;
   flex-direction: row;
-  transition: transform 0.3s var(--ease-ant);
+  transition: transform 0.3s var(--ease-in-out);
 }
 .du-tab_item {
   flex-shrink: 0;

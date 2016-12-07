@@ -17,10 +17,10 @@ export default {
       this.$message('A success message with green border', 'success')
     },
     warn() {
-      this.$message('Warn messages have yellow border', 'warn')
+      this.$message.warn('Warn messages have yellow border')
     },
     error() {
-      this.$message('Red border is for error messages', 'error')
+      this.$message.error('Red border is for error messages')
     },
   }
 }
