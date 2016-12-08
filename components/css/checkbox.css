@@ -71,7 +71,8 @@ input.du-checkbox:checked:after,
 }
 input.du-checkbox:disabled,
 .du-checkbox > input:disabled,
-.du-checkbox.Disabled .du-checkbox_box {
+.du-checkbox.Disabled {
+  opacity: 0.6;
   cursor: not-allowed;
 }
 input.du-checkbox:disabled:before,
@@ -83,7 +84,6 @@ input.du-checkbox:disabled:before,
 input.du-checkbox:disabled:after,
 .du-checkbox > input:disabled:after,
 .du-checkbox.Disabled .du-checkbox_box {
-  opacity: 0.6;
   border-color: var(--field-border-color);
   background-color: var(--color-milk);
 }

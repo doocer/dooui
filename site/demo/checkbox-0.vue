@@ -6,10 +6,10 @@
 <label class="du-checkbox">
   <input type="checkbox" value="Two" v-model="checked">Two
 </label>
-<label class="du-checkbox">
+<label class="du-checkbox Disabled">
   <input type="checkbox" value="Three" disabled v-model="checked">Three
 </label>
-<label class="du-checkbox">
+<label class="du-checkbox Disabled">
   <input type="checkbox" disabled checked>
 </label>
 <p>Checked: {{checked}}</p>

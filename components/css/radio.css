@@ -68,13 +68,13 @@ input.du-radio:checked:after,
 }
 input.du-radio:disabled,
 .du-radio > input:disabled,
-.du-radio.Disabled .du-radio_box {
+.du-radio.Disabled {
+  opacity: 0.6;
   cursor: not-allowed;
 }
 input.du-radio:disabled:after,
 .du-radio > input:disabled:after,
 .du-radio.Disabled .du-radio_box {
-  opacity: 0.6;
   border-color: var(--field-border-color);
   background-color: var(--color-milk);
 }

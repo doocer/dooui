@@ -6,7 +6,7 @@
 <label class="du-radio">
   <input type="radio" value="Two" v-model="picked">Two
 </label>
-<label class="du-radio">
+<label class="du-radio Disabled">
   <input type="radio" value="Three" disabled v-model="picked">Three
 </label>
 <p>Picked: {{picked}}</p>
