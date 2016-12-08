@@ -1,7 +1,9 @@
 import grid from './grid'
 import menu from './menu'
 import box from './box'
+import connect from './connect'
 import picker from './picker'
+import popover from './popover'
 import input from './input'
 // switch is a keyword
 import _switch from './switch'
@@ -18,10 +20,12 @@ import chart from './chart'
 
 
 function install(Vue) {
+  Vue.use(connect)
   Vue.use(grid)
   Vue.use(menu)
   Vue.use(box)
   Vue.use(picker)
+  Vue.use(popover)
   Vue.use(input)
   Vue.use(_switch)
   Vue.use(select)
