@@ -42,7 +42,10 @@
   box-sizing: border-box;
   user-select: none;
 }
-
+.du-month-picker_overlay {
+  position: absolute;
+  width: 220px;
+}
 .du-month-calendar {
   min-width: 220px;
   background: white;

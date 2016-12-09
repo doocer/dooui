@@ -1,26 +1,34 @@
 <template>
-<du-picker class="du-month-picker" @keydown.native="keypress" ref="popup">
+<div class="du-month-picker" @keydown="keypress">
   <span class="du-month-picker_box">
     <i class="du-icon" :class="icon" aria-hidden="true" v-if="icon"></i>
     <input type="text" :name="name" :value="display"
-      :placeholder="placeholder" @click="toggle" ref="input" readonly>
+      :placeholder="placeholder" ref="input" readonly>
   </span>
-  <du-month-calendar slot="overlay" ref="calendar"
-    :year="year" :month="month" :locale="locale"
-    @change="change" @select="select" tabindex="0">
-  </du-month-calendar>
-</du-picker>
+  <div class="du-month-picker_overlay"
+    v-show="visible" ref="pop" :style="style">
+    <du-month-calendar :year="year" :month="month" :locale="locale"
+      @change="change" @select="select" tabindex="0">
+    </du-month-calendar>
+  </div>
+</div>
 </template>
 
 <script>
+import mixin from '../connect/mixin'
 export default {
   name: 'du-month-picker',
+  mixins: [mixin],
   props: {
     name: String,
     placeholder: String,
     icon: String,
     value: String,
     locale: String,
+    placement: {
+      type: String,
+      default: 'bottom-left'
+    }
   },
   watch: {
     value: {
@@ -52,7 +60,6 @@ export default {
       this.month = ym[1]
     },
     select() {
-      this.$refs.popup.toggleOff()
       this.$nextTick(() => {
         this.selected = [this.year, this.month]
         this.$emit('input', _format(this.year, this.month))
@@ -60,11 +67,11 @@ export default {
       this.$refs.input.focus()
     },
     keypress(e) {
-      this.$refs.calendar.keypress(e)
+      this.$refs.pop.keypress(e)
     },
-    toggle() {
-      this.$refs.popup.toggle()
-    }
+  },
+  mounted() {
+    this.connect(this.$refs.input)
   }
 }
 
