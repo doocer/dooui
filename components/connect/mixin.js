@@ -5,7 +5,8 @@ var VM_MAP = {}
 listen(document, 'click', (e) => {
   Object.keys(VM_MAP).forEach(ident => {
     var vm = VM_MAP[ident]
-    if (vm.$refs.pop.contains(e.target) || vm.refEl.contains(e.target)) {
+    const pop = getElement(vm.$refs.pop)
+    if (pop.contains(e.target) || vm.refEl.contains(e.target)) {
       return
     }
     vm.visible = false
@@ -47,7 +48,8 @@ export default {
       const right = left + refRect.width
       const bottom = top + refRect.height
 
-      const popRect = this.$refs.pop.getBoundingClientRect()
+      const pop = getElement(this.$refs.pop)
+      const popRect = pop.getBoundingClientRect()
 
       var placement = this.placement.toLowerCase()
       const gap = this.$options.gap
@@ -128,7 +130,8 @@ export default {
     },
     show() {
       if (!this._inserted) {
-        document.body.appendChild(this.$refs.pop)
+        const pop = getElement(this.$refs.pop)
+        document.body.appendChild(pop)
         this._inserted = true
       }
       Z_INDEX += 1
@@ -147,11 +150,6 @@ export default {
         this.show()
       }
     },
-    delayHide() {
-      setTimeout(() => {
-        this.hide()
-      }, 200)
-    },
     connect(el, vnode) {
       this.refEl = el
       VM_MAP[this._id] = this
@@ -161,8 +159,9 @@ export default {
     },
   },
   beforeDestroy() {
-    if (this.$refs.pop && this.$refs.pop.parentNode === document.body) {
-      document.body.removeChild(this.$refs.pop)
+    const pop = getElement(this.$refs.pop)
+    if (pop && pop.parentNode === document.body) {
+      document.body.removeChild(pop)
     }
   },
   destroyed() {
@@ -187,4 +186,11 @@ function unlisten(el, event, handler) {
   } else if (el.detachEvent) {
     el.detachEvent('on' + event, handler)
   }
+}
+
+function getElement(ref) {
+  if (ref.$el) {
+    return ref.$el
+  }
+  return ref
 }
