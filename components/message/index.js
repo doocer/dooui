@@ -4,14 +4,17 @@ function install(Vue) {
   const Message = Vue.extend(MessageComponent)
   const instance = new Message()
   instance.$mount()
-  document.body.appendChild(instance.$el)
-
+  var mounted = false
   var options = {
     top: 24,
     duration: 2.5
   }
 
   function message(text, type, duration) {
+    if (!mounted) {
+      document.body.appendChild(instance.$el)
+      mounted = true
+    }
     type = type || 'info'
     duration = duration || options.duration
     return instance.flash(text, type, duration, options.top + 'px')
