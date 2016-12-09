@@ -31,8 +31,7 @@ export default {
       altPlacement: this.placement,
       refEl: null,
       visible: false,
-      style: {},
-      zIndex: Z_INDEX
+      style: {}
     }
   },
   methods: {
@@ -69,6 +68,7 @@ export default {
           rv.top = bottom + gap
         }
         rv.top += 'px'
+        rv.zIndex = Z_INDEX
         this.style = rv
       }
       const hStyle = (placement) => {
@@ -87,6 +87,7 @@ export default {
           rv.left = right + gap
         }
         rv.left += 'px'
+        rv.zIndex = Z_INDEX
         this.style = rv
       }
 
@@ -131,7 +132,6 @@ export default {
         this._inserted = true
       }
       Z_INDEX += 1
-      this.zIndex = Z_INDEX
       this.visible = true
       if (this.refEl) {
         this.$nextTick(this.updatePosition)

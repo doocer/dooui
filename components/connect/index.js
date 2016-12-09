@@ -2,7 +2,7 @@ const connect = {
   bind(el, binding, vnode) {
     vnode.context.$nextTick(() => {
       const comp = vnode.context.$refs[binding.arg]
-      comp.connect(el, vnode)
+      comp && comp.connect(el, vnode)
     })
   }
 }

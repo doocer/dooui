@@ -1,5 +1,5 @@
 <template>
-<div style="display:none">
+<div class="du-popover_wrap">
   <div class="du-popover" :class="altPlacement" :style="style"
     v-show="visible" ref="pop">
     <div class="du-popover_inner">
@@ -12,6 +12,7 @@
     </div>
     <span class="du-popover_arrow"></span>
   </div>
+  <slot></slot>
 </div>
 </template>
 
@@ -33,6 +34,9 @@ export default {
 </script>
 
 <style>
+.du-popover_wrap {
+  display: inline-block;
+}
 .du-popover {
   position: absolute;
   min-width: 110px;
