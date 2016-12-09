@@ -1,5 +1,5 @@
 <template>
-<span class="du-select"
+<div class="du-select"
   :class="{'Active': active, 'Input': canInput, 'Inputing': isInputing}"
   v-out:click="toggleOff" @keydown="keypress"
   @compositionstart="composing=true"
@@ -26,7 +26,7 @@
       </li>
     </ul>
   </div>
-</span>
+</div>
 </template>
 
 <script>
