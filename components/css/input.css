@@ -80,3 +80,12 @@ input.du-input {
   border-color: var(--field-border-color);
   cursor: not-allowed;
 }
+
+.du-input_prepend .du-select {
+  margin: -4px -10px;
+  width: auto;
+}
+.du-input_prepend .du-select_box {
+  border: 0;
+  background-color: inherit;
+}
