@@ -3,7 +3,7 @@
   <span class="du-menu_title" @click.prevent="open = !open">
     <i class="du-icon" :class="icon" aria-hidden="true" v-if="icon"></i>
     <span class="du-menu_text">
-      <slot name="title"></slot>
+      <slot name="title">{{title}}</slot>
       <i class="du-arrow"></i>
     </span>
   </span>
@@ -18,6 +18,7 @@ export default {
   name: 'du-menu-tree',
   props: {
     icon: String,
+    title: String,
   },
   data() {
     return {
