@@ -1,14 +1,14 @@
 <template>
 <div class="du-month-picker" @keydown="keypress">
-  <span class="du-month-picker_box">
+  <span class="du-month-picker_box" ref="box">
     <i class="du-icon" :class="icon" aria-hidden="true" v-if="icon"></i>
     <input type="text" :name="name" :value="display"
       :placeholder="placeholder" ref="input" readonly>
   </span>
-  <div class="du-month-picker_overlay"
-    v-show="visible" ref="pop" :style="style">
+  <div class="du-month-picker_overlay" v-show="visible"
+    ref="pop" :style="style">
     <du-month-calendar :year="year" :month="month" :locale="locale"
-      @change="change" @select="select" tabindex="0">
+      @change="change" @select="select" tabindex="0" ref="ca">
     </du-month-calendar>
   </div>
 </div>
@@ -67,11 +67,11 @@ export default {
       this.$refs.input.focus()
     },
     keypress(e) {
-      this.$refs.pop.keypress(e)
+      this.$refs.ca.keypress(e)
     },
   },
   mounted() {
-    this.connect(this.$refs.input)
+    this.connect(this.$refs.box)
   }
 }
 

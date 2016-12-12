@@ -27,7 +27,7 @@ export default {
   },
   data() {
     return {
-      _id: ID_COUNT++,
+      id: ID_COUNT++,
       _inserted: false,
       altPlacement: this.placement,
       refEl: null,
@@ -152,7 +152,7 @@ export default {
     },
     connect(el, vnode) {
       this.refEl = el
-      VM_MAP[this._id] = this
+      VM_MAP[this.id] = this
       if (this.trigger === 'click') {
         listen(el, 'click', this.toggle)
       }
@@ -165,7 +165,7 @@ export default {
     }
   },
   destroyed() {
-    delete VM_MAP[this._id]
+    delete VM_MAP[this.id]
     if (this.refEl) {
       unlisten(this.refEl, 'click', this.toggle)
     }
