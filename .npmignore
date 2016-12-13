@@ -1,0 +1,10 @@
+.DS_Store
+components/
+config/
+node_modules/
+public/
+scripts/
+site/
+npm-debug.log
+index.html
+Makefile
