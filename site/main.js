@@ -16,6 +16,18 @@ Vue.component('doc-events', DocEvents)
 const RootApp = Vue.extend(App)
 const router = new VueRouter(routerConfig)
 
+router.afterEach((to) => {
+  if (to.path === '/') {
+    document.title = 'dooui'
+  } else {
+    var title = to.path.replace(/\//g, '')
+    title = title.split('-').map(t => {
+      return t.charAt(0).toUpperCase() + t.substr(1)
+    }).join(' ')
+    document.title = 'dooui - ' + title
+  }
+})
+
 window.rootApp = new RootApp({
   el: '#app',
   name: 'RootApp',

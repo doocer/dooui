@@ -38,7 +38,7 @@ const routes = [
   {path: '/checkbox/', component: Checkbox},
   {path: '/switch/', component: Switch},
   {path: '/select/', component: Select},
-  {path: '/monthpicker/', component: Monthpicker},
+  {path: '/month-picker/', component: Monthpicker},
   {path: '/breadcrumb/', component: Breadcrumb},
   {path: '/tab/', component: Tab},
   {path: '/menu/', component: Menu},

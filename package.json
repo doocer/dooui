@@ -1,8 +1,12 @@
 {
   "name": "dooui",
+  "version": "0.1.0-pre",
   "description": "A dashboard ui for admin sites built with Vue.js",
   "author": "Hsiaoming Yang <me@lepture.com>",
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/doocer/dooui.git"
+  },
   "scripts": {
     "dev": "webpack-dev-server --config config/webpack.dev.js --inline --hot",
     "build-min": "webpack --config config/webpack.min.js --progress --hide-modules",

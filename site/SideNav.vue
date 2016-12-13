@@ -32,7 +32,7 @@
       <du-menu-item to="/slider/">Slider</du-menu-item>
       <du-menu-item to="/select/">Select</du-menu-item>
       <du-menu-item to="/autocomplete/">Autocomplete</du-menu-item>
-      <du-menu-item to="/monthpicker/">Month Picker</du-menu-item>
+      <du-menu-item to="/month-picker/">Month Picker</du-menu-item>
     </du-menu-tree>
     <du-menu-tree icon="fa fa-table" title="Data Display">
       <du-menu-item to="/progress/">Progress</du-menu-item>
