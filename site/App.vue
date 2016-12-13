@@ -16,7 +16,7 @@
     </router-link>
     <side-nav :dark="dark"></side-nav>
     <div class="du-layout-bottom">
-      <du-switch v-model="dark"></du-switch>
+      <p>Created by <a href="http://lepture.com">Hsiaoming Yang</a></p>
     </div>
   </aside>
 </div>

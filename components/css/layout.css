@@ -49,6 +49,9 @@
   padding: 10px 15px;
   box-sizing: border-box;
 }
+.du-layout-bottom a {
+  color: var(--color-white);
+}
 
 .du-layout-side {
   position: fixed;

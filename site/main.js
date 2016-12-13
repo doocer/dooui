@@ -26,6 +26,8 @@ router.afterEach((to) => {
     }).join(' ')
     document.title = 'dooui - ' + title
   }
+  ga('set', 'page', to.path)
+  ga('send', 'pageview')
 })
 
 window.rootApp = new RootApp({
