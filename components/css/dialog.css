@@ -24,7 +24,7 @@
   box-sizing: border-box;
   border-radius: 3px;
   box-shadow: var(--box-shadow);
-  border-top: 4px solid var(--color-lightgray);
+  border-top: 4px solid var(--color-gray);
   z-index: 2;
 }
 .du-dialog.Blue .du-dialog_content {
@@ -46,7 +46,7 @@
 }
 .du-dialog_head {
   position: relative;
-  border-bottom: 1px solid var(--line-color);
+  border-bottom: 1px solid var(--color-border);
 }
 .du-dialog_title {
   font-weight: 600;

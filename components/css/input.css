@@ -3,7 +3,7 @@
   width: var(--field-width);
   box-sizing: border-box;
   line-height: var(--field-line-height);
-  border: 1px solid var(--field-border-color);
+  border: 1px solid var(--color-border);
   padding: var(--field-padding) 10px;
   border-radius: 3px;
   background-color: white;
@@ -17,7 +17,7 @@ input.du-input {
 }
 
 .du-input:hover {
-  border-color: var(--field-hover-border-color);
+  border-color: var(--color-active-border);
 }
 
 .du-input > input,
@@ -46,13 +46,13 @@ input.du-input {
 }
 
 .du-input_prepend {
-  background-color: var(--color-milk);
-  border-right: 1px solid var(--field-border-color);
+  background-color: var(--color-lightwhite);
+  border-right: 1px solid var(--color-border);
   border-radius: 3px 0 0 3px;
 }
 .du-input_append {
-  background-color: var(--color-milk);
-  border-left: 1px solid var(--field-border-color);
+  background-color: var(--color-lightwhite);
+  border-left: 1px solid var(--color-border);
   border-radius: 0 3px 3px 0;
 }
 .du-input_inner {
@@ -77,7 +77,7 @@ input.du-input {
   cursor: not-allowed;
 }
 .du-input.Disabled:hover {
-  border-color: var(--field-border-color);
+  border-color: var(--color-border);
   cursor: not-allowed;
 }
 

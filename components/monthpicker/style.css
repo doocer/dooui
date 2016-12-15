@@ -10,7 +10,7 @@
   position: relative;
   box-sizing: border-box;
   line-height: var(--field-line-height);
-  border: 1px solid var(--field-border-color);
+  border: 1px solid var(--color-border);
   padding: var(--field-padding) 10px;
   border-radius: 3px;
   background-color: white;
@@ -19,7 +19,7 @@
   transition: border-color 0.15s ease;
 }
 .du-month-picker_box:hover {
-  border-color: var(--field-hover-border-color);
+  border-color: var(--color-active-border);
 }
 .du-month-picker_box .du-icon {
   position: absolute;

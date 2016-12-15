@@ -44,8 +44,8 @@ export default {
   width: 42px;
   border-radius: 24px;
   box-sizing: border-box;
-  background: var(--color-lightgray);
-  border: solid 2px var(--color-lightgray);
+  background: var(--color-gray);
+  border: solid 2px var(--color-gray);
   cursor: pointer;
   vertical-align: middle;
   pointer-events: auto;
@@ -62,8 +62,9 @@ export default {
   border-color: var(--color-blue);
 }
 .du-switch.Disabled {
-  opacity: 0.6;
   cursor: not-allowed;
+  background: var(--color-lightgray);
+  border-color: var(--color-lightgray);
 }
 .du-switch .du-switch_handle {
   position: absolute;
@@ -79,8 +80,5 @@ export default {
 }
 .du-switch.Checked .du-switch_handle {
   transform: translate3d(18px, 0, 0);
-}
-.du-switch.Disabled .du-switch_handle {
-  background: var(--color-milk);
 }
 </style>

@@ -77,7 +77,7 @@ export default {
   border-top: 1px solid transparent;
 }
 .demo.Open .demo_source {
-  border-color: var(--line-color);
+  border-color: var(--color-border);
 }
 .demo_control {
   text-align: center;

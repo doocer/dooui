@@ -56,7 +56,7 @@
 
 .du-menu.Light {
   color: var(--color-light-black);
-  background-color: var(--color-milk);
+  background-color: var(--color-lightwhite);
 }
 .du-menu.Light .du-menu_head {
   color: var(--color-gray);
@@ -85,7 +85,7 @@
 }
 
 .du-menu.Dark {
-  color: var(--color-milk);
+  color: var(--color-lightwhite);
   background-color: var(--color-dark);
 }
 .du-menu.Dark .du-menu_head {
@@ -97,8 +97,8 @@
   background-color: rgba(222, 222, 222, 0.04);
 }
 .du-menu.Dark .du-arrow:after {
-  border-top-color: var(--color-milk);
-  border-left-color: var(--color-milk);
+  border-top-color: var(--color-lightwhite);
+  border-left-color: var(--color-lightwhite);
 }
 .du-menu.Dark > li.Active > a,
 .du-menu.Dark > li.Active > span {

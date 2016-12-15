@@ -4,7 +4,7 @@
 }
 .du-tab_bar {
   position: relative;
-  border-bottom: 1px solid var(--line-color);
+  border-bottom: 1px solid var(--color-border);
 }
 .du-tab_scroll {
   overflow: hidden;

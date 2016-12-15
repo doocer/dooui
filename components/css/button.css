@@ -7,7 +7,7 @@ input[type="button"].du-button,
 input[type="submit"].du-button {
   display: inline-block;
   background-color: white;
-  border: 1px solid var(--field-border-color);
+  border: 1px solid var(--color-border);
   border-radius: 3px;
   color: var(--text-plain-color);
   padding: var(--field-padding) 14px;
@@ -78,7 +78,7 @@ input[type="submit"].du-button {
 .du-button.Line {
   background-color: transparent;
   color: var(--text-plain-color);
-  border-color: var(--field-border-color);
+  border-color: var(--color-border);
 }
 .du-button.Line.Blue:hover {
   color: var(--color-blue);

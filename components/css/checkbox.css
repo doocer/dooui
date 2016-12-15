@@ -47,7 +47,7 @@ input.du-checkbox:after,
   content: '';
   width: 16px;
   height: 16px;
-  border: 1px solid var(--field-border-color);
+  border: 1px solid var(--color-border);
   border-radius: 3px;
   box-sizing: border-box;
   transition: border-color 0.1s;
@@ -56,7 +56,7 @@ input.du-checkbox:after,
 input.du-checkbox:hover:after,
 .du-checkbox:hover > input:after,
 .du-checkbox:hover .du-checkbox_box {
-  border-color: var(--field-hover-border-color);
+  border-color: var(--color-active-border);
 }
 input.du-checkbox:checked:before,
 .du-checkbox > input:checked:before,
@@ -78,14 +78,14 @@ input.du-checkbox:disabled,
 input.du-checkbox:disabled:before,
 .du-checkbox > input:disabled:before,
 .du-checkbox.Disabled .du-checkbox_box:before {
-  border-left-color: var(--field-border-color);
-  border-bottom-color: var(--field-border-color);
+  border-left-color: var(--color-border);
+  border-bottom-color: var(--color-border);
 }
 input.du-checkbox:disabled:after,
 .du-checkbox > input:disabled:after,
 .du-checkbox.Disabled .du-checkbox_box {
-  border-color: var(--field-border-color);
-  background-color: var(--color-milk);
+  border-color: var(--color-border);
+  background-color: var(--color-lightwhite);
 }
 
 .du-checkbox_box {
@@ -95,11 +95,11 @@ input.du-checkbox:disabled:after,
   margin: 0;
   width: 16px;
   height: 16px;
-  border: 1px solid var(--field-border-color);
+  border: 1px solid var(--color-border);
   border-radius: 3px;
   box-sizing: border-box;
   transition: border-color 0.1s;
-  border: 1px solid var(--field-border-color);
+  border: 1px solid var(--color-border);
 }
 .du-checkbox_box > input {
   position: absolute;

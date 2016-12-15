@@ -73,7 +73,7 @@
   overflow-y: auto;
 }
 .du-layout-side.Dark {
-  color: var(--color-milk);
+  color: var(--color-lightwhite);
   background-color: var(--color-dark);
 }
 .du-layout-main {

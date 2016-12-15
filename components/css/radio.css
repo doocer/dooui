@@ -44,7 +44,7 @@ input.du-radio:after,
   content: '';
   width: 16px;
   height: 16px;
-  border: 1px solid var(--field-border-color);
+  border: 1px solid var(--color-border);
   border-radius: 50%;
   box-sizing: border-box;
   transition: border-color 0.15s ease;
@@ -53,7 +53,7 @@ input.du-radio:after,
 input.du-radio:hover:after,
 .du-radio:hover > input:after,
 .du-radio:hover .du-radio_box {
-  border-color: var(--field-hover-border-color);
+  border-color: var(--color-active-border);
 }
 input.du-radio:checked:before,
 .du-radio > input:checked:before,
@@ -75,8 +75,8 @@ input.du-radio:disabled,
 input.du-radio:disabled:after,
 .du-radio > input:disabled:after,
 .du-radio.Disabled .du-radio_box {
-  border-color: var(--field-border-color);
-  background-color: var(--color-milk);
+  border-color: var(--color-border);
+  background-color: var(--color-lightwhite);
 }
 
 .du-radio_box {
@@ -86,11 +86,11 @@ input.du-radio:disabled:after,
   margin: 0;
   width: 16px;
   height: 16px;
-  border: 1px solid var(--field-border-color);
+  border: 1px solid var(--color-border);
   border-radius: 50%;
   box-sizing: border-box;
   transition: border-color 0.1s;
-  border: 1px solid var(--field-border-color);
+  border: 1px solid var(--color-border);
 }
 .du-radio_box > input {
   position: absolute;

@@ -4,9 +4,8 @@
   --color-dimgray: #5E6D80;
   --color-gray: #8492A6;
   --color-silver: #C0CCDA;
-  --color-lightgray: #D3DCE6;
-  --color-lightsilver: #E5E9F2;
-  --color-milk: #F9FAFC;
+  --color-lightgray: #E5E9F2;
+  --color-lightwhite: #F9FAFC;
   --color-white: #FFFFFF;
 
   --color-light-black: #475669;
@@ -23,6 +22,15 @@
 
   --layout-base-bg: #eff4fb;
 
+  /* functional colors */
+  --color-bold: var(--color-dark);
+  --color-plain: var(--color-dimgray);
+  --color-border: var(--color-lightgray);
+  --color-active-border: var(--color-silver);
+
+  --color-link: var(--color-blue);
+  --color-hover-link: var(--color-dark-blue);
+
   /* text colors */
   --text-plain-color: #5e6d80;
   --text-bold-color: #323a44;
@@ -30,7 +38,6 @@
 
   /* utilities */
   --box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-  --line-color: var(--color-lightsilver);
   --focus-bg-color: var(--color-blue);
   --focus-fg-color: white;
 
@@ -39,8 +46,6 @@
   --field-height: 24px;
   --field-padding: 4px;
   --field-line-height: 24px;
-  --field-border-color: var(--color-lightgray);
-  --field-hover-border-color: var(--color-silver);
   --field-option-active-fg: var(--color-white);
   --field-option-active-bg: var(--color-blue);
 

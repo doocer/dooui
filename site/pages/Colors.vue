@@ -25,30 +25,55 @@
     <div slot="head">Grayscale</div>
     <du-row :gutter="10" :gap="10">
       <du-col :span="3">
-        <div class="color-block" style="background:#36495D">Dark<em>#36495D</em></div>
+        <div class="color-block" style="background:#36495D">
+          <div>Dark</div>
+          <em>title heading strong</em>
+          <em>#36495D</em>
+        </div>
       </du-col>
       <du-col :span="3">
-        <div class="color-block" style="background:#5E6D80">Dimgray<em>#5E6D80</em></div>
+        <div class="color-block" style="background:#5E6D80">
+          <div>Dimgray</div>
+          <em>plain content</em>
+          <em>#5E6D80</em>
+        </div>
       </du-col>
       <du-col :span="3">
-        <div class="color-block" style="background:#8492A6">Gray<em>#8492A6</em></div>
+        <div class="color-block" style="background:#8492A6">
+          <div>Gray</div>
+          <em>light content, sub features</em>
+          <em>#8492A6</em>
+        </div>
       </du-col>
       <du-col :span="3">
-        <div class="color-block" style="background:#C0CCDA">Silver<em>#C0CCDA</em></div>
+        <div class="color-block" style="background:#C0CCDA">
+          <div>Silver</div>
+          <em>active border</em>
+          <em>#C0CCDA</em>
+        </div>
       </du-col>
     </du-row>
     <du-row class="White" :gutter="10" :gap="10">
       <du-col :span="3">
-        <div class="color-block" style="background:#D3DCE6">Lightgray<em>#D3DCE6</em></div>
+        <div class="color-block" style="background:#E5E9F2">
+          <div>Lightgray</div>
+          <em>border</em>
+          <em>#E5E9F2</em>
+        </div>
       </du-col>
       <du-col :span="3">
-        <div class="color-block" style="background:#E5E9F2">Lightsilver<em>#E5E9F2</em></div>
+        <div class="color-block" style="background:#F9FAFC">
+          <div>Lightwhite</div>
+          <em>light background</em>
+          <em>#F9FAFC</em>
+        </div>
       </du-col>
       <du-col :span="3">
-        <div class="color-block" style="background:#F9FAFC">Milk<em>#F9FAFC</em></div>
-      </du-col>
-      <du-col :span="3">
-        <div class="color-block" style="border-color:#D3DCE6">White<em>#FFFFFF</em></div>
+        <div class="color-block" style="border-color:#E5E9F2">
+          <div>White</div>
+          <em>white</em>
+          <em>#FFFFFF</em>
+        </div>
       </du-col>
     </du-row>
   </du-box>

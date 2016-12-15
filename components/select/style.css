@@ -11,7 +11,7 @@
   width: 100%;
   line-height: var(--field-line-height);
   box-sizing: border-box;
-  border: 1px solid var(--field-border-color);
+  border: 1px solid var(--color-border);
   border-radius: 3px;
   padding: var(--field-padding) 30px var(--field-padding) 10px;
   background-color: white;
@@ -20,7 +20,7 @@
   transition: border-color 0.15s ease;
 }
 .du-select_box:hover {
-  border-color: var(--field-hover-border-color);
+  border-color: var(--color-active-border);
 }
 .du-select_box.Single .du-select_value {
   display: block;
@@ -83,7 +83,7 @@
   border-style: solid;
   border-color: transparent;
   border-width: 5px 4px 0 4px;
-  border-top-color: var(--field-border-color);
+  border-top-color: var(--color-border);
 }
 
 .du-select_dropdown {
@@ -91,7 +91,7 @@
   left: 0;
   right: 0;
   background-color: white;
-  border: 1px solid var(--field-border-color);
+  border: 1px solid var(--color-border);
   border-radius: 3px;
   transform-origin: top;
   transform: scaleY(0);
