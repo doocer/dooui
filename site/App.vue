@@ -1,5 +1,5 @@
 <template>
-<div id="app" class="du-root" :class="{'Collapse': collapse}">
+<div id="app" class="dooui" :class="{'Collapse': collapse}">
   <div class="du-layout-main">
     <header class="du-layout-head">
       <nav class="du-layout-nav">

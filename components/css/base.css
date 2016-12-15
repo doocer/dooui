@@ -1,25 +1,17 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-
 body {
   -webkit-font-smoothing: antialiased;
-  color: var(--text-plain-color);
-  background-color: var(--layout-base-bg);
+  color: var(--color-plain);
   font-family: var(--font-family);
   font-size: var(--size-sm);
 }
 
 h1, h2, h3, h4, h5, strong {
-  color: var(--text-bold-color);
+  color: var(--color-bold);
 }
 
-.du-root {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100%;
+a {
+  color: var(--color-link);
+}
+a:hover {
+  opacity: 0.78;
 }

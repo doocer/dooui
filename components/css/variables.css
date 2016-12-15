@@ -20,16 +20,18 @@
   --color-dark-yellow: #F1B52A;
   --color-dark-red: #F55826;
 
-  --layout-base-bg: #eff4fb;
-
   /* functional colors */
   --color-bold: var(--color-dark);
   --color-plain: var(--color-dimgray);
   --color-border: var(--color-lightgray);
   --color-active-border: var(--color-silver);
 
+  --color-primary: var(--color-blue);
+  --color-success: var(--color-green);
+  --color-warn: var(--color-yellow);
+  --color-error: var(--color-red);
+
   --color-link: var(--color-blue);
-  --color-hover-link: var(--color-dark-blue);
 
   /* text colors */
   --text-plain-color: #5e6d80;
