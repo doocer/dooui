@@ -9,30 +9,30 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --config config/webpack.dev.js --inline --hot",
-    "build-min": "webpack --config config/webpack.min.js --progress --hide-modules",
-    "build-site": "webpack --config config/webpack.site.js --progress --hide-modules",
-    "build-common": "webpack --config config/webpack.common.js --progress --hide-modules",
+    "build-min": "NODE_ENV=production webpack --config config/webpack.min.js --hide-modules",
+    "build-site": "NODE_ENV=production webpack --config config/webpack.site.js --hide-modules",
+    "build-common": "NODE_ENV=production webpack --config config/webpack.common.js --hide-modules",
     "build-demo": "node scripts/build-demo.js"
   },
   "dependencies": {
     "echarts": "^3.3.2",
-    "vue": "^2.1.4",
+    "vue": "^2.1.6",
     "vue-document-event": "^1.0.1",
     "vue-router": "^2.1.1"
   },
   "devDependencies": {
-    "autoprefixer": "^6.5.3",
-    "buble": "^0.14.2",
+    "autoprefixer": "^6.5.4",
+    "buble": "^0.14.0",
     "buble-loader": "^0.3.2",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "file-loader": "^0.9.0",
-    "highlight.js": "^9.8.0",
+    "highlight.js": "^9.9.0",
     "json-loader": "^0.5.4",
     "postcss-custom-properties": "^5.0.1",
     "vue-loader": "^10.0.2",
-    "vue-template-compiler": "^2.1.4",
-    "webpack": "^2.1.0-beta.27",
+    "vue-template-compiler": "^2.1.6",
+    "webpack": "^2.1.0-beta.28",
     "webpack-dev-server": "^2.1.0-beta.12"
   }
 }
