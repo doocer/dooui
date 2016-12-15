@@ -46,7 +46,7 @@
 }
 .du-dialog_head {
   position: relative;
-  border-bottom: 1px solid var(--line-light-color);
+  border-bottom: 1px solid var(--line-color);
 }
 .du-dialog_title {
   font-weight: 600;

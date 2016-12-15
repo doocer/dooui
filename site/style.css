@@ -18,7 +18,7 @@
   padding: 10px 15px;
   text-align: left;
   background: var(--color-semi-white);
-  border-bottom: 1px solid var(--line-light-color);
+  border-bottom: 1px solid var(--line-color);
 }
 .doc td {
   padding: 10px 15px;

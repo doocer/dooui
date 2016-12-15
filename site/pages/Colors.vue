@@ -42,6 +42,9 @@
         <div class="color-block" style="background:#D3DCE6">Lightgray<em>#D3DCE6</em></div>
       </du-col>
       <du-col :span="3">
+        <div class="color-block" style="background:#E5E9F2">Lightsilver<em>#E5E9F2</em></div>
+      </du-col>
+      <du-col :span="3">
         <div class="color-block" style="background:#F9FAFC">Milk<em>#F9FAFC</em></div>
       </du-col>
       <du-col :span="3">

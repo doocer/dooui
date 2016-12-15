@@ -26,7 +26,7 @@
 }
 .du-box_head {
   padding: 10px 15px;
-  border-bottom: 1px solid var(--line-light-color);
+  border-bottom: 1px solid var(--line-color);
 }
 h1.du-box_head,
 h2.du-box_head,
@@ -45,5 +45,5 @@ h4.du-box_head,
 }
 .du-box_foot {
   padding: 10px 15px;
-  border-top: 1px solid var(--line-light-color);
+  border-top: 1px solid var(--line-color);
 }

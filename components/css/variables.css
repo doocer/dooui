@@ -5,10 +5,10 @@
   --color-gray: #8492A6;
   --color-silver: #C0CCDA;
   --color-lightgray: #D3DCE6;
+  --color-lightsilver: #E5E9F2;
   --color-milk: #F9FAFC;
-
   --color-white: #FFFFFF;
-  --color-semi-gray: #E5E9F2;
+
   --color-light-black: #475669;
 
   /* main colors */
@@ -30,8 +30,7 @@
 
   /* utilities */
   --box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-  --line-color: var(--color-lightgray);
-  --line-light-color: var(--color-semi-gray);
+  --line-color: var(--color-lightsilver);
   --focus-bg-color: var(--color-blue);
   --focus-fg-color: white;
 

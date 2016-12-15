@@ -15,6 +15,8 @@ config.output.library = 'dooui'
 config.output.libraryTarget = 'commonjs-module'
 config.externals = {
   echarts: 'echarts',
+  vue: 'vue',
+  'vue-router': 'vue-router',
   'vue-document-event': 'vue-document-event',
 }
 

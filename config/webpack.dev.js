@@ -5,6 +5,9 @@ config.devServer = {
   historyApiFallback: true,
   noInfo: true
 }
+config.performance = {
+  hints: false
+}
 config.devtool = '#eval-source-map'
 
 config.entry = {
