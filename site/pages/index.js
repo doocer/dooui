@@ -16,6 +16,7 @@ import Monthpicker from './Monthpicker.vue'
 import Tab from './Tab.vue'
 import Menu from './Menu.vue'
 import Breadcrumb from './Breadcrumb.vue'
+import Pagination from './Pagination.vue'
 
 import Progress from './Progress.vue'
 import Message from './Message.vue'
@@ -40,6 +41,7 @@ const routes = [
   {path: '/select/', component: Select},
   {path: '/month-picker/', component: Monthpicker},
   {path: '/breadcrumb/', component: Breadcrumb},
+  {path: '/pagination/', component: Pagination},
   {path: '/tab/', component: Tab},
   {path: '/menu/', component: Menu},
   {path: '/progress/', component: Progress},

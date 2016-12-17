@@ -5,6 +5,7 @@
   </du-tab-item>
   <du-tab-item title="Second Item">
     <p>Content of Second Item</p>
+    <p>A second line</p>
   </du-tab-item>
   <du-tab-item title="Third Item">
     <p>Content of Third Item</p>
