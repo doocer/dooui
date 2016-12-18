@@ -36,6 +36,10 @@ body {
   background: var(--color-semi-white);
   border-bottom: 1px solid var(--color-border);
 }
+.doc th:last-of-type {
+  width: 1%;
+  white-space: nowrap;
+}
 .doc td {
   padding: 10px 15px;
 }

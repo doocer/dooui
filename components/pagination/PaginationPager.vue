@@ -9,9 +9,7 @@
     <a @click="select(p)" v-text="p"></a>
   </li>
   <li v-show="rightEdge"><a @click="selectRight">…</a></li>
-  <li v-show="rightEdge">
-    <a @click="select(pagesCount)" v-text="pagesCount"></a>
-  </li>
+  <li v-show="rightEdge"><a @click="select(pagesCount)" v-text="pagesCount"></a></li>
   <li v-if="next" :class="{'Disabled': !nextNum}">
     <a class="du-arrow Right" @click="select(nextNum)"></a>
   </li>
