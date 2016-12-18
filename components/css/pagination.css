@@ -17,6 +17,7 @@
 .du-pagination_pager > li {
   display: inline-block;
   float: left;
+  margin-right: 3px;
   min-width: 28px;
   height: 28px;
   line-height: 28px;
@@ -26,10 +27,6 @@
   border-radius: 3px;
   cursor: pointer;
   user-select: none;
-}
-
-.du-pagination_pager > li + li {
-  margin-left: 3px;
 }
 
 .du-pagination_pager > li > a {

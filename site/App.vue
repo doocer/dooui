@@ -4,8 +4,7 @@
     <header class="du-layout-head">
       <nav class="du-layout-nav">
         <router-link to="/">Home</router-link>
-        <router-link to="/">Home</router-link>
-        <a href="https://github.com/lepture" target="_blank">GitHub</a>
+        <a href="https://github.com/doocer/dooui" target="_blank">GitHub</a>
       </nav>
     </header>
     <router-view class="du-layout-content"></router-view>

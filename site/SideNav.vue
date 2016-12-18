@@ -14,7 +14,6 @@
     </du-menu-tree>
     <du-menu-tree icon="fa fa-location-arrow" title="Navigation">
       <du-menu-item to="/breadcrumb/">Breadcrumb</du-menu-item>
-      <du-menu-item to="/navigation/">Navigation</du-menu-item>
       <du-menu-item to="/pagination/">Pagination</du-menu-item>
       <du-menu-item to="/tab/">Tabs</du-menu-item>
       <du-menu-item to="/menu/">Menu</du-menu-item>
