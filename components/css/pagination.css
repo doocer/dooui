@@ -1,7 +1,12 @@
+.du-pagination > * + * {
+  margin-left: 10px;
+}
 .du-pagination_pager {
+  display: inline-block;
   list-style: none;
   margin: 0;
   padding: 0;
+  vertical-align: middle;
 }
 .du-pagination_pager:after {
   display: table;
@@ -20,10 +25,11 @@
   border: 1px solid var(--color-border);
   border-radius: 3px;
   cursor: pointer;
+  user-select: none;
 }
 
 .du-pagination_pager > li + li {
-  margin-left: 4px;
+  margin-left: 3px;
 }
 
 .du-pagination_pager > li > a {
@@ -40,4 +46,22 @@
   opacity: 0.8;
   background-color: var(--color-disabled);
   cursor: not-allowed;
+}
+
+.du-pagination_goto {
+  display: inline-block;
+  height: 28px;
+  line-height: 28px;
+  vertical-align: middle;
+}
+.du-pagination_goto > input {
+  font: inherit;
+  color: inherit;
+  width: 4em;
+  line-height: 16px;
+  box-sizing: border-box;
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  padding: 5px 2px 5px 6px;
+  outline: 0;
 }

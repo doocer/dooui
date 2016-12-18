@@ -3,13 +3,13 @@
   <li v-if="prev" :class="{'Disabled': !prevNum}">
     <a class="du-arrow Left" @click="select(prevNum)"></a>
   </li>
-  <li v-if="leftEdge"><a @click="select(1)">1</a></li>
-  <li v-if="leftEdge"><a @click="selectLeft">…</a></li>
+  <li v-show="leftEdge"><a @click="select(1)">1</a></li>
+  <li v-show="leftEdge"><a @click="selectLeft">…</a></li>
   <li v-for="p in pages" :class="{'Current': p==current}">
     <a @click="select(p)" v-text="p"></a>
   </li>
-  <li v-if="rightEdge"><a @click="selectRight">…</a></li>
-  <li v-if="rightEdge">
+  <li v-show="rightEdge"><a @click="selectRight">…</a></li>
+  <li v-show="rightEdge">
     <a @click="select(pagesCount)" v-text="pagesCount"></a>
   </li>
   <li v-if="next" :class="{'Disabled': !nextNum}">

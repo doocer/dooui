@@ -33,6 +33,9 @@ export default {
   },
   methods: {
     select(num) {
+      if (num && num > this.pagesCount) {
+        num = this.pagesCount
+      }
       if (num && num !== this.current) {
         this.current = num
         this.$emit('change', num)
