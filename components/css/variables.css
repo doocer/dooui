@@ -25,6 +25,7 @@
   --color-plain: var(--color-dimgray);
   --color-border: var(--color-lightgray);
   --color-active-border: var(--color-silver);
+  --color-disabled: var(--color-lightwhite);
 
   --color-primary: var(--color-blue);
   --color-success: var(--color-green);

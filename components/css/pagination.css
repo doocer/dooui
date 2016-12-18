@@ -26,12 +26,18 @@
   margin-left: 4px;
 }
 
-.du-pagination_pager .du-arrow {
-  position: relative;
-  top: -4px;
+.du-pagination_pager > li > a {
+  display: block;
+  color: inherit;
 }
 
+.du-pagination_pager > li.Current {
+  background-color: var(--color-blue);
+  border-color: var(--color-dark-blue);
+  color: var(--color-white);
+}
 .du-pagination_pager > li.Disabled {
   opacity: 0.8;
+  background-color: var(--color-disabled);
   cursor: not-allowed;
 }

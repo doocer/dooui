@@ -12,27 +12,11 @@ export default {
       type: Number,
       required: true
     },
-    leftEdge: {
-      type: Number,
-      default: 1
-    },
-    leftCurrent: {
-      type: Number,
-      default: 2
-    },
-    rightEdge: {
-      type: Number,
-      default: 1
-    },
-    rightCurrent: {
-      type: Number,
-      default: 4
-    },
     perpage: {
       type: Number,
       default: 10
     },
-    value: {
+    page: {
       type: Number,
       default: 1
     },
