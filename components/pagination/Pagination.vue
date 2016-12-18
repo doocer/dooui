@@ -21,29 +21,23 @@ export default {
       default: 1
     },
   },
+  data() {
+    return {
+      current: this.page
+    }
+  },
   computed: {
     pagesCount() {
       return parseInt((this.total - 1) / this.perpage, 10) + 1
     },
-    pages() {
-      var count = parseInt((this.total - 1) / this.perpage, 10) + 1
-      var i = 0, last = 0
-      var rv = []
-      while (i <= count) {
-        if (
-          i <= this.leftEdge ||
-          (
-            i > this.current - this.leftCurrent - 1 &&
-            i < this.current + this.rightCurrent
-          ) ||
-          i > count - this.right_edge
-        ) {
-          rv.push(i)
-          last = i
-        }
-      }
-      return rv
-    }
   },
+  methods: {
+    select(num) {
+      if (num && num !== this.current) {
+        this.current = num
+        this.$emit('change', num)
+      }
+    }
+  }
 }
 </script>

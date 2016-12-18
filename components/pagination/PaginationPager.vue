@@ -4,11 +4,11 @@
     <a class="du-arrow Left" @click="select(prevNum)"></a>
   </li>
   <li v-if="leftEdge"><a @click="select(1)">1</a></li>
-  <li v-if="leftEdge"><a>…</a></li>
+  <li v-if="leftEdge"><a @click="selectLeft">…</a></li>
   <li v-for="p in pages" :class="{'Current': p==current}">
     <a @click="select(p)" v-text="p"></a>
   </li>
-  <li v-if="rightEdge"><a>…</a></li>
+  <li v-if="rightEdge"><a @click="selectRight">…</a></li>
   <li v-if="rightEdge">
     <a @click="select(pagesCount)" v-text="pagesCount"></a>
   </li>
@@ -35,12 +35,10 @@ export default {
       default: 4
     }
   },
-  data() {
-    return {
-      current: this.$parent.page
-    }
-  },
   computed: {
+    current() {
+      return this.$parent.current
+    },
     pagesCount() {
       return this.$parent.pagesCount
     },
@@ -80,9 +78,13 @@ export default {
   },
   methods: {
     select(num) {
-      if (!num) return
-      this.current = num
-      this.$parent.$emit('change', num)
+      this.$parent.select(num)
+    },
+    selectLeft() {
+      this.select(this.current - this.edge)
+    },
+    selectRight() {
+      this.select(this.current + this.edge)
     }
   }
 }
