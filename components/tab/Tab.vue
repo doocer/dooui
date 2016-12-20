@@ -17,27 +17,10 @@
 <script>
 export default {
   name: 'du-tab',
-  props: {
-    position: {
-      type: String,
-      default: 'top'
-    },
-  },
   data() {
     return {
       active: 0,
       items: [],
-    }
-  },
-  computed: {
-    contentStyle() {
-      var offset = this.activeIndex * 100 + '%'
-      return {
-        transform: 'translate3d(-' + offset + ',0,0)'
-      }
-    },
-    activeIndex() {
-      return this.items.indexOf(this.active)
     }
   },
   methods: {
