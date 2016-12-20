@@ -3,13 +3,13 @@
   <li v-if="prev" :class="{'Disabled': !prevNum}">
     <a class="du-arrow Left" @click="select(prevNum)"></a>
   </li>
-  <li v-show="leftEdge"><a @click="select(1)">1</a></li>
+  <li :class="{'Current': current==1}"><a @click="select(1)">1</a></li>
   <li v-show="leftEdge"><a @click="selectLeft">…</a></li>
   <li v-for="p in pages" :class="{'Current': p==current}">
     <a @click="select(p)" v-text="p"></a>
   </li>
   <li v-show="rightEdge"><a @click="selectRight">…</a></li>
-  <li v-show="rightEdge"><a @click="select(pagesCount)" v-text="pagesCount"></a></li>
+  <li :class="{'Current': current==pagesCount}"><a @click="select(pagesCount)" v-text="pagesCount"></a></li>
   <li v-if="next" :class="{'Disabled': !nextNum}">
     <a class="du-arrow Right" @click="select(nextNum)"></a>
   </li>
@@ -58,7 +58,7 @@ export default {
     pages() {
       var rv = []
       var i = this.current
-      var left = 1, right = this.pagesCount
+      var left = 2, right = this.pagesCount - 1
 
       if (this.leftEdge && !this.rightEdge) {
         left = Math.max(3, this.pagesCount - 2 * this.edge + 2)
