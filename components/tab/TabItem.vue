@@ -1,11 +1,10 @@
 <template>
-<div class="du-tab_item" :aria-hidden="!selected">
+<div class="du-tab_item" :aria-hidden="!selected" v-show="selected">
   <slot></slot>
 </div>
 </template>
 
 <script>
-var count = 0
 export default {
   name: 'du-tab-item',
   props: {
@@ -13,9 +12,6 @@ export default {
       type: String,
       required: true
     },
-  },
-  data() {
-    return {id: count++}
   },
   computed: {
     selected() {

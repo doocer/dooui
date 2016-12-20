@@ -1,17 +1,14 @@
 <template>
 <div class="du-tab">
   <div class="du-tab_bar" role="tablist">
-    <div class="du-tab_scroll">
-      <div class="du-tab_navs">
-        <div class="du-tab_cursor" :style="cursorStyle"></div>
-        <div class="du-tab_tab" role="tab" v-for="item in items"
-          :aria-selected="item.selected" @click="select(item)" ref="tabs">
-          <div class="du-tab_inner" v-text="item.title"></div>
-        </div>
+    <div class="du-tab_navs">
+      <div class="du-tab_tab" role="tab" v-for="item in items"
+        :aria-selected="item.selected" @click="select(item)" ref="tabs">
+        <div class="du-tab_inner" v-text="item.title"></div>
       </div>
     </div>
   </div>
-  <div class="du-tab_content" :style="contentStyle">
+  <div class="du-tab_content">
     <slot></slot>
   </div>
 </div>
@@ -30,7 +27,6 @@ export default {
     return {
       active: 0,
       items: [],
-      cursorStyle: null,
     }
   },
   computed: {
@@ -44,33 +40,9 @@ export default {
       return this.items.indexOf(this.active)
     }
   },
-  watch: {
-    active() {
-      this.$nextTick(() => {
-        this.cursorStyle = this.getCursorStyle()
-      })
-    }
-  },
   methods: {
     select(tab) {
       this.active = tab
-    },
-    getCursorStyle() {
-      const tabs = this.$refs.tabs
-      var width = 0, offset = 0
-      for (var i = 0; i < tabs.length; i++) {
-        var el = tabs[i]
-        if (i === this.activeIndex) {
-          width = el.clientWidth
-          break
-        } else {
-          offset += el.clientWidth
-        }
-      }
-      return {
-        width: width + 'px',
-        transform: 'translate3d(' + offset + 'px,0,0)',
-      }
     }
   },
   mounted() {
