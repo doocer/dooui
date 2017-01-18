@@ -15,24 +15,24 @@
     "build-demo": "node scripts/build-demo.js"
   },
   "dependencies": {
-    "echarts": "^3.3.2",
-    "vue": "^2.1.6",
+    "echarts": "^3.4.0",
+    "vue": "^2.1.10",
     "vue-document-event": "^1.0.1",
     "vue-router": "^2.1.1"
   },
   "devDependencies": {
-    "autoprefixer": "^6.5.4",
-    "buble": "^0.15.1",
+    "autoprefixer": "^6.6.1",
+    "buble": "^0.15.2",
     "buble-loader": "^0.4.0",
     "css-loader": "^0.26.1",
-    "extract-text-webpack-plugin": "^2.0.0-beta.4",
+    "extract-text-webpack-plugin": "^2.0.0-beta.5",
     "file-loader": "^0.9.0",
     "highlight.js": "^9.9.0",
     "json-loader": "^0.5.4",
     "postcss-custom-properties": "^5.0.1",
     "vue-loader": "^10.0.2",
-    "vue-template-compiler": "^2.1.6",
-    "webpack": "^2.1.0-beta.28",
-    "webpack-dev-server": "^2.1.0-beta.12"
+    "vue-template-compiler": "^2.1.10",
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^2.2.0"
   }
 }

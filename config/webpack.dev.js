@@ -14,6 +14,10 @@ config.entry = {
   site: ['./site/main.js']
 }
 
+config.resolve.alias = {
+  'vue$': 'vue/dist/vue'
+}
+
 config.plugins = (config.plugins || []).concat([
   new webpack.DefinePlugin({
     'process.env': {
