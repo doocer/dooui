@@ -6,7 +6,8 @@ build-site:
 	node scripts/build-site.js
 
 upload-site:
-	ghp-import public
+	@ghp-import public
 
 component:
-	COMPONENT=${name} npm run build-component
+	@COMPONENT=${name} npm run build-component
+	@node scripts/postcss.js ${name}
