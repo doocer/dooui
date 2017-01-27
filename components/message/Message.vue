@@ -40,3 +40,5 @@ export default {
   }
 }
 </script>
+
+<style src="./message.css"></style>

@@ -12,6 +12,7 @@
     "build-min": "NODE_ENV=production webpack --config config/webpack.min.js --hide-modules",
     "build-site": "NODE_ENV=production webpack --config config/webpack.site.js --hide-modules",
     "build-common": "NODE_ENV=production webpack --config config/webpack.common.js --hide-modules",
+    "build-component": "NODE_ENV=production webpack --config config/webpack.component.js --hide-modules",
     "build-demo": "node scripts/build-demo.js"
   },
   "dependencies": {

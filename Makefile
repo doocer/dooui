@@ -1,3 +1,5 @@
+name=
+
 build-site:
 	mkdir -p public
 	npm run build-site
@@ -5,3 +7,6 @@ build-site:
 
 upload-site:
 	ghp-import public
+
+component:
+	COMPONENT=${name} npm run build-component
