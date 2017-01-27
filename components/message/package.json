@@ -1,0 +1,11 @@
+{
+  "name": "du-message",
+  "version": "0.1.0",
+  "description": "A message component of dooui",
+  "author": "Hsiaoming Yang <me@lepture.com>",
+  "main": "./dist/message.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/doocer/dooui.git"
+  }
+}
