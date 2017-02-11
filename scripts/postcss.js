@@ -6,7 +6,7 @@ const customProperties = require('postcss-custom-properties')
 
 
 function transform(data) {
-  return postcss([autoprefixer(), customProperties(), cssnano()]).process(data)
+  return postcss([autoprefixer(), customProperties(), cssnano({zindex: false})]).process(data)
 }
 
 
