@@ -34,7 +34,7 @@ config.plugins = (config.plugins || []).concat([
   new webpack.LoaderOptionsPlugin({
     minimize: false
   }),
-  new ExtractTextPlugin("[name].css")
+  new ExtractTextPlugin("style.css")
 ])
 
 module.exports = config

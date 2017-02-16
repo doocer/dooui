@@ -19,7 +19,7 @@ function processFile(src, dest) {
 
 
 function processComponent(name) {
-  const src = `./components/${name}/dist/${name}.css`
+  const src = `./components/${name}/dist/style.css`
   processFile(src, src)
 }
 
