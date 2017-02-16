@@ -1,0 +1,11 @@
+{
+  "name": "du-switch",
+  "version": "0.1.0",
+  "description": "A switch component of dooui",
+  "author": "Hsiaoming Yang <me@lepture.com>",
+  "main": "./dist/switch.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/doocer/dooui.git"
+  }
+}
