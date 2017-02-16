@@ -41,4 +41,4 @@ export default {
 }
 </script>
 
-<style src="./message.css"></style>
+<style src="./style.css"></style>
