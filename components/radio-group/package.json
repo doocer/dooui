@@ -1,0 +1,11 @@
+{
+  "name": "du-radio-group",
+  "version": "0.1.0",
+  "description": "A radio group component of dooui",
+  "author": "Hsiaoming Yang <me@lepture.com>",
+  "main": "./dist/radio-group.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/doocer/dooui.git"
+  }
+}

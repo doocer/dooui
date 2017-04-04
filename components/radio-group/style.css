@@ -33,3 +33,8 @@
   color: var(--color-white);
   border-color: var(--color-blue);
 }
+
+.du-radio-group.Black input:checked + span {
+  background-color: rgba(0, 0, 0, 0.98);
+  border-color: rgba(0, 0, 0, 0.98);
+}
