@@ -15,7 +15,7 @@ config.entry[name] = [
 ]
 
 config.output = {
-  path: `./components/${name}/dist`,
+  path: path.resolve(`./components/${name}/dist`),
   filename: '[name].js',
   library: name,
   libraryTarget: 'commonjs-module'

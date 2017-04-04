@@ -27,10 +27,6 @@ var moduleRules = [
     }
   },
   {
-    test: /\.json$/,
-    loader: 'json-loader'
-  },
-  {
     test: /\.(png|jpg|gif|svg)$/,
     loader: 'file-loader',
     options: {
@@ -44,8 +40,8 @@ exports.moduleRules = moduleRules
 function addExtractPlugin() {
   var ExtractTextPlugin = require("extract-text-webpack-plugin")
   var extractLoader = ExtractTextPlugin.extract({
-    loader: 'css-loader',
-    fallbackLoader: 'vue-style-loader'
+    use: 'css-loader',
+    fallback: 'vue-style-loader'
   })
 
   vueOptions.loaders = {css: extractLoader}
