@@ -11,6 +11,7 @@
   vertical-align: middle;
   pointer-events: auto;
   transition: all 0.15s ease;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .du-switch input {
   position: absolute;
