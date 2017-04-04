@@ -11,6 +11,7 @@ import Radio from './Radio.vue'
 import Checkbox from './Checkbox.vue'
 import Switch from './Switch.vue'
 import Select from './Select.vue'
+import RadioGroup from './RadioGroup.vue'
 import Monthpicker from './Monthpicker.vue'
 
 import Tab from './Tab.vue'
@@ -39,6 +40,7 @@ const routes = [
   {path: '/checkbox/', component: Checkbox},
   {path: '/switch/', component: Switch},
   {path: '/select/', component: Select},
+  {path: '/radio-group/', component: RadioGroup},
   {path: '/month-picker/', component: Monthpicker},
   {path: '/breadcrumb/', component: Breadcrumb},
   {path: '/pagination/', component: Pagination},

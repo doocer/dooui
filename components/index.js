@@ -1,41 +1,42 @@
-import grid from './grid'
-import menu from './menu'
-import box from './box'
-import connect from './connect'
-import popover from './popover'
-import input from './input'
-// switch is a keyword
-import _switch from './switch'
-import select from './select'
-import monthpicker from './monthpicker'
+import Grid from './grid'
+import Menu from './menu'
+import Box from './box'
+import Connect from './connect'
+import Popover from './popover'
+import Input from './input'
+import Switch from './switch'
+import Select from './select'
+import RadioGroup from './radio-group'
+import MonthPicker from './monthpicker'
 
-import breadcrumb from './breadcrumb'
-import pagination from './pagination'
-import tab from './tab'
+import Breadcrumb from './breadcrumb'
+import Pagination from './pagination'
+import Tab from './tab'
 
-import progress from './progress'
-import message from './message'
-import dialog from './dialog'
-import chart from './chart'
+import Progress from './progress'
+import Message from './message'
+import Dialog from './dialog'
+import Chart from './chart'
 
 
 function install(Vue) {
-  Vue.use(connect)
-  Vue.use(grid)
-  Vue.use(menu)
-  Vue.use(box)
-  Vue.use(popover)
-  Vue.use(input)
-  Vue.use(_switch)
-  Vue.use(select)
-  Vue.use(monthpicker)
-  Vue.use(breadcrumb)
-  Vue.use(pagination)
-  Vue.use(tab)
-  Vue.use(progress)
-  Vue.use(message)
-  Vue.use(dialog)
-  Vue.use(chart)
+  Vue.use(Connect)
+  Vue.use(Grid)
+  Vue.use(Menu)
+  Vue.use(Box)
+  Vue.use(Popover)
+  Vue.use(Input)
+  Vue.use(Switch)
+  Vue.use(Select)
+  Vue.use(RadioGroup)
+  Vue.use(MonthPicker)
+  Vue.use(Breadcrumb)
+  Vue.use(Pagination)
+  Vue.use(Tab)
+  Vue.use(Progress)
+  Vue.use(Message)
+  Vue.use(Dialog)
+  Vue.use(Chart)
 }
 
 export default {install}

@@ -1,0 +1,35 @@
+.du-radio-group {
+  display: inline-block;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.du-radio-group:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.du-radio-group > label {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  float: left;
+  cursor: pointer;
+}
+.du-radio-group label + label > span {
+  border-left: 1px solid rgba(0, 0, 0, 0.04);
+}
+.du-radio-group span {
+  display: inline-block;
+  padding: 10px;
+  background-color: var(--color-white);
+}
+.du-radio-group input {
+  position: absolute;
+  left: -100px;
+}
+.du-radio-group input:checked + span {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border-color: var(--color-blue);
+}
